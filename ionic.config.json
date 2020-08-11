@@ -1,0 +1,7 @@
+{
+  "name": "Goal Shaper",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

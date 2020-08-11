@@ -1,0 +1,157 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Update Goal</ion-title>
+   </ion-toolbar>
+  </ion-header>
+
+
+  <ion-content  mode="ios">
+
+    <ion-list>
+        <br>
+        <ion-item>
+            <ion-input placeholder="Title" type="text" [(ngModel)]="goalSelected.goal_title"></ion-input>
+        </ion-item>
+
+          <ion-item>
+            <ion-input placeholder="Description" type="text" [(ngModel)]="goalSelected.description"></ion-input>
+          </ion-item>
+
+          &nbsp;
+
+          <ion-item lines="none" style="padding-right: 0px !important;">
+              <ion-label style="color: skyblue;">Target Date</ion-label>
+              <ion-datetime mode="ios" style="color: gray;" displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31" value="1990-02-19" placeholder="Select Date" [(ngModel)]="goalSelected.target_date" required></ion-datetime>
+          </ion-item>
+
+          <ion-item lines="none">
+              <ion-label style="color: skyblue;">Complete Date</ion-label>
+              <ion-icon name="checkbox-outline"></ion-icon>
+              <ion-datetime mode="ios" style="color: grey;" displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31" value="1990-02-19" placeholder="Complete Date" [(ngModel)]="goalSelected.completed_date"></ion-datetime>
+          </ion-item>
+
+          <ion-item *ngIf="!showMoreInfoDetails" style="color: skyblue;cursor: pointer;" lines="none" (click)=toggleDetails()>
+              <ion-label>More information</ion-label>
+              <ion-icon style="color: orange;" name="caret-down-outline"></ion-icon>
+          </ion-item>
+
+          <ion-item *ngIf="showMoreInfoDetails" lines="none" style="color: skyblue; cursor: pointer;" (click)=toggleDetails()>
+              <ion-label>Less information</ion-label>
+              <ion-icon style="color: orange;" name="caret-up-outline"></ion-icon>
+          </ion-item>
+
+          <div  *ngIf="showMoreInfoDetails">
+              <ion-item lines="none">
+                  <span *ngFor="let item of goalTypeInfo;let i = index;">
+                      <input type="radio" [(ngModel)]="goalSelected.goal_type_id" id="professional_{{i}}" name="goalType" [value]="item.goal_type_id" style="color: #0072BB;" (change)="onGoalTypeChange(item.goal_type_id)">
+                      <label for="professional_{{i}}" style="margin:10px 0px 0px 6px; margin-right:30px; color: skyblue;">{{item.type_name}}</label>
+                  </span>
+
+              </ion-item>&nbsp;
+
+              <ion-item lines="none" style="padding-right: 0px !important;">
+                 <ion-label style="color: skyblue;">Category</ion-label>
+
+                 <ion-select [(ngModel)]="goalSelected.goal_category_id">
+                    <!-- <ion-select-option value="">Select Category</ion-select-option> -->
+                    <ion-select-option *ngFor="let catogery of categoryInfo" value="{{catogery.category_id}}">{{catogery.name}}</ion-select-option>
+                  </ion-select>
+
+              </ion-item>
+
+
+
+              <ion-item lines="none" style="color: skyblue;" >
+                <ion-label>Milestones</ion-label>
+                <ion-label>Target Date</ion-label>
+                <ion-label>Complete Date</ion-label>
+             </ion-item>
+
+             <ion-item lines="none">
+                  <ion-grid>
+                          <ion-row *ngFor="let milestoneData_1 of milestonesData; let i = index">
+                                  <ion-col class="col" color="light" size="4">
+                                          <ion-input  placeholder="{{'Milestone '  + (i+1) + ' optional'}}" [(ngModel)]="milestoneData_1.milestone"></ion-input>
+                                    </ion-col>
+                                    <ion-col color="light" size="4">
+                                         <ion-datetime  mode="ios" displayFormat='DD-MMM-YYYY' [min]="min_date" [max]="max_date" value="1990-02-19" placeholder="Target" (click)=validatemstargetdate(); [(ngModel)]="milestoneData_1.target_date"></ion-datetime>
+                                    </ion-col>
+                                    <ion-col color="light" size="4">
+                                          <ion-datetime mode="ios" displayFormat='DD-MMM-YYYY'  [min]="min_date" max="2099-10-31" value="1990-02-19"  placeholder="Complete" [(ngModel)]="milestoneData_1.completion_date"></ion-datetime>
+                                    </ion-col>
+                          </ion-row>
+                          <!-- <ion-row>
+                            <ion-col  class="col" color="light" size="4">
+                                  <ion-input  placeholder="ms2" [(ngModel)]="mstxt2"></ion-input>
+                            </ion-col>
+                            <ion-col color="light" size="4">
+                                  <ion-datetime   displayFormat="MM/YYYY"  placeholder="Target" [(ngModel)]="mstargetdate2"></ion-datetime>
+                            </ion-col>
+                            <ion-col color="light" size="4">
+                                  <ion-datetime   displayFormat="MM/YYYY"  placeholder="Complete" [(ngModel)]="mscompleteddate2"></ion-datetime>
+                            </ion-col>
+                          </ion-row> -->
+                  </ion-grid>
+              </ion-item>
+          </div>
+
+
+    </ion-list>
+
+  </ion-content>
+
+
+  <ion-footer style="border-top: solid 1px lightgray;">
+          <ion-grid>
+              <ion-row class="ion-text-center">
+                <!-- <ion-col size="4">
+                  <ion-item lines="none" (click)="closemodal('UPDATE');" style="font-weight:bold; background:transparent; border-right:solid 1px #dcdcdc;    text-align:center; height:50px">
+                    <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+                    <ion-text  style="color: #039CD9; font-weight: bold;" class="ion-margin-start">Update</ion-text>
+                </ion-item>
+                </ion-col> -->
+
+                <ion-col size="4" lines="none"  >
+                  <ion-item lines="none" tappable (click)="closemodal('UPDATE');" style="font-weight:bold; background:transparent; border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px">
+                    <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+                    <ion-text  style="color: #039CD9; padding-left:10px; font-weight: bold;" >Update</ion-text>
+                </ion-item>
+                </ion-col>
+
+
+                <!-- <ion-col size="4">
+                  <ion-item lines="none"  (click)="closemodal('DELETE');" style="font-weight:bold; background:transparent;  border-right:solid 1px #dcdcdc;  text-align:center; height:50px">
+                    <ion-icon style="color: red;" name="trash-outline"></ion-icon>
+                    <ion-text style="color: red; font-weight: bold;" class="ion-margin-start">Delete</ion-text>
+                </ion-item>
+                </ion-col> -->
+
+
+                <ion-col size="4" lines="none"  >
+                  <ion-item lines="none" tappable  (click)="closemodal('DELETE');" style="font-weight:bold; background:transparent; border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px">
+                    <ion-icon size="small" style="color: red; " name="trash-outline"></ion-icon>
+                    <ion-text style="color: red; padding-left:10px; font-weight: bold;" >Delete</ion-text>
+                </ion-item>
+                </ion-col>
+
+
+                <!-- <ion-col size="4">
+                  <ion-item lines="none" (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent;  margin:0 auto;   text-align:center; height:50px">
+                    <ion-icon style="color: red;" name="close-circle-outline"></ion-icon>
+                    <ion-text style="color: red; font-weight: bold;" class="ion-margin-start">Cancel</ion-text>
+                </ion-item>
+                </ion-col> -->
+
+
+                <ion-col size="4" >
+                  <ion-item lines="none" tappable  (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent;   margin:0 auto;  width:100%;  text-align:center; height:50px">
+                    <ion-icon style="color: red; " name="close-circle-outline"></ion-icon>
+                    <ion-text style="color: red; padding-left:10px; font-weight: bold;" >Cancel</ion-text>
+                </ion-item>
+                </ion-col>
+
+
+              </ion-row>
+            </ion-grid>
+
+  </ion-footer>

@@ -1,0 +1,40 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <br><br>
+        <!-- <ion-item  style="height: 150px;"  lines= "none" style="border-bottom:solid 2px lightgrey ;">
+                <ion-avatar style="    height: 60px; width: 66px;">
+                    <img  src="assets/icon/1234.jpeg">
+                  </ion-avatar>
+                &nbsp; &nbsp;
+                <ion-label style="color: green;">Syam Kumar</ion-label>
+                <ion-icon style="color: orange;" (click)="closeMenu()" name="close-outline"></ion-icon>
+
+
+          </ion-item> -->
+
+        <ion-list>
+            <ion-item>
+                    <img style="width:45px; height:45px; border-radius:45px; margin-bottom: 20px;" src="{{profilephoto}}">
+                    &nbsp; &nbsp;
+                    <ion-label style="color: green; margin-bottom:30px; text-transform: capitalize;">{{displayName}}</ion-label>
+                    <ion-icon style="color: #f09d2e; margin-top:-50px; margin-left:20px" size='large' (click)="closeMenu()" name="close-outline"></ion-icon>
+              </ion-item>
+        </ion-list>
+
+
+
+        <ion-list lines="none" id="inbox-list">
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item lines="none" (click)="selectedIndex = i;clickedItem(p)" routerDirection="root" [routerLink]="[p.url]" detail="false" [class.selected]="selectedIndex == i">
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

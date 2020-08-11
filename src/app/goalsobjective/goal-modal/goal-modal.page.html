@@ -1,0 +1,150 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Goal</ion-title>
+ </ion-toolbar>
+</ion-header>
+
+
+<ion-content  mode="ios">
+
+  <ion-list>
+      <br>
+      <ion-item>
+          <ion-input placeholder="Title" type="text" [(ngModel)]="goalTitle"></ion-input>
+      </ion-item>
+
+        <ion-item>
+          <ion-input placeholder="Description" type="text" [(ngModel)]="goalDescription"></ion-input>
+        </ion-item>
+
+        &nbsp;
+
+        <ion-item lines="none" style="padding-right: 0px !important;">
+            <ion-label style="color: hsl(197, 71%, 73%);">Target Date</ion-label>
+            <ion-datetime mode="ios" displayFormat='DD-MMM-YYYY' style="color: gray;" [min]="min_date"  max="2099-10-31" value="1990-02-19" placeholder="Select Date" [(ngModel)]="goalTargetDate" required></ion-datetime>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label style="color: skyblue;">Complete Date</ion-label>
+            <ion-icon name="checkbox-outline"></ion-icon>
+            <ion-datetime mode="ios" displayFormat='DD-MMM-YYYY' style="color: grey;" [min]="min_date"  max="2099-10-31" value="1990-02-19" placeholder="Complete Date" [(ngModel)]="goalCompletedDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item *ngIf="!showMoreInfoDetails" style="color: skyblue;cursor: pointer;" lines="none" (click)=toggleDetails()>
+            <ion-label>More information</ion-label>
+            <ion-icon style="color: orange;" name="caret-down-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item *ngIf="showMoreInfoDetails" lines="none" style="color: skyblue; cursor: pointer;" (click)=toggleDetails()>
+            <ion-label>Less information</ion-label>
+            <ion-icon style="color: orange;" name="caret-up-outline"></ion-icon>
+        </ion-item>
+
+        <div  *ngIf="showMoreInfoDetails">
+            <ion-item lines="none">
+                <span *ngFor="let item of goalTypeInfo;let i = index;">
+                    <input type="radio" [(ngModel)]="goalBody.goal_type_id"  id="professional_{{i}}" name="goalType" [value]="item.goal_type_id" style="color: #0072BB;" (change)="onGoalTypeChange(item.goal_type_id)">
+                    <label for="professional_{{i}}" style="margin:10px 0px 0px 6px; margin-right:30px; color: skyblue;">{{item.type_name}}</label>
+                </span>
+
+                <!-- <ion-checkbox [(ngModel)]="isPersonal" (ionChange)="clickPersonal()"></ion-checkbox>
+                <ion-label>Personal</ion-label>
+                <ion-checkbox [(ngModel)]="isProfessional" (ionChange)="clickProfessional()" ></ion-checkbox>
+                <ion-label>Professional</ion-label> -->
+            </ion-item>&nbsp;
+
+            <ion-item lines="none" style="padding-right: 0px !important;">
+               <!-- <span slot="start" style="color: skyblue;">Category</span>
+               <span style="color: gray;" slot="end">Miscellaneous</span> -->
+               <ion-label style="color: skyblue;">Category</ion-label>
+
+               <ion-select [(ngModel)]="goalBody.goal_category_id">
+                  <!-- <ion-select-option value="">Select Category</ion-select-option> -->
+                  <ion-select-option *ngFor="let catogery of categoryInfo" value="{{catogery.category_id}}">{{catogery.name}}</ion-select-option>
+                </ion-select>
+
+            </ion-item>
+
+
+
+            <ion-item lines="none" style="color: skyblue;" >
+              <ion-label>Milestones</ion-label>
+              <ion-label>Target Date</ion-label>
+              <ion-label>Complete Date</ion-label>
+           </ion-item>
+
+           <ion-item lines="none" >
+                <ion-grid>
+                        <ion-row>
+                                <ion-col class="col" color="light" size="4">
+                                        <ion-input  placeholder="ms1" [(ngModel)]="mstxt1"></ion-input>
+                                  </ion-col>
+                                  <ion-col color="light" size="4">
+                                        <ion-datetime mode="ios" displayFormat='DD-MMM-YYYY'   [min]="min_date" [max]="max_date" value="1990-02-19"  (click)="validatemstargetdate1()" placeholder="Target" [(ngModel)]="mstargetdate1"></ion-datetime>
+                                  </ion-col>
+                                  <ion-col color="light" size="4">
+                                        <ion-datetime mode="ios" displayFormat='DD-MMM-YYYY'  [min]="min_date"  max="2099-10-31" value="1990-02-19"  placeholder="Complete" [(ngModel)]="mscompleteddate1"></ion-datetime>
+                                  </ion-col>
+                        </ion-row>
+                        <ion-row>
+                          <ion-col  class="col" color="light" size="4">
+                                <ion-input  placeholder="ms2" [(ngModel)]="mstxt2"></ion-input>
+                          </ion-col>
+                          <ion-col color="light" size="4">
+                                <ion-datetime  mode="ios" displayFormat='DD-MMM-YYYY'  [min]="min_date" [max]="max_date" value="1990-02-19" (click)="validatemstargetdate2()"  placeholder="Target" [(ngModel)]="mstargetdate2"></ion-datetime>
+                          </ion-col>
+                          <ion-col color="light" size="4">
+                                <ion-datetime  mode="ios" displayFormat='DD-MMM-YYYY'  [min]="min_date"  max="2099-10-31" value="1990-02-19"  placeholder="Complete" [(ngModel)]="mscompleteddate2"></ion-datetime>
+                          </ion-col>
+                        </ion-row>
+                </ion-grid>
+            </ion-item>
+        </div>
+
+
+  </ion-list>
+
+</ion-content>
+
+
+<ion-footer style="border-top: solid 1px lightgray;">
+        <!-- <table lines="none" style="width:100%; border-radius:15px;">
+            <tr>
+                <td align="center" style="width:50%;border-top:solid 1px #dcdcdc; height:30px; text-align:center; font-weight:bold;">
+
+                    <ion-item lines="none" tappable  (click)="closemodal('SAVE');" style="font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+                        <ion-icon style="color: #039CD9; margin-right: -20px;" name="checkmark-outline"></ion-icon>
+                        <ion-label style="color: #039CD9;">Save</ion-label>
+
+
+                    </ion-item>
+                </td>
+                <td align="center" style="width:50%;border-top:solid 1px #dcdcdc; height:30px; text-align:center;">
+
+                    <ion-item lines="none" tappable (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+                        <ion-icon style="color: red;" name="close-circle-outline"></ion-icon>
+                        <ion-label style="color: red;">Cancel</ion-label>
+                    </ion-item>
+
+                </td>
+            </tr>
+        </table> -->
+
+        <ion-grid>
+            <ion-row class="ion-text-center">
+              <ion-col size="6">
+                <ion-item lines="none" (click)="closemodal('SAVE');" style="text-align: center; font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;    width:100%;  text-align:center; height:50px">
+                  <ion-icon style="color: #039CD9;margin-left: 16px;" name="checkmark-outline"></ion-icon>
+                  <ion-text  style="color: #039CD9; font-weight: bold;" class="ion-margin-start">Save</ion-text>
+              </ion-item>
+              </ion-col>
+              <ion-col size="6">
+                <ion-item lines="none" tappable (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+                  <ion-icon style="color: red; margin-left: 10px;" name="close-circle-outline"></ion-icon>
+                  <ion-text style="color: red; font-weight: bold;" class="ion-margin-start">Cancel</ion-text>
+              </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+</ion-footer>

@@ -1,0 +1,115 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #F09D2E;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="Medium"> Welcome</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode='ios' fullscreen>
+
+    <ion-grid>
+
+
+      <ion-row>
+        <ion-col style="text-align: center; margin-top: 10%;">
+          <img src="assets/icon/GoalShaper-Logo.png" style="width:180px; margin:10px; padding: 0 auto;"/>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="margin:0px 8px 0px 8px">
+        <ion-col style="text-align: left">
+          <h2>Boost your productivity by adding Goals Objectives and Actions.</h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row style="border-bottom: gray 1px solid; margin: 0px 8px 10px 8px" class="ion-padding-bottom">
+        <ion-col size="9" style="margin-bottom:10px">
+          <h4>Goals & Milestones</h4>
+          <p>Specific outcomes to be achieved and a timeframe to reach them.</p>
+        </ion-col>
+        <ion-col size="3" (click)="goto_goals()">
+          <img style="width:85%; float:right" src="assets/icon/icons_plus.png" alt=""/>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: gray 1px solid; margin: 0px 8px 10px 8px" class="ion-padding-bottom ion-padding-top">
+        <ion-col size="9" style="margin-bottom:10px">
+          <h4>Objectives</h4>
+          <p>Your near-term targets.</p>
+        </ion-col>
+        <ion-col size="3" (click)="goto_objectives()">
+          <img style="width:85%;  float:right" src="assets/icon/icons_plus.png" alt=""/>
+        </ion-col>
+      </ion-row>
+      <ion-row style=" margin: 0px 8px 10px 8px" class="ion-padding-top">
+        <ion-col size="9" style="margin-bottom:10px">
+          <h4>Actions</h4>
+          <p>Small, bite sized and achievable.</p>
+        </ion-col>
+        <ion-col size="3" (click)="goto_actions()">
+          <img style="width:85%;  float:right" src="assets/icon/icons_plus.png" alt=""/>
+        </ion-col>
+      </ion-row>
+      
+        <!-- <ion-row  style="text-align: left;">
+          <ion-col>
+
+              <ion-list>
+
+                  <ion-item style="text-align: center;" lines="none">
+                      <ion-label class="ion-text-wrap"> 
+                          <img src="assets/icon/GoalShaper-Logo.png" style="width:180px; margin: 0 auto; padding: 0 auto;" />
+                        </ion-label>
+                    </ion-item>
+                    
+
+                  <ion-item lines="none">
+                      <ion-label class="ion-text-wrap"> 
+                        <h2 style="font-size: 16px;">Boost your productivity by adding Goals Objectives and Actions.</h2>
+                      </ion-label>
+                    </ion-item>
+                    &nbsp;
+
+                    
+
+                  <ion-item>
+                    <ion-avatar slot="end">
+                      <img  src="./assets/icon/icons_plus.png">
+                    </ion-avatar>
+                    <ion-label class="ion-text-wrap">
+                      <h2 style="font-size: 16px;">Golas & milestones</h2>
+                      <p>Specific outcomes to be achieved and a timeframe to reach them.</p>
+                    </ion-label>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-avatar slot="end">
+                        <img src="./assets/icon/icons_plus.png">
+                      </ion-avatar>
+                      <ion-label class="ion-text-wrap">
+                        <h2 style="font-size: 16px;">Objectives</h2>
+                        <p>Your near-term targets.</p>
+                      </ion-label>
+                    </ion-item>
+
+                    <ion-item lines="none">
+                        <ion-avatar slot="end">
+                          <img src="./assets/icon/icons_plus.png">
+                        </ion-avatar>
+                        <ion-label class="ion-text-wrap">
+                          <h2 style="font-size: 16px;">Actions</h2>
+                          <p>Small, bite sized and achievable.</p>
+                        </ion-label>
+                      </ion-item>
+               </ion-list>
+             
+          </ion-col>
+        </ion-row> -->
+      </ion-grid>
+
+  
+ 
+   
+
+</ion-content>

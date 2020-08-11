@@ -1,0 +1,189 @@
+<!-- <ion-header [translucent]="true">
+    <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+        <ion-back-button color="primary" mode="md" ></ion-back-button>
+      </ion-buttons>
+      <ion-title color="primary">Login</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+<!-- <ion-content class="ion-text-center" mode="md">
+    <ion-grid class="halfCircleBottom" style="background-color: blue;">
+          <form (ngSubmit)="checkLogin($event)">
+            <ion-grid style="width:80%">
+              <br><br>
+              <ion-row class="ion-align-items-center">
+                <ion-col>
+                  <img  style="width:55%" src="../assets/images/toolbar_logo.png" >
+                </ion-col>
+              </ion-row>
+              <br>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label color="primary" position="floating">Email Address<ion-text color="danger">*</ion-text></ion-label>
+                    <ion-input required type="text" (ionChange)="handleEmailValue($event)"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label color="primary" position="floating">Password<ion-text color="danger">*</ion-text></ion-label>
+                    <ion-input required type="password" (ionChange)="handlePasswordValue($event)"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <br>
+              <ion-row class="ion-align-items-center">
+                <ion-col class="ion-align-self-center">
+                    <ion-button mode="ios" type="submit"  size="small" color="primary" fill="outline" >Create Account</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </form>
+    </ion-grid>
+
+    
+    <br>
+
+   <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text (click)="gotoForgotPasswordPage()">
+              Forgot Password?
+            </ion-text>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+
+  </ion-content>  -->
+
+<!-- 058EE1
+  F19E2B -->
+
+<!-- f09d2e -->
+
+<!-- <ion-content padding>
+
+    <ion-list style="height: 70%;">
+
+        <form #form="ngForm" (ngSubmit)="login(form)" style="margin-top: 100px;">
+            <ion-grid>
+              <ion-row justify-content-center style="text-align: center;">
+                <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+                  <div text-center>
+                      <img src="assets/icon/GoalShaper-Logo.png" style="width:240px; margin: 0 auto; padding: 0 auto;" />
+                  </div>
+                  <br><br><br>
+                  <div padding>
+                    <ion-item>
+                      <ion-icon style="color: #F09D2E;" name="person"></ion-icon> &nbsp;&nbsp;
+                      <ion-input style="color: black;" name="email" type="email" placeholder="Username" ngModel required></ion-input>
+                    </ion-item>
+                    <br>
+                    <ion-item style="margin-top: 10px;">
+                      <ion-icon style="color: #F09D2E;" name="lock-closed"></ion-icon> &nbsp;&nbsp;
+                      <ion-input style="color: black;" name="password" type="password" placeholder="Password" ngModel required></ion-input>
+                    </ion-item>
+                  </div>
+                  <br><br><br>
+                  <div padding>
+                    <ion-button  shape="round" size="small" fill="solid" style="--background: #f09d2e" type="submit" [disabled]="form.invalid">Login</ion-button>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </form>
+
+    </ion-list>
+
+
+
+    <ion-list  style="height: 30%; background-color: #058EE1;">
+
+        <br>
+        <br>
+        <br>
+
+        <ion-grid>
+            <ion-row  style="text-align: center; color: white;">
+              <ion-col>
+                <ion-text (click)="gotoForgotPasswordPage()">
+                  Forgot Password?
+                </ion-text>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+
+  
+    </ion-list>
+
+     
+    </ion-content> -->
+
+<ion-content class="ion-padding">
+  <form #form="ngForm" (ngSubmit)="login(form)" style="margin-top: 25%; height: 50%;">
+    <ion-grid>
+      <ion-row justify-content-center style="text-align: center;">
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <img
+              src="assets/icon/GoalShaper-Logo.png"
+              style="width: 240px; margin: 0 auto; padding: 0 auto;"
+            />
+          </div>
+          <br /><br /><br />
+          <div padding>
+            <ion-item>
+              <ion-icon style="color: #f09d2e;" name="person"></ion-icon>
+              &nbsp;&nbsp;
+              <ion-input
+                style="color: black;"
+                name="email"
+                type="email"
+                placeholder="Username"
+                [(ngModel)]="username"
+                required
+              ></ion-input>
+            </ion-item>
+            <br />
+            <ion-item style="margin-top: 10px;">
+              <ion-icon style="color: #f09d2e;" name="lock-closed"></ion-icon>
+              &nbsp;&nbsp;
+              <ion-input
+                style="color: black;"
+                name="password"
+                type="password"
+                placeholder="Password"
+                [(ngModel)]="password"
+                required
+              ></ion-input>
+            </ion-item>
+          </div>
+          <div padding style="margin-top: 15%;">
+            <ion-button
+              shape="round"
+              size="medium"
+              fill="solid"
+              style="--background: #f09d2e;"
+              type="submit"
+              [disabled]="form.invalid"
+              >Login</ion-button
+            >
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <ion-grid style="margin-top: 35%;">
+    <ion-row class="ion-text-center">
+      <ion-col>
+        <!-- <ion-text (click)="gotoForgotPasswordPage()" color="light">
+          Forgot Password?
+        </ion-text> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

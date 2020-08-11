@@ -1,0 +1,36 @@
+.halfCircleBottom {
+  height: 50%;
+  width: 100%;
+  // border-radius: 10 0 40% 40%;
+  background: green;
+
+  // height:100px;
+  // width:100px;
+  border: 1px solid black;
+  border-top: 0px;
+  // border-radius: 10px 10px 100px 100px;
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+}
+ion-item {
+  --background: #ffff;
+  --color: #d7d7d7;
+}
+
+// .background-image{
+//     // --background: url(assets/icon/login_p.svg) no-repeat;
+
+//     --background: lightgray  url('/assets/icon/1234.jpeg')  no-repeat top center / 100%;
+// }
+
+// .backgound-image {
+//   background-image: url("/assets/icon/login_p.svg");
+//   width: 100%;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+// }
+
+ion-content {
+  --background: url("/assets/login.svg") no-repeat center/cover fixed;
+}

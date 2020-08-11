@@ -1,0 +1,170 @@
+<ion-content mode="ios">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="" required type="text" [(ngModel)]=txtCatagoryName></ion-input>
+        </ion-item>
+       </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="ion-padding-top">
+    <ion-row class="ion-text-center">
+      <ion-col size="2" class="offset" *ngFor="let item of circleArray;let i = index">
+        <span class="ion-matrgin-end">
+            <ion-checkbox class={{item.color}} id="SelectedCheckbox_{{$index}}"  name="CheckBoxdata[]" (click)=clickMethod(item) [(ngModel)]=item.checked></ion-checkbox>&nbsp;&nbsp;
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Category Description" required type="text" [(ngModel)]=txtCategoryDescription></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer style="border-top: solid 1px lightgray;">
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <!-- <ion-col size="6">
+        <ion-item lines="none" (click)="closemodal('SAVE');" style="font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc; width:100%; height:50px" button>
+          <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+          <ion-text  style="color: #039CD9; font-weight: bold;" class="ion-margin-start">Save</ion-text>
+        </ion-item>
+      </ion-col> -->
+
+
+      <ion-col size="6">
+        <ion-item lines="none" (click)="closemodal('SAVE');" style="text-align: center; font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;    width:100%;  text-align:center; height:50px">
+          <ion-icon style="color: #039CD9;margin-left: 16px;" name="checkmark-outline"></ion-icon>
+          <ion-text  style="color: #039CD9; font-weight: bold;" class="ion-margin-start">Save</ion-text>
+      </ion-item>
+      </ion-col>
+
+      <!-- <ion-col size="6">
+        <ion-item lines="none" (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto; width:100%; height:50px" button>
+          <ion-icon style="color: red;" name="close-circle-outline"></ion-icon>
+          <ion-text style="color: red; font-weight: bold;" class="ion-margin-start">Cancel</ion-text>
+        </ion-item>
+      </ion-col> -->
+
+      <ion-col size="6">
+        <ion-item lines="none" tappable (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+          <ion-icon style="color: red; margin-left: 10px;" name="close-circle-outline"></ion-icon>
+          <ion-text style="color: red; font-weight: bold;" class="ion-margin-start">Cancel</ion-text>
+      </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+
+<!-- <ion-content no-padding mode="ios">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-input placeholder="Family" required type="text" (ionChange)="click($event)"></ion-input>
+          </ion-item>
+         </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid style="margin-left:20px;">
+    <ion-row>
+        <ion-col>
+            <span *ngFor="let item of circleArray">
+                <ion-checkbox class={{item.color}} checked={{item.checked}} style="margin-left: 10px;"></ion-checkbox>&nbsp;&nbsp;
+            </span>
+         </ion-col>
+
+       </ion-row>
+    </ion-grid>
+
+    <ion-grid style="margin-top:-10px;">
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input placeholder="Category Description" required type="text" (ionChange)="click($event)"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <br><br>
+
+
+</ion-content>
+
+<ion-footer>
+
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-col size="6">
+        <ion-item lines="none" (click)="closemodal('SAVE');" style="text-align: center; font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;    width:100%;  text-align:center; height:50px">
+          <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+          <ion-text  style="color: #039CD9;" class="ion-margin-start">Save</ion-text>
+      </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item lines="none" tappable (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+          <ion-icon style="color: red;" name="close-circle-outline"></ion-icon>
+          <ion-text style="color: red;" class="ion-margin-start">Cancel</ion-text>
+      </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <table lines="none" style="width:100%; border-radius:15px;">
+      <tr>
+          <td align="center" style="width:50%;border-top:solid 1px #dcdcdc; height:30px; text-align:center; font-weight:bold;">
+
+              <ion-item lines="none" (click)="closemodal('SAVE');" style="text-align: center; font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;    width:100%;  text-align:center; height:50px">
+                  <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+                  <ion-label  style="color: #039CD9;">Save</ion-label>
+              </ion-item>
+          </td>
+          <td align="center" style="width:50%;border-top:solid 1px #dcdcdc; height:30px; text-align:center; font-weight:bold;">
+
+              <ion-item lines="none" tappable (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+                  <ion-icon style="color: red;" slot="start" name="close-circle-outline"></ion-icon>
+
+                  <ion-label style="text-align: center;" style="color: red;">Cancel
+                  </ion-label>
+              </ion-item>
+
+              <ion-grid style="width:100%; border-radius:15px;">
+                  <ion-row>
+                   <ion-col width-50>
+                   <ion-item lines="none" (click)="closemodal('SAVE');" style="text-align: center; font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;    width:100%;  text-align:center; height:50px">
+                      <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+                      <ion-label  style="color: #039CD9;">Save</ion-label>
+                  </ion-item>
+                 </ion-col>
+                 <ion-col width-50>
+                    <ion-item lines="none" tappable (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+                        <ion-icon style="color: red;" slot="start" name="close-circle-outline"></ion-icon>
+                        <ion-label style="text-align: center;" style="color: red;">Cancel
+                        </ion-label>
+                    </ion-item>
+                    </ion-col>
+                  </ion-row>
+                  </ion-grid>
+
+
+
+
+          </td>
+      </tr>
+  </table>
+</ion-footer> -->

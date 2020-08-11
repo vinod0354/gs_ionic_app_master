@@ -1,0 +1,60 @@
+.backgroundCategory1-ionitem{   
+    --background: #058EE1 !important;
+}
+.backgroundCategory2-ionitem{   
+    --background: #722CA0 !important;
+}
+.backgroundCategory3-ionitem{   
+    --background: #FFC200 !important;
+}
+
+.backgroundDueDate1-ionitem{   
+    --background: #FE4A49 !important;
+}
+.backgroundDueDate2-ionitem{   
+    --background: #058EE1 !important;
+}
+.backgroundDueDate3-ionitem{   
+    --background: #FFC200 !important;
+}
+
+.background-fabbutton{
+    --background: #F09D2E !important;
+}
+ion-card-content{
+   padding: 0px !important;
+
+}
+ion-card-header{
+   padding: 10px !important;
+   // border-top-left-radius: 10px;
+   // border-top-right-radius: 10px;
+}
+
+.roundbutton {
+   display: block;
+   height: 25px;
+   width: 25px;
+   border-radius: 50%;
+   // // border: 1px solid blue;
+   background-color: white;
+   text-align: center;
+ }
+
+ ion-item:hover { background-color: lightslategray !important; }
+ 
+.qww{
+    --ion-background-color: chocolate;
+    --border-radius: 20px !important;
+ }
+ .custom-goalmodal {
+      width: 60%;
+      height: 60%;
+      border-radius:20px;
+  }
+
+// ion-grid{
+//     --ion-grid-padding: 20px 5px 20px 5px;
+// }
+
+

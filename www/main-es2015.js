@@ -1,0 +1,2007 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
+
+/***/ "./$$_lazy_route_resource lazy recursive":
+/*!******************************************************!*\
+  !*** ./$$_lazy_route_resource lazy namespace object ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncaught exception popping up in devtools
+	return Promise.resolve().then(function() {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
+
+/***/ }),
+
+/***/ "./node_modules/@ionic/core/dist/esm lazy recursive ^\\.\\/.*\\.entry\\.js$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm lazy ^\.\/.*\.entry\.js$ include: \.entry\.js$ exclude: \.system\.entry\.js$ namespace object ***!
+  \*****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./ion-action-sheet-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-action-sheet-ios.entry.js",
+		"common",
+		"stencil-ion-action-sheet-ios-entry-js"
+	],
+	"./ion-action-sheet-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-action-sheet-md.entry.js",
+		"common",
+		"stencil-ion-action-sheet-md-entry-js"
+	],
+	"./ion-alert-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-alert-ios.entry.js",
+		"common",
+		"stencil-ion-alert-ios-entry-js"
+	],
+	"./ion-alert-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-alert-md.entry.js",
+		"common",
+		"stencil-ion-alert-md-entry-js"
+	],
+	"./ion-app_8-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-app_8-ios.entry.js",
+		"common",
+		"stencil-ion-app_8-ios-entry-js"
+	],
+	"./ion-app_8-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-app_8-md.entry.js",
+		"common",
+		"stencil-ion-app_8-md-entry-js"
+	],
+	"./ion-avatar_3-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-avatar_3-ios.entry.js",
+		"common",
+		"stencil-ion-avatar_3-ios-entry-js"
+	],
+	"./ion-avatar_3-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-avatar_3-md.entry.js",
+		"common",
+		"stencil-ion-avatar_3-md-entry-js"
+	],
+	"./ion-back-button-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-back-button-ios.entry.js",
+		"common",
+		"stencil-ion-back-button-ios-entry-js"
+	],
+	"./ion-back-button-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-back-button-md.entry.js",
+		"common",
+		"stencil-ion-back-button-md-entry-js"
+	],
+	"./ion-backdrop-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-backdrop-ios.entry.js",
+		"stencil-ion-backdrop-ios-entry-js"
+	],
+	"./ion-backdrop-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-backdrop-md.entry.js",
+		"stencil-ion-backdrop-md-entry-js"
+	],
+	"./ion-button_2-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-button_2-ios.entry.js",
+		"common",
+		"stencil-ion-button_2-ios-entry-js"
+	],
+	"./ion-button_2-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-button_2-md.entry.js",
+		"common",
+		"stencil-ion-button_2-md-entry-js"
+	],
+	"./ion-card_5-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-card_5-ios.entry.js",
+		"common",
+		"stencil-ion-card_5-ios-entry-js"
+	],
+	"./ion-card_5-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-card_5-md.entry.js",
+		"common",
+		"stencil-ion-card_5-md-entry-js"
+	],
+	"./ion-checkbox-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-checkbox-ios.entry.js",
+		"common",
+		"stencil-ion-checkbox-ios-entry-js"
+	],
+	"./ion-checkbox-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-checkbox-md.entry.js",
+		"common",
+		"stencil-ion-checkbox-md-entry-js"
+	],
+	"./ion-chip-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-chip-ios.entry.js",
+		"common",
+		"stencil-ion-chip-ios-entry-js"
+	],
+	"./ion-chip-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-chip-md.entry.js",
+		"common",
+		"stencil-ion-chip-md-entry-js"
+	],
+	"./ion-col_3.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-col_3.entry.js",
+		"stencil-ion-col_3-entry-js"
+	],
+	"./ion-datetime_3-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-datetime_3-ios.entry.js",
+		"common",
+		"stencil-ion-datetime_3-ios-entry-js"
+	],
+	"./ion-datetime_3-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-datetime_3-md.entry.js",
+		"common",
+		"stencil-ion-datetime_3-md-entry-js"
+	],
+	"./ion-fab_3-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-fab_3-ios.entry.js",
+		"common",
+		"stencil-ion-fab_3-ios-entry-js"
+	],
+	"./ion-fab_3-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-fab_3-md.entry.js",
+		"common",
+		"stencil-ion-fab_3-md-entry-js"
+	],
+	"./ion-img.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-img.entry.js",
+		"stencil-ion-img-entry-js"
+	],
+	"./ion-infinite-scroll_2-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-infinite-scroll_2-ios.entry.js",
+		"common",
+		"stencil-ion-infinite-scroll_2-ios-entry-js"
+	],
+	"./ion-infinite-scroll_2-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-infinite-scroll_2-md.entry.js",
+		"common",
+		"stencil-ion-infinite-scroll_2-md-entry-js"
+	],
+	"./ion-input-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-input-ios.entry.js",
+		"common",
+		"stencil-ion-input-ios-entry-js"
+	],
+	"./ion-input-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-input-md.entry.js",
+		"common",
+		"stencil-ion-input-md-entry-js"
+	],
+	"./ion-item-option_3-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-item-option_3-ios.entry.js",
+		"common",
+		"stencil-ion-item-option_3-ios-entry-js"
+	],
+	"./ion-item-option_3-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-item-option_3-md.entry.js",
+		"common",
+		"stencil-ion-item-option_3-md-entry-js"
+	],
+	"./ion-item_8-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-item_8-ios.entry.js",
+		"common",
+		"stencil-ion-item_8-ios-entry-js"
+	],
+	"./ion-item_8-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-item_8-md.entry.js",
+		"common",
+		"stencil-ion-item_8-md-entry-js"
+	],
+	"./ion-loading-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-loading-ios.entry.js",
+		"common",
+		"stencil-ion-loading-ios-entry-js"
+	],
+	"./ion-loading-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-loading-md.entry.js",
+		"common",
+		"stencil-ion-loading-md-entry-js"
+	],
+	"./ion-menu_3-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-menu_3-ios.entry.js",
+		"common",
+		"stencil-ion-menu_3-ios-entry-js"
+	],
+	"./ion-menu_3-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-menu_3-md.entry.js",
+		"common",
+		"stencil-ion-menu_3-md-entry-js"
+	],
+	"./ion-modal-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-modal-ios.entry.js",
+		"common",
+		"stencil-ion-modal-ios-entry-js"
+	],
+	"./ion-modal-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-modal-md.entry.js",
+		"common",
+		"stencil-ion-modal-md-entry-js"
+	],
+	"./ion-nav_2.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-nav_2.entry.js",
+		"common",
+		"stencil-ion-nav_2-entry-js"
+	],
+	"./ion-popover-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-popover-ios.entry.js",
+		"common",
+		"stencil-ion-popover-ios-entry-js"
+	],
+	"./ion-popover-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-popover-md.entry.js",
+		"common",
+		"stencil-ion-popover-md-entry-js"
+	],
+	"./ion-progress-bar-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-progress-bar-ios.entry.js",
+		"common",
+		"stencil-ion-progress-bar-ios-entry-js"
+	],
+	"./ion-progress-bar-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-progress-bar-md.entry.js",
+		"common",
+		"stencil-ion-progress-bar-md-entry-js"
+	],
+	"./ion-radio_2-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-radio_2-ios.entry.js",
+		"common",
+		"stencil-ion-radio_2-ios-entry-js"
+	],
+	"./ion-radio_2-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-radio_2-md.entry.js",
+		"common",
+		"stencil-ion-radio_2-md-entry-js"
+	],
+	"./ion-range-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-range-ios.entry.js",
+		"common",
+		"stencil-ion-range-ios-entry-js"
+	],
+	"./ion-range-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-range-md.entry.js",
+		"common",
+		"stencil-ion-range-md-entry-js"
+	],
+	"./ion-refresher_2-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-refresher_2-ios.entry.js",
+		"common",
+		"stencil-ion-refresher_2-ios-entry-js"
+	],
+	"./ion-refresher_2-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-refresher_2-md.entry.js",
+		"common",
+		"stencil-ion-refresher_2-md-entry-js"
+	],
+	"./ion-reorder_2-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-reorder_2-ios.entry.js",
+		"common",
+		"stencil-ion-reorder_2-ios-entry-js"
+	],
+	"./ion-reorder_2-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-reorder_2-md.entry.js",
+		"common",
+		"stencil-ion-reorder_2-md-entry-js"
+	],
+	"./ion-ripple-effect.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-ripple-effect.entry.js",
+		"stencil-ion-ripple-effect-entry-js"
+	],
+	"./ion-route_4.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-route_4.entry.js",
+		"common",
+		"stencil-ion-route_4-entry-js"
+	],
+	"./ion-searchbar-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-searchbar-ios.entry.js",
+		"common",
+		"stencil-ion-searchbar-ios-entry-js"
+	],
+	"./ion-searchbar-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-searchbar-md.entry.js",
+		"common",
+		"stencil-ion-searchbar-md-entry-js"
+	],
+	"./ion-segment_2-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-segment_2-ios.entry.js",
+		"common",
+		"stencil-ion-segment_2-ios-entry-js"
+	],
+	"./ion-segment_2-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-segment_2-md.entry.js",
+		"common",
+		"stencil-ion-segment_2-md-entry-js"
+	],
+	"./ion-select_3-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-select_3-ios.entry.js",
+		"common",
+		"stencil-ion-select_3-ios-entry-js"
+	],
+	"./ion-select_3-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-select_3-md.entry.js",
+		"common",
+		"stencil-ion-select_3-md-entry-js"
+	],
+	"./ion-slide_2-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-slide_2-ios.entry.js",
+		"stencil-ion-slide_2-ios-entry-js"
+	],
+	"./ion-slide_2-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-slide_2-md.entry.js",
+		"stencil-ion-slide_2-md-entry-js"
+	],
+	"./ion-spinner.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-spinner.entry.js",
+		"common",
+		"stencil-ion-spinner-entry-js"
+	],
+	"./ion-split-pane-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-split-pane-ios.entry.js",
+		"stencil-ion-split-pane-ios-entry-js"
+	],
+	"./ion-split-pane-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-split-pane-md.entry.js",
+		"stencil-ion-split-pane-md-entry-js"
+	],
+	"./ion-tab-bar_2-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-tab-bar_2-ios.entry.js",
+		"common",
+		"stencil-ion-tab-bar_2-ios-entry-js"
+	],
+	"./ion-tab-bar_2-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-tab-bar_2-md.entry.js",
+		"common",
+		"stencil-ion-tab-bar_2-md-entry-js"
+	],
+	"./ion-tab_2.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-tab_2.entry.js",
+		"common",
+		"stencil-ion-tab_2-entry-js"
+	],
+	"./ion-text.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-text.entry.js",
+		"common",
+		"stencil-ion-text-entry-js"
+	],
+	"./ion-textarea-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-textarea-ios.entry.js",
+		"common",
+		"stencil-ion-textarea-ios-entry-js"
+	],
+	"./ion-textarea-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-textarea-md.entry.js",
+		"common",
+		"stencil-ion-textarea-md-entry-js"
+	],
+	"./ion-toast-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-toast-ios.entry.js",
+		"common",
+		"stencil-ion-toast-ios-entry-js"
+	],
+	"./ion-toast-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-toast-md.entry.js",
+		"common",
+		"stencil-ion-toast-md-entry-js"
+	],
+	"./ion-toggle-ios.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-toggle-ios.entry.js",
+		"common",
+		"stencil-ion-toggle-ios-entry-js"
+	],
+	"./ion-toggle-md.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-toggle-md.entry.js",
+		"common",
+		"stencil-ion-toggle-md-entry-js"
+	],
+	"./ion-virtual-scroll.entry.js": [
+		"./node_modules/@ionic/core/dist/esm/ion-virtual-scroll.entry.js",
+		"stencil-ion-virtual-scroll-entry-js"
+	]
+};
+function webpackAsyncContext(req) {
+	if(!__webpack_require__.o(map, req)) {
+		return Promise.resolve().then(function() {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+
+	var ids = map[req], id = ids[0];
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+		return __webpack_require__(id);
+	});
+}
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = "./node_modules/@ionic/core/dist/esm lazy recursive ^\\.\\/.*\\.entry\\.js$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$";
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
+/*!**************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-split-pane contentId=\"main-content\">\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\n      <ion-content>\n        <br><br>\n        <!-- <ion-item  style=\"height: 150px;\"  lines= \"none\" style=\"border-bottom:solid 2px lightgrey ;\">\n                <ion-avatar style=\"    height: 60px; width: 66px;\">\n                    <img  src=\"assets/icon/1234.jpeg\">\n                  </ion-avatar>\n                &nbsp; &nbsp;\n                <ion-label style=\"color: green;\">Syam Kumar</ion-label>\n                <ion-icon style=\"color: orange;\" (click)=\"closeMenu()\" name=\"close-outline\"></ion-icon>\n\n\n          </ion-item> -->\n\n        <ion-list>\n            <ion-item>\n                    <img style=\"width:45px; height:45px; border-radius:45px; margin-bottom: 20px;\" src=\"{{profilephoto}}\">\n                    &nbsp; &nbsp;\n                    <ion-label style=\"color: green; margin-bottom:30px; text-transform: capitalize;\">{{displayName}}</ion-label>\n                    <ion-icon style=\"color: #f09d2e; margin-top:-50px; margin-left:20px\" size='large' (click)=\"closeMenu()\" name=\"close-outline\"></ion-icon>\n\n              </ion-item>\n\n        </ion-list>\n\n\n\n        <ion-list lines=\"none\" id=\"inbox-list\">\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\n            <ion-item lines=\"none\" (click)=\"selectedIndex = i;clickedItem(p)\" routerDirection=\"root\" [routerLink]=\"[p.url]\" detail=\"false\" [class.selected]=\"selectedIndex == i\">\n              <ion-label>{{ p.title }}</ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/categgories/category-modal/category-modal.page.html":
+/*!***********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/categgories/category-modal/category-modal.page.html ***!
+  \***********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content mode=\"ios\">\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-input placeholder=\"\" required type=\"text\" [(ngModel)]=txtCatagoryName></ion-input>\n        </ion-item>\n       </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-grid class=\"ion-padding-top\">\n    <ion-row class=\"ion-text-center\">\n      <ion-col size=\"2\" class=\"offset\" *ngFor=\"let item of circleArray;let i = index\">\n        <span class=\"ion-matrgin-end\">\n            <ion-checkbox class={{item.color}} id=\"SelectedCheckbox_{{$index}}\"  name=\"CheckBoxdata[]\" (click)=clickMethod(item) [(ngModel)]=item.checked></ion-checkbox>&nbsp;&nbsp;\n        </span>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-input placeholder=\"Category Description\" required type=\"text\" [(ngModel)]=txtCategoryDescription></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n\n<ion-footer style=\"border-top: solid 1px lightgray;\">\n  <ion-grid>\n    <ion-row class=\"ion-text-center\">\n      <!-- <ion-col size=\"6\">\n        <ion-item lines=\"none\" (click)=\"closemodal('SAVE');\" style=\"font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc; width:100%; height:50px\" button>\n          <ion-icon style=\"color: #039CD9;\" name=\"checkmark-outline\"></ion-icon>\n          <ion-text  style=\"color: #039CD9; font-weight: bold;\" class=\"ion-margin-start\">Save</ion-text>\n        </ion-item>\n      </ion-col> -->\n\n\n      <ion-col size=\"6\">\n        <ion-item lines=\"none\" (click)=\"closemodal('SAVE');\" style=\"text-align: center; font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;    width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: #039CD9;margin-left: 16px;\" name=\"checkmark-outline\"></ion-icon>\n          <ion-text  style=\"color: #039CD9; font-weight: bold;\" class=\"ion-margin-start\">Save</ion-text>\n      </ion-item>\n      </ion-col>\n\n      <!-- <ion-col size=\"6\">\n        <ion-item lines=\"none\" (click)=\"closemodal('CANCEL');\" style=\"font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto; width:100%; height:50px\" button>\n          <ion-icon style=\"color: red;\" name=\"close-circle-outline\"></ion-icon>\n          <ion-text style=\"color: red; font-weight: bold;\" class=\"ion-margin-start\">Cancel</ion-text>\n        </ion-item>\n      </ion-col> -->\n\n      <ion-col size=\"6\">\n        <ion-item lines=\"none\" tappable (click)=\"closemodal('CANCEL');\" style=\"font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: red; margin-left: 10px;\" name=\"close-circle-outline\"></ion-icon>\n          <ion-text style=\"color: red; font-weight: bold;\" class=\"ion-margin-start\">Cancel</ion-text>\n      </ion-item>\n      </ion-col>\n\n    </ion-row>\n  </ion-grid>\n</ion-footer>\n\n<!-- <ion-content no-padding mode=\"ios\">\n\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-input placeholder=\"Family\" required type=\"text\" (ionChange)=\"click($event)\"></ion-input>\n          </ion-item>\n         </ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <ion-grid style=\"margin-left:20px;\">\n    <ion-row>\n        <ion-col>\n            <span *ngFor=\"let item of circleArray\">\n                <ion-checkbox class={{item.color}} checked={{item.checked}} style=\"margin-left: 10px;\"></ion-checkbox>&nbsp;&nbsp;\n            </span>\n         </ion-col>\n\n       </ion-row>\n    </ion-grid>\n\n    <ion-grid style=\"margin-top:-10px;\">\n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-input placeholder=\"Category Description\" required type=\"text\" (ionChange)=\"click($event)\"></ion-input>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n    </ion-grid>\n\n\n    <br><br>\n\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-grid>\n    <ion-row class=\"ion-text-center\">\n      <ion-col size=\"6\">\n        <ion-item lines=\"none\" (click)=\"closemodal('SAVE');\" style=\"text-align: center; font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;    width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: #039CD9;\" name=\"checkmark-outline\"></ion-icon>\n          <ion-text  style=\"color: #039CD9;\" class=\"ion-margin-start\">Save</ion-text>\n      </ion-item>\n      </ion-col>\n      <ion-col size=\"6\">\n        <ion-item lines=\"none\" tappable (click)=\"closemodal('CANCEL');\" style=\"font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: red;\" name=\"close-circle-outline\"></ion-icon>\n          <ion-text style=\"color: red;\" class=\"ion-margin-start\">Cancel</ion-text>\n      </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <table lines=\"none\" style=\"width:100%; border-radius:15px;\">\n      <tr>\n          <td align=\"center\" style=\"width:50%;border-top:solid 1px #dcdcdc; height:30px; text-align:center; font-weight:bold;\">\n\n              <ion-item lines=\"none\" (click)=\"closemodal('SAVE');\" style=\"text-align: center; font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;    width:100%;  text-align:center; height:50px\">\n                  <ion-icon style=\"color: #039CD9;\" name=\"checkmark-outline\"></ion-icon>\n                  <ion-label  style=\"color: #039CD9;\">Save</ion-label>\n              </ion-item>\n          </td>\n          <td align=\"center\" style=\"width:50%;border-top:solid 1px #dcdcdc; height:30px; text-align:center; font-weight:bold;\">\n\n              <ion-item lines=\"none\" tappable (click)=\"closemodal('CANCEL');\" style=\"font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px\">\n                  <ion-icon style=\"color: red;\" slot=\"start\" name=\"close-circle-outline\"></ion-icon>\n\n                  <ion-label style=\"text-align: center;\" style=\"color: red;\">Cancel\n                  </ion-label>\n              </ion-item>\n\n              <ion-grid style=\"width:100%; border-radius:15px;\">\n                  <ion-row>\n                   <ion-col width-50>\n                   <ion-item lines=\"none\" (click)=\"closemodal('SAVE');\" style=\"text-align: center; font-weight:bold; background:transparent; border-bottom-left-radius:15px; border-right:solid 1px #dcdcdc;    width:100%;  text-align:center; height:50px\">\n                      <ion-icon style=\"color: #039CD9;\" name=\"checkmark-outline\"></ion-icon>\n                      <ion-label  style=\"color: #039CD9;\">Save</ion-label>\n                  </ion-item>\n                 </ion-col>\n                 <ion-col width-50>\n                    <ion-item lines=\"none\" tappable (click)=\"closemodal('CANCEL');\" style=\"font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px\">\n                        <ion-icon style=\"color: red;\" slot=\"start\" name=\"close-circle-outline\"></ion-icon>\n                        <ion-label style=\"text-align: center;\" style=\"color: red;\">Cancel\n                        </ion-label>\n                    </ion-item>\n                    </ion-col>\n                  </ion-row>\n                  </ion-grid>\n\n\n\n\n          </td>\n      </tr>\n  </table>\n</ion-footer> -->\n");
+
+/***/ }),
+
+/***/ "./node_modules/tslib/tslib.es6.js":
+/*!*****************************************!*\
+  !*** ./node_modules/tslib/tslib.es6.js ***!
+  \*****************************************/
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__extends", function() { return __extends; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__assign", function() { return __assign; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__rest", function() { return __rest; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__decorate", function() { return __decorate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__param", function() { return __param; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spread", function() { return __spread; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__spreadArrays", function() { return __spreadArrays; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__await", function() { return __await; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function() { return __asyncGenerator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function() { return __asyncDelegator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__asyncValues", function() { return __asyncValues; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function() { return __makeTemplateObject; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importStar", function() { return __importStar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__importDefault", function() { return __importDefault; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __exportStar(m, exports) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result.default = mod;
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, privateMap) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+    }
+    return privateMap.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, privateMap, value) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+    }
+    privateMap.set(receiver, value);
+    return value;
+}
+
+
+/***/ }),
+
+/***/ "./src/app/app-routing.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/app-routing.module.ts ***!
+  \***************************************/
+/*! exports provided: AppRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_auth_guard_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/auth-guard.service */ "./src/app/services/auth-guard.service.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+    },
+    {
+        path: 'login',
+        loadChildren: () => __webpack_require__.e(/*! import() | login-login-module */ "login-login-module").then(__webpack_require__.bind(null, /*! ./login/login.module */ "./src/app/login/login.module.ts")).then(m => m.LoginPageModule),
+        canActivate: [_services_auth_guard_service__WEBPACK_IMPORTED_MODULE_3__["AuthGuardService"]]
+    },
+    {
+        path: 'actions',
+        loadChildren: () => Promise.all(/*! import() | actions-actions-module */[__webpack_require__.e("default~action-creation-action-creation-module~actions-actions-module"), __webpack_require__.e("common"), __webpack_require__.e("actions-actions-module")]).then(__webpack_require__.bind(null, /*! ./actions/actions.module */ "./src/app/actions/actions.module.ts")).then(m => m.ActionsPageModule)
+    },
+    {
+        path: 'goals',
+        loadChildren: () => __webpack_require__.e(/*! import() | goals-goals-module */ "goals-goals-module").then(__webpack_require__.bind(null, /*! ./goals/goals.module */ "./src/app/goals/goals.module.ts")).then(m => m.GoalsPageModule)
+    },
+    {
+        path: 'objectives',
+        loadChildren: () => __webpack_require__.e(/*! import() | objectives-objectives-module */ "objectives-objectives-module").then(__webpack_require__.bind(null, /*! ./objectives/objectives.module */ "./src/app/objectives/objectives.module.ts")).then(m => m.ObjectivesPageModule)
+    },
+    {
+        path: 'settings',
+        loadChildren: () => __webpack_require__.e(/*! import() | settings-settings-module */ "settings-settings-module").then(__webpack_require__.bind(null, /*! ./settings/settings.module */ "./src/app/settings/settings.module.ts")).then(m => m.SettingsPageModule)
+    },
+    {
+        path: 'logout',
+        loadChildren: () => __webpack_require__.e(/*! import() | logout-logout-module */ "logout-logout-module").then(__webpack_require__.bind(null, /*! ./logout/logout.module */ "./src/app/logout/logout.module.ts")).then(m => m.LogoutPageModule)
+    },
+    {
+        path: 'categgories',
+        loadChildren: () => __webpack_require__.e(/*! import() | categgories-categgories-module */ "categgories-categgories-module").then(__webpack_require__.bind(null, /*! ./categgories/categgories.module */ "./src/app/categgories/categgories.module.ts")).then(m => m.CateggoriesPageModule)
+    },
+    {
+        path: 'calendar',
+        loadChildren: () => __webpack_require__.e(/*! import() | calendar-calendar-module */ "calendar-calendar-module").then(__webpack_require__.bind(null, /*! ./calendar/calendar.module */ "./src/app/calendar/calendar.module.ts")).then(m => m.CalendarPageModule)
+    },
+    {
+        path: 'progressmonitoring',
+        loadChildren: () => __webpack_require__.e(/*! import() | progressmonitoring-progressmonitoring-module */ "progressmonitoring-progressmonitoring-module").then(__webpack_require__.bind(null, /*! ./progressmonitoring/progressmonitoring.module */ "./src/app/progressmonitoring/progressmonitoring.module.ts")).then(m => m.ProgressmonitoringPageModule)
+    },
+    {
+        path: 'category-modal',
+        loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./categgories/category-modal/category-modal.module */ "./src/app/categgories/category-modal/category-modal.module.ts")).then(m => m.CategoryModalPageModule)
+    },
+    {
+        path: 'welcome',
+        loadChildren: () => __webpack_require__.e(/*! import() | welcome-welcome-module */ "welcome-welcome-module").then(__webpack_require__.bind(null, /*! ./welcome/welcome.module */ "./src/app/welcome/welcome.module.ts")).then(m => m.WelcomePageModule)
+    },
+    {
+        path: 'goalsobjective',
+        loadChildren: () => Promise.all(/*! import() | goalsobjective-goalsobjective-module */[__webpack_require__.e("default~goalsobjective-goal-modal-goal-modal-module~goalsobjective-goalsobjective-module"), __webpack_require__.e("default~goalsobjective-goalsobjective-module~goalsobjective-objective-modal-objective-modal-module"), __webpack_require__.e("goalsobjective-goalsobjective-module")]).then(__webpack_require__.bind(null, /*! ./goalsobjective/goalsobjective.module */ "./src/app/goalsobjective/goalsobjective.module.ts")).then(m => m.GoalsobjectivePageModule)
+    },
+    {
+        path: 'goal-modal',
+        loadChildren: () => __webpack_require__.e(/*! import() | goalsobjective-goal-modal-goal-modal-module */ "default~goalsobjective-goal-modal-goal-modal-module~goalsobjective-goalsobjective-module").then(__webpack_require__.bind(null, /*! ./goalsobjective/goal-modal/goal-modal.module */ "./src/app/goalsobjective/goal-modal/goal-modal.module.ts")).then(m => m.GoalModalPageModule)
+    },
+    {
+        path: 'objective-modal',
+        loadChildren: () => __webpack_require__.e(/*! import() | goalsobjective-objective-modal-objective-modal-module */ "default~goalsobjective-goalsobjective-module~goalsobjective-objective-modal-objective-modal-module").then(__webpack_require__.bind(null, /*! ./goalsobjective/objective-modal/objective-modal.module */ "./src/app/goalsobjective/objective-modal/objective-modal.module.ts")).then(m => m.ObjectiveModalPageModule)
+    },
+    {
+        path: 'action-creation',
+        loadChildren: () => __webpack_require__.e(/*! import() | action-creation-action-creation-module */ "default~action-creation-action-creation-module~actions-actions-module").then(__webpack_require__.bind(null, /*! ./action-creation/action-creation.module */ "./src/app/action-creation/action-creation.module.ts")).then(m => m.ActionCreationPageModule)
+    },
+    {
+        path: 'search',
+        loadChildren: () => __webpack_require__.e(/*! import() | search-search-module */ "common").then(__webpack_require__.bind(null, /*! ./search/search.module */ "./src/app/search/search.module.ts")).then(m => m.SearchPageModule)
+    }
+];
+let AppRoutingModule = class AppRoutingModule {
+};
+AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { preloadingStrategy: _angular_router__WEBPACK_IMPORTED_MODULE_2__["PreloadAllModules"] })
+        ],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+    })
+], AppRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/app.component.scss":
+/*!************************************!*\
+  !*** ./src/app/app.component.scss ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("ion-menu ion-content {\n  --background: var(--ion-item-background, var(--ion-background-color, #fff));\n}\n\nion-menu.md ion-content {\n  --padding-start: 8px;\n  --padding-end: 8px;\n  --padding-top: 20px;\n  --padding-bottom: 20px;\n}\n\nion-menu.md ion-list {\n  padding: 20px 0;\n}\n\nion-menu.md ion-note {\n  margin-bottom: 30px;\n}\n\nion-menu.md ion-list-header,\nion-menu.md ion-note {\n  padding-left: 10px;\n}\n\nion-menu.md ion-list#inbox-list {\n  border-bottom: 0px solid var(--ion-color-step-150, #d7d8da);\n}\n\nion-menu.md ion-list#inbox-list ion-list-header {\n  font-size: 22px;\n  font-weight: 600;\n  min-height: 20px;\n}\n\nion-menu.md ion-list#labels-list ion-list-header {\n  font-size: 16px;\n  margin-bottom: 18px;\n  color: #757575;\n  min-height: 26px;\n}\n\nion-menu.md ion-item {\n  --padding-start: 10px;\n  --padding-end: 10px;\n  border-radius: 4px;\n}\n\nion-menu.md ion-item.selected {\n  --background: rgba(var(--ion-color-primary-rgb), 0.14);\n}\n\nion-menu.md ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.md ion-item ion-icon {\n  color: #616e7e;\n}\n\nion-menu.md ion-item ion-label {\n  font-weight: 500;\n}\n\nion-menu.ios ion-content {\n  --padding-bottom: 20px;\n}\n\nion-menu.ios ion-list {\n  padding: 20px 0 0 0;\n}\n\nion-menu.ios ion-note {\n  line-height: 24px;\n  margin-bottom: 20px;\n}\n\nion-menu.ios ion-item {\n  --padding-start: 16px;\n  --padding-end: 16px;\n  --padding-end: 20px;\n  --min-height: 50px;\n}\n\nion-menu.ios ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.ios ion-item ion-icon {\n  font-size: 24px;\n  color: #73849a;\n}\n\nion-menu.ios ion-list#labels-list ion-list-header {\n  margin-bottom: 8px;\n}\n\nion-menu.ios ion-list-header,\nion-menu.ios ion-note {\n  padding-left: 16px;\n  padding-right: 16px;\n}\n\nion-menu.ios ion-note {\n  margin-bottom: 8px;\n}\n\nion-note {\n  display: inline-block;\n  font-size: 16px;\n  color: var(--ion-color-medium-shade);\n}\n\nion-item.selected {\n  --color: var(--ion-color-primary);\n}\n\n.line {\n  border-bottom: 1px solid grey !important;\n}\n\n.custom-avatar {\n  height: 15vw;\n  width: 15vw;\n  border: 1px solid #fff;\n  border-radius: 50%;\n  display: inline-block;\n  margin-left: auto;\n  margin-right: auto;\n}\n\n.horizontalLine {\n  height: 1px;\n  width: 100px;\n  background: green;\n  margin: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9EZXNrdG9wL1ByYWN0aWNlL0dpdEh1Yi9nb2FsLXNoYXBlci1tb2JpbGUvc3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLDJFQUFBO0FDQ0Y7O0FERUE7RUFDRSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxzQkFBQTtBQ0NGOztBREVBO0VBQ0UsZUFBQTtBQ0NGOztBREVBO0VBQ0UsbUJBQUE7QUNDRjs7QURFQTs7RUFFRSxrQkFBQTtBQ0NGOztBREVBO0VBQ0UsMkRBQUE7QUNDRjs7QURFQTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUVBLGdCQUFBO0FDQUY7O0FER0E7RUFDRSxlQUFBO0VBRUEsbUJBQUE7RUFFQSxjQUFBO0VBRUEsZ0JBQUE7QUNIRjs7QURNQTtFQUNFLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQ0hGOztBRE1BO0VBQ0Usc0RBQUE7QUNIRjs7QURNQTtFQUNFLCtCQUFBO0FDSEY7O0FETUE7RUFDRSxjQUFBO0FDSEY7O0FETUE7RUFDRSxnQkFBQTtBQ0hGOztBRE1BO0VBQ0Usc0JBQUE7QUNIRjs7QURNQTtFQUNFLG1CQUFBO0FDSEY7O0FETUE7RUFDRSxpQkFBQTtFQUNBLG1CQUFBO0FDSEY7O0FETUE7RUFDRSxxQkFBQTtFQUNBLG1CQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQ0hGOztBRE1BO0VBQ0UsK0JBQUE7QUNIRjs7QURNQTtFQUNFLGVBQUE7RUFDQSxjQUFBO0FDSEY7O0FETUE7RUFDRSxrQkFBQTtBQ0hGOztBRE1BOztFQUVFLGtCQUFBO0VBQ0EsbUJBQUE7QUNIRjs7QURNQTtFQUNFLGtCQUFBO0FDSEY7O0FETUE7RUFDRSxxQkFBQTtFQUNBLGVBQUE7RUFFQSxvQ0FBQTtBQ0pGOztBRE9BO0VBQ0UsaUNBQUE7QUNKRjs7QURNQTtFQUNFLHdDQUFBO0FDSEY7O0FEVUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtFQUNBLHNCQUFBO0VBQ0Esa0JBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUNQRjs7QURVQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0FDUEYiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tbWVudSBpb24tY29udGVudCB7XG4gIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWl0ZW0tYmFja2dyb3VuZCwgdmFyKC0taW9uLWJhY2tncm91bmQtY29sb3IsICNmZmYpKTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWNvbnRlbnQge1xuICAtLXBhZGRpbmctc3RhcnQ6IDhweDtcbiAgLS1wYWRkaW5nLWVuZDogOHB4O1xuICAtLXBhZGRpbmctdG9wOiAyMHB4O1xuICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCB7XG4gIHBhZGRpbmc6IDIwcHggMDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLW5vdGUge1xuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdC1oZWFkZXIsXG5pb24tbWVudS5tZCBpb24tbm90ZSB7XG4gIHBhZGRpbmctbGVmdDogMTBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjaW5ib3gtbGlzdCB7XG4gIGJvcmRlci1ib3R0b206IDBweCBzb2xpZCB2YXIoLS1pb24tY29sb3Itc3RlcC0xNTAsICNkN2Q4ZGEpO1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNpbmJveC1saXN0IGlvbi1saXN0LWhlYWRlciB7XG4gIGZvbnQtc2l6ZTogMjJweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcblxuICBtaW4taGVpZ2h0OiAyMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNsYWJlbHMtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBmb250LXNpemU6IDE2cHg7XG5cbiAgbWFyZ2luLWJvdHRvbTogMThweDtcblxuICBjb2xvcjogIzc1NzU3NTtcblxuICBtaW4taGVpZ2h0OiAyNnB4O1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSB7XG4gIC0tcGFkZGluZy1zdGFydDogMTBweDtcbiAgLS1wYWRkaW5nLWVuZDogMTBweDtcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbS5zZWxlY3RlZCB7XG4gIC0tYmFja2dyb3VuZDogcmdiYSh2YXIoLS1pb24tY29sb3ItcHJpbWFyeS1yZ2IpLCAwLjE0KTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSBpb24taWNvbiB7XG4gIGNvbG9yOiAjNjE2ZTdlO1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSBpb24tbGFiZWwge1xuICBmb250LXdlaWdodDogNTAwO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWNvbnRlbnQge1xuICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3Qge1xuICBwYWRkaW5nOiAyMHB4IDAgMCAwO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBsaW5lLWhlaWdodDogMjRweDtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1pdGVtIHtcbiAgLS1wYWRkaW5nLXN0YXJ0OiAxNnB4O1xuICAtLXBhZGRpbmctZW5kOiAxNnB4O1xuICAtLXBhZGRpbmctZW5kOiAyMHB4O1xuICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbS5zZWxlY3RlZCBpb24taWNvbiB7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbSBpb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgY29sb3I6ICM3Mzg0OWE7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbGlzdCNsYWJlbHMtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBtYXJnaW4tYm90dG9tOiA4cHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbGlzdC1oZWFkZXIsXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBwYWRkaW5nLWxlZnQ6IDE2cHg7XG4gIHBhZGRpbmctcmlnaHQ6IDE2cHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbm90ZSB7XG4gIG1hcmdpbi1ib3R0b206IDhweDtcbn1cblxuaW9uLW5vdGUge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZvbnQtc2l6ZTogMTZweDtcblxuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLW1lZGl1bS1zaGFkZSk7XG59XG5cbmlvbi1pdGVtLnNlbGVjdGVkIHtcbiAgLS1jb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuLmxpbmV7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCBncmV5ICFpbXBvcnRhbnQ7XG59XG5cbi8vIC5oaWRlLWNhcmQge1xuLy8gICAtd2Via2l0LWJveC1zaGFkb3c6IG5vbmUhaW1wb3J0YW50O1xuLy8gfVxuXG4uY3VzdG9tLWF2YXRhciB7XG4gIGhlaWdodDogMTV2dztcbiAgd2lkdGg6IDE1dnc7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNmZmY7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xufVxuXG4uaG9yaXpvbnRhbExpbmUge1xuICBoZWlnaHQ6MXB4O1xuICB3aWR0aDogMTAwcHg7XG4gIGJhY2tncm91bmQ6Z3JlZW47XG4gIG1hcmdpbjogYXV0bztcbn0iLCJpb24tbWVudSBpb24tY29udGVudCB7XG4gIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWl0ZW0tYmFja2dyb3VuZCwgdmFyKC0taW9uLWJhY2tncm91bmQtY29sb3IsICNmZmYpKTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWNvbnRlbnQge1xuICAtLXBhZGRpbmctc3RhcnQ6IDhweDtcbiAgLS1wYWRkaW5nLWVuZDogOHB4O1xuICAtLXBhZGRpbmctdG9wOiAyMHB4O1xuICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCB7XG4gIHBhZGRpbmc6IDIwcHggMDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLW5vdGUge1xuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdC1oZWFkZXIsXG5pb24tbWVudS5tZCBpb24tbm90ZSB7XG4gIHBhZGRpbmctbGVmdDogMTBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjaW5ib3gtbGlzdCB7XG4gIGJvcmRlci1ib3R0b206IDBweCBzb2xpZCB2YXIoLS1pb24tY29sb3Itc3RlcC0xNTAsICNkN2Q4ZGEpO1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNpbmJveC1saXN0IGlvbi1saXN0LWhlYWRlciB7XG4gIGZvbnQtc2l6ZTogMjJweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgbWluLWhlaWdodDogMjBweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWxpc3QjbGFiZWxzLWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgZm9udC1zaXplOiAxNnB4O1xuICBtYXJnaW4tYm90dG9tOiAxOHB4O1xuICBjb2xvcjogIzc1NzU3NTtcbiAgbWluLWhlaWdodDogMjZweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0ge1xuICAtLXBhZGRpbmctc3RhcnQ6IDEwcHg7XG4gIC0tcGFkZGluZy1lbmQ6IDEwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQge1xuICAtLWJhY2tncm91bmQ6IHJnYmEodmFyKC0taW9uLWNvbG9yLXByaW1hcnktcmdiKSwgMC4xNCk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1pdGVtLnNlbGVjdGVkIGlvbi1pY29uIHtcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWljb24ge1xuICBjb2xvcjogIzYxNmU3ZTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWxhYmVsIHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1jb250ZW50IHtcbiAgLS1wYWRkaW5nLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1saXN0IHtcbiAgcGFkZGluZzogMjBweCAwIDAgMDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcbiAgbGluZS1oZWlnaHQ6IDI0cHg7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbSB7XG4gIC0tcGFkZGluZy1zdGFydDogMTZweDtcbiAgLS1wYWRkaW5nLWVuZDogMTZweDtcbiAgLS1wYWRkaW5nLWVuZDogMjBweDtcbiAgLS1taW4taGVpZ2h0OiA1MHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0gaW9uLWljb24ge1xuICBmb250LXNpemU6IDI0cHg7XG4gIGNvbG9yOiAjNzM4NDlhO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3QjbGFiZWxzLWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgbWFyZ2luLWJvdHRvbTogOHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3QtaGVhZGVyLFxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcbiAgcGFkZGluZy1sZWZ0OiAxNnB4O1xuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBtYXJnaW4tYm90dG9tOiA4cHg7XG59XG5cbmlvbi1ub3RlIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItbWVkaXVtLXNoYWRlKTtcbn1cblxuaW9uLWl0ZW0uc2VsZWN0ZWQge1xuICAtLWNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59XG5cbi5saW5lIHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIGdyZXkgIWltcG9ydGFudDtcbn1cblxuLmN1c3RvbS1hdmF0YXIge1xuICBoZWlnaHQ6IDE1dnc7XG4gIHdpZHRoOiAxNXZ3O1xuICBib3JkZXI6IDFweCBzb2xpZCAjZmZmO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gIG1hcmdpbi1yaWdodDogYXV0bztcbn1cblxuLmhvcml6b250YWxMaW5lIHtcbiAgaGVpZ2h0OiAxcHg7XG4gIHdpZHRoOiAxMDBweDtcbiAgYmFja2dyb3VuZDogZ3JlZW47XG4gIG1hcmdpbjogYXV0bztcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/app.component.ts":
+/*!**********************************!*\
+  !*** ./src/app/app.component.ts ***!
+  \**********************************/
+/*! exports provided: AppComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/native-storage/ngx */ "./node_modules/@ionic-native/native-storage/ngx/index.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _services_globals_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/globals.service */ "./src/app/services/globals.service.ts");
+/* harmony import */ var _events_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./events.service */ "./src/app/events.service.ts");
+
+
+
+
+
+
+
+
+
+let AppComponent = class AppComponent {
+    constructor(platform, alertController, splashScreen, statusBar, menuCtrl, storage, route, globals, events) {
+        this.platform = platform;
+        this.alertController = alertController;
+        this.splashScreen = splashScreen;
+        this.statusBar = statusBar;
+        this.menuCtrl = menuCtrl;
+        this.storage = storage;
+        this.route = route;
+        this.globals = globals;
+        this.events = events;
+        this.selectedIndex = 0;
+        this.appPages = [
+            {
+                title: 'Actions',
+                url: '/actions',
+                icon: 'mail'
+            },
+            // {
+            //   title: 'Goals',
+            //   url: '/goals',
+            //   icon: 'paper-plane'
+            // },
+            {
+                title: 'Goals & Objectives',
+                url: '/goalsobjective',
+                icon: 'mail'
+            },
+            {
+                title: 'Categories',
+                url: '/categgories',
+                icon: 'paper-plane'
+            },
+            {
+                title: 'Calendar',
+                url: '/calendar',
+                icon: 'paper-plane'
+            },
+            // {
+            //   title: 'Progress Monitoring',
+            //   // url: '/progressmonitoring',
+            //   icon: 'paper-plane'
+            // },
+            // {
+            //   title: 'Settings',
+            //   // url: '/settings',
+            //   icon: 'paper-plane'
+            // },
+            {
+                title: 'Logout',
+                // url: '/logout',
+                icon: 'paper-plane'
+            }
+        ];
+        this.displayName = '';
+        this.username = '';
+        this.profilephoto = '';
+        this.initializeApp();
+    }
+    initializeApp() {
+        this.platform.ready().then(() => {
+            this.statusBar.styleDefault();
+            this.splashScreen.hide();
+            this.events.subscribe('user:created', (data) => {
+                console.log(data.user.user.user_name);
+                console.log(data.user.user.profile_photo);
+                console.log('Welcome: Mr.', data.user.user.user_name);
+                console.log('User Daetails');
+                console.log(data.user);
+                this.username = data.user.user.user_name;
+                this.displayName = data.user.user.firstname + ' ' + data.user.user.lastname;
+                if (data.user.user.profile_photo != null && data.user.user.profile_photo != '' && data.user.user.profile_photo != undefined) {
+                    console.log('Came here for profile 1');
+                    this.profilephoto = data.user.user.profile_photo;
+                    console.log(this.profilephoto);
+                }
+                else {
+                    console.log('Came here for profile 2');
+                    this.profilephoto = "assets/icon/account.jpeg";
+                    console.log(this.profilephoto);
+                }
+            });
+        });
+    }
+    closeMenu() {
+        this.menuCtrl.close();
+        // this.menuCtrl.enable(false);
+    }
+    clickedItem(p) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            console.log('Cliked item');
+            console.log(p);
+            if (p.title == 'Logout') {
+                this.presentAlertConfirm();
+            }
+        });
+    }
+    presentAlertConfirm() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const alert = yield this.alertController.create({
+                cssClass: 'my-custom-class',
+                header: 'Logout!',
+                message: 'Do you want to logout?',
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: (blah) => {
+                            console.log('Confirm Cancel: blah');
+                        }
+                    }, {
+                        text: 'yes',
+                        handler: () => {
+                            console.log('Confirm Okay');
+                            this.storage.remove('login');
+                            this.storage.remove('userId');
+                            this.storage.remove('enterprisedId');
+                            this.route.navigateByUrl('/login');
+                        }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
+    }
+    ngOnInit() {
+        // const path = window.location.pathname.split('folder/')[1];
+        // if (path !== undefined) {
+        //   this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+        // }
+    }
+    ionViewDidLeave() {
+        this.menuCtrl.open();
+        // this.menuCtrl.enable(true);
+    }
+};
+AppComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
+    { type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"] },
+    { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"] },
+    { type: _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_5__["NativeStorage"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] },
+    { type: _services_globals_service__WEBPACK_IMPORTED_MODULE_7__["GlobalsService"] },
+    { type: _events_service__WEBPACK_IMPORTED_MODULE_8__["EventsService"] }
+];
+AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-root',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"],
+        _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"],
+        _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["MenuController"],
+        _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_5__["NativeStorage"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"], _services_globals_service__WEBPACK_IMPORTED_MODULE_7__["GlobalsService"], _events_service__WEBPACK_IMPORTED_MODULE_8__["EventsService"]])
+], AppComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/app.module.ts":
+/*!*******************************!*\
+  !*** ./src/app/app.module.ts ***!
+  \*******************************/
+/*! exports provided: AppModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _mobiscroll_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mobiscroll/angular */ "./node_modules/@mobiscroll/angular/dist/esm5/mobiscroll.angular.min.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _categgories_category_modal_category_modal_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./categgories/category-modal/category-modal.module */ "./src/app/categgories/category-modal/category-modal.module.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _services_api_services_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/api-services.service */ "./src/app/services/api-services.service.ts");
+/* harmony import */ var _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ionic-native/native-storage/ngx */ "./node_modules/@ionic-native/native-storage/ngx/index.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pipes/pipes.module */ "./src/app/pipes/pipes.module.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let AppModule = class AppModule {
+};
+AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
+        entryComponents: [],
+        imports: [
+            _mobiscroll_angular__WEBPACK_IMPORTED_MODULE_1__["MbscModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"].forRoot(),
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_10__["AppRoutingModule"],
+            _categgories_category_modal_category_modal_module__WEBPACK_IMPORTED_MODULE_11__["CategoryModalPageModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"],
+            _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_17__["PipesModule"]
+        ],
+        providers: [
+            _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_8__["StatusBar"],
+            _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_7__["SplashScreen"],
+            _services_api_services_service__WEBPACK_IMPORTED_MODULE_14__["ApiServicesService"],
+            _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_15__["NativeStorage"],
+            _angular_common__WEBPACK_IMPORTED_MODULE_16__["DatePipe"],
+            { provide: _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicRouteStrategy"] }
+        ],
+        exports: [],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
+    })
+], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/categgories/category-modal/category-modal-routing.module.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/categgories/category-modal/category-modal-routing.module.ts ***!
+  \*****************************************************************************/
+/*! exports provided: CategoryModalPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryModalPageRoutingModule", function() { return CategoryModalPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _category_modal_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./category-modal.page */ "./src/app/categgories/category-modal/category-modal.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _category_modal_page__WEBPACK_IMPORTED_MODULE_3__["CategoryModalPage"]
+    }
+];
+let CategoryModalPageRoutingModule = class CategoryModalPageRoutingModule {
+};
+CategoryModalPageRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], CategoryModalPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/categgories/category-modal/category-modal.module.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/categgories/category-modal/category-modal.module.ts ***!
+  \*********************************************************************/
+/*! exports provided: CategoryModalPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryModalPageModule", function() { return CategoryModalPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _category_modal_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./category-modal-routing.module */ "./src/app/categgories/category-modal/category-modal-routing.module.ts");
+/* harmony import */ var _category_modal_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./category-modal.page */ "./src/app/categgories/category-modal/category-modal.page.ts");
+
+
+
+
+
+
+
+let CategoryModalPageModule = class CategoryModalPageModule {
+};
+CategoryModalPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _category_modal_routing_module__WEBPACK_IMPORTED_MODULE_5__["CategoryModalPageRoutingModule"]
+        ],
+        declarations: [_category_modal_page__WEBPACK_IMPORTED_MODULE_6__["CategoryModalPage"]]
+    })
+], CategoryModalPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/categgories/category-modal/category-modal.page.scss":
+/*!*********************************************************************!*\
+  !*** ./src/app/categgories/category-modal/category-modal.page.scss ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".round {\n  border: 1px solid #ccc;\n  border-radius: 50%;\n  height: 15px;\n  left: 0;\n  top: 0;\n  width: 15px;\n  position: relative;\n}\n\n.color1 {\n  --background:#7b7b7b;\n  --background-checked: #7b7b7b;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color2 {\n  --background: #722fa0;\n  --background-checked: #722fa0;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color3 {\n  --background: #ffc100;\n  --background-checked: #ffc100;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color4 {\n  --background: #0671d1;\n  --background-checked: #0671d1;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color5 {\n  --background: #00b4ef;\n  --background-checked: #00b4ef;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color6 {\n  --background: #ed0c00;\n  --background-checked: #ed0c00;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color7 {\n  --background: #fffe00;\n  --background-checked: #fffe00;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color8 {\n  --background: #00b350;\n  --background-checked: #00b350;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color9 {\n  --background: #a19e9b;\n  --background-checked: #a19e9b;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color10 {\n  --background: #f38a0d;\n  --background-checked: #f38a0d;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color11 {\n  --background: grey;\n  --background-checked: grey;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color12 {\n  --background: grey;\n  --background-checked: grey;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color13 {\n  --background: grey;\n  --background-checked: grey;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.color14 {\n  --background: grey;\n  --background-checked: grey;\n  --checkmark-color: white;\n  --border-color: transparent;\n  --border-color-checked: transparent;\n  /* increasing overall width not the check icon size */\n  --size:20px !important;\n}\n\n.offset {\n  margin-left: 3.166666667%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9EZXNrdG9wL1ByYWN0aWNlL0dpdEh1Yi9nb2FsLXNoYXBlci1tb2JpbGUvc3JjL2FwcC9jYXRlZ2dvcmllcy9jYXRlZ29yeS1tb2RhbC9jYXRlZ29yeS1tb2RhbC5wYWdlLnNjc3MiLCJzcmMvYXBwL2NhdGVnZ29yaWVzL2NhdGVnb3J5LW1vZGFsL2NhdGVnb3J5LW1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBRTtFQUNFLHNCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsT0FBQTtFQUNBLE1BQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7QUNDSjs7QURFQTtFQUNJLG9CQUFBO0VBQ0EsNkJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0VBQ0EsbUNBQUE7RUFDRCxxREFBQTtFQUNDLHNCQUFBO0FDQ0o7O0FER0E7RUFDRSxxQkFBQTtFQUNBLDZCQUFBO0VBQ0Esd0JBQUE7RUFDQSwyQkFBQTtFQUNBLG1DQUFBO0VBQ0QscURBQUE7RUFDQyxzQkFBQTtBQ0FGOztBREVBO0VBQ0UscUJBQUE7RUFDQSw2QkFBQTtFQUNBLHdCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQ0FBQTtFQUNELHFEQUFBO0VBQ0Msc0JBQUE7QUNDRjs7QURDQTtFQUNFLHFCQUFBO0VBQ0EsNkJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0VBQ0EsbUNBQUE7RUFDRCxxREFBQTtFQUNDLHNCQUFBO0FDRUY7O0FEQUE7RUFDRSxxQkFBQTtFQUNBLDZCQUFBO0VBQ0Esd0JBQUE7RUFDQSwyQkFBQTtFQUNBLG1DQUFBO0VBQ0QscURBQUE7RUFDQyxzQkFBQTtBQ0dGOztBRERBO0VBQ0UscUJBQUE7RUFDQSw2QkFBQTtFQUNBLHdCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQ0FBQTtFQUNELHFEQUFBO0VBQ0Msc0JBQUE7QUNJRjs7QURGQTtFQUNFLHFCQUFBO0VBQ0EsNkJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0VBQ0EsbUNBQUE7RUFDRCxxREFBQTtFQUNDLHNCQUFBO0FDS0Y7O0FESEE7RUFDRSxxQkFBQTtFQUNBLDZCQUFBO0VBQ0Esd0JBQUE7RUFDQSwyQkFBQTtFQUNBLG1DQUFBO0VBQ0QscURBQUE7RUFDQyxzQkFBQTtBQ01GOztBRExDO0VBQ0MscUJBQUE7RUFDQSw2QkFBQTtFQUNBLHdCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQ0FBQTtFQUNELHFEQUFBO0VBQ0Msc0JBQUE7QUNRRjs7QURQQztFQUNDLHFCQUFBO0VBQ0EsNkJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0VBQ0EsbUNBQUE7RUFDRCxxREFBQTtFQUNDLHNCQUFBO0FDVUY7O0FEVEM7RUFDQyxrQkFBQTtFQUNBLDBCQUFBO0VBQ0Esd0JBQUE7RUFDQSwyQkFBQTtFQUNBLG1DQUFBO0VBQ0QscURBQUE7RUFDQyxzQkFBQTtBQ1lGOztBRFhDO0VBQ0Msa0JBQUE7RUFDQSwwQkFBQTtFQUNBLHdCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQ0FBQTtFQUNELHFEQUFBO0VBQ0Msc0JBQUE7QUNjRjs7QURiQztFQUNDLGtCQUFBO0VBQ0EsMEJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0VBQ0EsbUNBQUE7RUFDRCxxREFBQTtFQUNDLHNCQUFBO0FDZ0JGOztBRGZDO0VBQ0Msa0JBQUE7RUFDQSwwQkFBQTtFQUNBLHdCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQ0FBQTtFQUNELHFEQUFBO0VBQ0Msc0JBQUE7QUNrQkY7O0FEZkE7RUFDRSx5QkFBQTtBQ2tCRiIsImZpbGUiOiJzcmMvYXBwL2NhdGVnZ29yaWVzL2NhdGVnb3J5LW1vZGFsL2NhdGVnb3J5LW1vZGFsLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiAgLnJvdW5ke1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xuICAgIGhlaWdodDogMTVweDtcbiAgICBsZWZ0OiAwO1xuICAgIHRvcDogMDtcbiAgICB3aWR0aDogMTVweDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIH1cblxuLmNvbG9yMSB7XG4gICAgLS1iYWNrZ3JvdW5kOiM3YjdiN2I7XG4gICAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6ICM3YjdiN2I7XG4gICAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAgIC0tYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICAtLWJvcmRlci1jb2xvci1jaGVja2VkOiB0cmFuc3BhcmVudDtcbiAgIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAgIC0tc2l6ZToyMHB4ICFpbXBvcnRhbnQ7XG4gICAgLy8gaGVpZ2h0OiAzMHB4O1xuICAgIC8vIHdpZHRoOiAzMHB4O1xufVxuLmNvbG9yMiB7XG4gIC0tYmFja2dyb3VuZDogIzcyMmZhMDtcbiAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6ICM3MjJmYTA7XG4gIC0tY2hlY2ttYXJrLWNvbG9yOiB3aGl0ZTtcbiAgLS1ib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAtLWJvcmRlci1jb2xvci1jaGVja2VkOiB0cmFuc3BhcmVudDtcbiAvKiBpbmNyZWFzaW5nIG92ZXJhbGwgd2lkdGggbm90IHRoZSBjaGVjayBpY29uIHNpemUgKi9cbiAgLS1zaXplOjIwcHggIWltcG9ydGFudDtcbn1cbi5jb2xvcjMge1xuICAtLWJhY2tncm91bmQ6ICNmZmMxMDA7XG4gIC0tYmFja2dyb3VuZC1jaGVja2VkOiAjZmZjMTAwO1xuICAtLWNoZWNrbWFyay1jb2xvcjogd2hpdGU7XG4gIC0tYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgLS1ib3JkZXItY29sb3ItY2hlY2tlZDogdHJhbnNwYXJlbnQ7XG4gLyogaW5jcmVhc2luZyBvdmVyYWxsIHdpZHRoIG5vdCB0aGUgY2hlY2sgaWNvbiBzaXplICovXG4gIC0tc2l6ZToyMHB4ICFpbXBvcnRhbnQ7XG59XG4uY29sb3I0IHtcbiAgLS1iYWNrZ3JvdW5kOiAjMDY3MWQxO1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogIzA2NzFkMTtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufVxuLmNvbG9yNSB7XG4gIC0tYmFja2dyb3VuZDogIzAwYjRlZjtcbiAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6ICMwMGI0ZWY7XG4gIC0tY2hlY2ttYXJrLWNvbG9yOiB3aGl0ZTtcbiAgLS1ib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAtLWJvcmRlci1jb2xvci1jaGVja2VkOiB0cmFuc3BhcmVudDtcbiAvKiBpbmNyZWFzaW5nIG92ZXJhbGwgd2lkdGggbm90IHRoZSBjaGVjayBpY29uIHNpemUgKi9cbiAgLS1zaXplOjIwcHggIWltcG9ydGFudDtcbn1cbi5jb2xvcjYge1xuICAtLWJhY2tncm91bmQ6ICNlZDBjMDA7XG4gIC0tYmFja2dyb3VuZC1jaGVja2VkOiAjZWQwYzAwO1xuICAtLWNoZWNrbWFyay1jb2xvcjogd2hpdGU7XG4gIC0tYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgLS1ib3JkZXItY29sb3ItY2hlY2tlZDogdHJhbnNwYXJlbnQ7XG4gLyogaW5jcmVhc2luZyBvdmVyYWxsIHdpZHRoIG5vdCB0aGUgY2hlY2sgaWNvbiBzaXplICovXG4gIC0tc2l6ZToyMHB4ICFpbXBvcnRhbnQ7XG59XG4uY29sb3I3IHtcbiAgLS1iYWNrZ3JvdW5kOiAjZmZmZTAwO1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogI2ZmZmUwMDtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufVxuLmNvbG9yOCB7XG4gIC0tYmFja2dyb3VuZDogIzAwYjM1MDtcbiAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6ICMwMGIzNTA7XG4gIC0tY2hlY2ttYXJrLWNvbG9yOiB3aGl0ZTtcbiAgLS1ib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAtLWJvcmRlci1jb2xvci1jaGVja2VkOiB0cmFuc3BhcmVudDtcbiAvKiBpbmNyZWFzaW5nIG92ZXJhbGwgd2lkdGggbm90IHRoZSBjaGVjayBpY29uIHNpemUgKi9cbiAgLS1zaXplOjIwcHggIWltcG9ydGFudDtcbn0uY29sb3I5IHtcbiAgLS1iYWNrZ3JvdW5kOiAjYTE5ZTliO1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogI2ExOWU5YjtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufS5jb2xvcjEwIHtcbiAgLS1iYWNrZ3JvdW5kOiAjZjM4YTBkO1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogI2YzOGEwZDtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufS5jb2xvcjExIHtcbiAgLS1iYWNrZ3JvdW5kOiBncmV5O1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogZ3JleTtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufS5jb2xvcjEyIHtcbiAgLS1iYWNrZ3JvdW5kOiBncmV5O1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogZ3JleTtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufS5jb2xvcjEzIHtcbiAgLS1iYWNrZ3JvdW5kOiBncmV5O1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogZ3JleTtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufS5jb2xvcjE0IHtcbiAgLS1iYWNrZ3JvdW5kOiBncmV5O1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogZ3JleTtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufVxuXG4ub2Zmc2V0e1xuICBtYXJnaW4tbGVmdDozLjE2NjY2NjY2NyVcbn1cbiAgIiwiLnJvdW5kIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xuICBoZWlnaHQ6IDE1cHg7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDE1cHg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLmNvbG9yMSB7XG4gIC0tYmFja2dyb3VuZDojN2I3YjdiO1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogIzdiN2I3YjtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuICAvKiBpbmNyZWFzaW5nIG92ZXJhbGwgd2lkdGggbm90IHRoZSBjaGVjayBpY29uIHNpemUgKi9cbiAgLS1zaXplOjIwcHggIWltcG9ydGFudDtcbn1cblxuLmNvbG9yMiB7XG4gIC0tYmFja2dyb3VuZDogIzcyMmZhMDtcbiAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6ICM3MjJmYTA7XG4gIC0tY2hlY2ttYXJrLWNvbG9yOiB3aGl0ZTtcbiAgLS1ib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAtLWJvcmRlci1jb2xvci1jaGVja2VkOiB0cmFuc3BhcmVudDtcbiAgLyogaW5jcmVhc2luZyBvdmVyYWxsIHdpZHRoIG5vdCB0aGUgY2hlY2sgaWNvbiBzaXplICovXG4gIC0tc2l6ZToyMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5jb2xvcjMge1xuICAtLWJhY2tncm91bmQ6ICNmZmMxMDA7XG4gIC0tYmFja2dyb3VuZC1jaGVja2VkOiAjZmZjMTAwO1xuICAtLWNoZWNrbWFyay1jb2xvcjogd2hpdGU7XG4gIC0tYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgLS1ib3JkZXItY29sb3ItY2hlY2tlZDogdHJhbnNwYXJlbnQ7XG4gIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufVxuXG4uY29sb3I0IHtcbiAgLS1iYWNrZ3JvdW5kOiAjMDY3MWQxO1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogIzA2NzFkMTtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuICAvKiBpbmNyZWFzaW5nIG92ZXJhbGwgd2lkdGggbm90IHRoZSBjaGVjayBpY29uIHNpemUgKi9cbiAgLS1zaXplOjIwcHggIWltcG9ydGFudDtcbn1cblxuLmNvbG9yNSB7XG4gIC0tYmFja2dyb3VuZDogIzAwYjRlZjtcbiAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6ICMwMGI0ZWY7XG4gIC0tY2hlY2ttYXJrLWNvbG9yOiB3aGl0ZTtcbiAgLS1ib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAtLWJvcmRlci1jb2xvci1jaGVja2VkOiB0cmFuc3BhcmVudDtcbiAgLyogaW5jcmVhc2luZyBvdmVyYWxsIHdpZHRoIG5vdCB0aGUgY2hlY2sgaWNvbiBzaXplICovXG4gIC0tc2l6ZToyMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5jb2xvcjYge1xuICAtLWJhY2tncm91bmQ6ICNlZDBjMDA7XG4gIC0tYmFja2dyb3VuZC1jaGVja2VkOiAjZWQwYzAwO1xuICAtLWNoZWNrbWFyay1jb2xvcjogd2hpdGU7XG4gIC0tYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgLS1ib3JkZXItY29sb3ItY2hlY2tlZDogdHJhbnNwYXJlbnQ7XG4gIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufVxuXG4uY29sb3I3IHtcbiAgLS1iYWNrZ3JvdW5kOiAjZmZmZTAwO1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogI2ZmZmUwMDtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuICAvKiBpbmNyZWFzaW5nIG92ZXJhbGwgd2lkdGggbm90IHRoZSBjaGVjayBpY29uIHNpemUgKi9cbiAgLS1zaXplOjIwcHggIWltcG9ydGFudDtcbn1cblxuLmNvbG9yOCB7XG4gIC0tYmFja2dyb3VuZDogIzAwYjM1MDtcbiAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6ICMwMGIzNTA7XG4gIC0tY2hlY2ttYXJrLWNvbG9yOiB3aGl0ZTtcbiAgLS1ib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAtLWJvcmRlci1jb2xvci1jaGVja2VkOiB0cmFuc3BhcmVudDtcbiAgLyogaW5jcmVhc2luZyBvdmVyYWxsIHdpZHRoIG5vdCB0aGUgY2hlY2sgaWNvbiBzaXplICovXG4gIC0tc2l6ZToyMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5jb2xvcjkge1xuICAtLWJhY2tncm91bmQ6ICNhMTllOWI7XG4gIC0tYmFja2dyb3VuZC1jaGVja2VkOiAjYTE5ZTliO1xuICAtLWNoZWNrbWFyay1jb2xvcjogd2hpdGU7XG4gIC0tYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgLS1ib3JkZXItY29sb3ItY2hlY2tlZDogdHJhbnNwYXJlbnQ7XG4gIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufVxuXG4uY29sb3IxMCB7XG4gIC0tYmFja2dyb3VuZDogI2YzOGEwZDtcbiAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6ICNmMzhhMGQ7XG4gIC0tY2hlY2ttYXJrLWNvbG9yOiB3aGl0ZTtcbiAgLS1ib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAtLWJvcmRlci1jb2xvci1jaGVja2VkOiB0cmFuc3BhcmVudDtcbiAgLyogaW5jcmVhc2luZyBvdmVyYWxsIHdpZHRoIG5vdCB0aGUgY2hlY2sgaWNvbiBzaXplICovXG4gIC0tc2l6ZToyMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5jb2xvcjExIHtcbiAgLS1iYWNrZ3JvdW5kOiBncmV5O1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogZ3JleTtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuICAvKiBpbmNyZWFzaW5nIG92ZXJhbGwgd2lkdGggbm90IHRoZSBjaGVjayBpY29uIHNpemUgKi9cbiAgLS1zaXplOjIwcHggIWltcG9ydGFudDtcbn1cblxuLmNvbG9yMTIge1xuICAtLWJhY2tncm91bmQ6IGdyZXk7XG4gIC0tYmFja2dyb3VuZC1jaGVja2VkOiBncmV5O1xuICAtLWNoZWNrbWFyay1jb2xvcjogd2hpdGU7XG4gIC0tYm9yZGVyLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgLS1ib3JkZXItY29sb3ItY2hlY2tlZDogdHJhbnNwYXJlbnQ7XG4gIC8qIGluY3JlYXNpbmcgb3ZlcmFsbCB3aWR0aCBub3QgdGhlIGNoZWNrIGljb24gc2l6ZSAqL1xuICAtLXNpemU6MjBweCAhaW1wb3J0YW50O1xufVxuXG4uY29sb3IxMyB7XG4gIC0tYmFja2dyb3VuZDogZ3JleTtcbiAgLS1iYWNrZ3JvdW5kLWNoZWNrZWQ6IGdyZXk7XG4gIC0tY2hlY2ttYXJrLWNvbG9yOiB3aGl0ZTtcbiAgLS1ib3JkZXItY29sb3I6IHRyYW5zcGFyZW50O1xuICAtLWJvcmRlci1jb2xvci1jaGVja2VkOiB0cmFuc3BhcmVudDtcbiAgLyogaW5jcmVhc2luZyBvdmVyYWxsIHdpZHRoIG5vdCB0aGUgY2hlY2sgaWNvbiBzaXplICovXG4gIC0tc2l6ZToyMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5jb2xvcjE0IHtcbiAgLS1iYWNrZ3JvdW5kOiBncmV5O1xuICAtLWJhY2tncm91bmQtY2hlY2tlZDogZ3JleTtcbiAgLS1jaGVja21hcmstY29sb3I6IHdoaXRlO1xuICAtLWJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gIC0tYm9yZGVyLWNvbG9yLWNoZWNrZWQ6IHRyYW5zcGFyZW50O1xuICAvKiBpbmNyZWFzaW5nIG92ZXJhbGwgd2lkdGggbm90IHRoZSBjaGVjayBpY29uIHNpemUgKi9cbiAgLS1zaXplOjIwcHggIWltcG9ydGFudDtcbn1cblxuLm9mZnNldCB7XG4gIG1hcmdpbi1sZWZ0OiAzLjE2NjY2NjY2NyU7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/categgories/category-modal/category-modal.page.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/categgories/category-modal/category-modal.page.ts ***!
+  \*******************************************************************/
+/*! exports provided: CategoryModalPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryModalPage", function() { return CategoryModalPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var src_app_services_globals_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/globals.service */ "./src/app/services/globals.service.ts");
+/* harmony import */ var src_app_services_api_services_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/api-services.service */ "./src/app/services/api-services.service.ts");
+
+
+
+
+
+let CategoryModalPage = class CategoryModalPage {
+    constructor(navParams, modal, global, apiService) {
+        this.navParams = navParams;
+        this.modal = modal;
+        this.global = global;
+        this.apiService = apiService;
+        this.circleArray = [
+            {
+                'name': 'Miscellaneous',
+                'color': 'color1',
+                'checked': 'false',
+                'passcolor': '#7b7b7b'
+            }, {
+                'name': 'Family',
+                'color': 'color2',
+                'checked': 'false',
+                'passcolor': '#722fa0'
+            }, {
+                'name': 'Health',
+                'color': 'color3',
+                'checked': 'false',
+                'passcolor': '#ffc100'
+            }, {
+                'name': 'Friends',
+                'color': 'color4',
+                'checked': 'false',
+                'passcolor': '#0671d1'
+            }, {
+                'name': 'Personal Developement',
+                'color': 'color5',
+                'checked': 'false',
+                'passcolor': '#00b4ef'
+            }, {
+                'name': 'Division Manager',
+                'color': 'color6',
+                'checked': 'false',
+                'passcolor': '#ed0c00'
+            }, {
+                'name': 'Digital Program Lead',
+                'color': 'color7',
+                'checked': 'false',
+                'passcolor': '#fffe00'
+            }, {
+                'name': 'Miscellaneous',
+                'color': 'color8',
+                'checked': 'false',
+                'passcolor': '#00b350'
+            }, {
+                'name': 'Family',
+                'color': 'color9',
+                'checked': 'false',
+                'passcolor': '#a19e9b'
+            }, {
+                'name': 'Health',
+                'color': 'color10',
+                'checked': 'false',
+                'passcolor': '#f38a0d'
+            }
+        ];
+        this.passColor = '';
+        this.categoryId = '';
+        this.txtCatagoryName = '';
+        this.txtCategoryDescription = '';
+    }
+    ngOnInit() {
+        this.category = this.navParams.get('passCatagory');
+        this.txtCatagoryName = this.category.name;
+        this.txtCategoryDescription = this.category.description;
+        this.passColor = this.category.color;
+        this.categoryId = this.category.category_id;
+        console.log(this.txtCatagoryName);
+        console.log(this.txtCategoryDescription);
+        console.log(this.passColor);
+        console.log(this.categoryId);
+        for (var i = 0; i < this.circleArray.length; i++) {
+            if (this.circleArray[i].passcolor == this.passColor) {
+                this.circleArray[i].checked = true;
+                console.log(this.circleArray);
+            }
+        }
+    }
+    updateCategoryMethod() {
+        var updateJson = {};
+        updateJson["name"] = this.txtCatagoryName;
+        updateJson["description"] = this.txtCategoryDescription;
+        updateJson["color"] = this.passColor;
+        updateJson["enterprise_id"] = this.global.enterprisedId;
+        updateJson["user_id"] = this.global.userId;
+        console.log(updateJson);
+        this.global.showLoading();
+        // this.global.enterprisedId ="1";
+        // this.global.userId ="2";
+        this.apiService.updateCategory(this.categoryId, updateJson).subscribe((result) => {
+            this.global.hideLoading();
+            console.log(result.body);
+            this.modal.dismiss();
+        }, (error) => {
+            this.global.hideLoading();
+            console.log(error);
+        });
+    }
+    clickMethod(item) {
+        console.log(item);
+        console.log(item.name);
+        this.passColor = item.passcolor;
+        // console.log(item.currentTarget.checked);
+        for (var i = 0; i < this.circleArray.length; i++) {
+            if (this.circleArray[i].name == item.name) {
+                console.log(this.circleArray[i].name);
+                console.log(this.circleArray[i].color);
+                console.log(this.circleArray[i].passcolor);
+                // this.passColor=this.circleArray[i].passcolor;
+                // console.log(this.passColor);
+                // this.circleArray[i].checked = true;
+            }
+            else {
+                this.circleArray[i].checked = false;
+            }
+        }
+    }
+    closemodal(value) {
+        console.log(value);
+        if (value == "SAVE") {
+            console.log("clicked save method");
+            this.updateCategoryMethod();
+        }
+        else {
+            console.log("close modal");
+            this.modal.dismiss();
+        }
+    }
+};
+CategoryModalPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"] },
+    { type: src_app_services_globals_service__WEBPACK_IMPORTED_MODULE_3__["GlobalsService"] },
+    { type: src_app_services_api_services_service__WEBPACK_IMPORTED_MODULE_4__["ApiServicesService"] }
+];
+CategoryModalPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-category-modal',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./category-modal.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/categgories/category-modal/category-modal.page.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./category-modal.page.scss */ "./src/app/categgories/category-modal/category-modal.page.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"], src_app_services_globals_service__WEBPACK_IMPORTED_MODULE_3__["GlobalsService"], src_app_services_api_services_service__WEBPACK_IMPORTED_MODULE_4__["ApiServicesService"]])
+], CategoryModalPage);
+
+
+
+/***/ }),
+
+/***/ "./src/app/events.service.ts":
+/*!***********************************!*\
+  !*** ./src/app/events.service.ts ***!
+  \***********************************/
+/*! exports provided: EventsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventsService", function() { return EventsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let EventsService = class EventsService {
+    constructor() {
+        this.channels = {};
+    }
+    /**
+     * Subscribe to a topic and provide a single handler/observer.
+     * @param topic The name of the topic to subscribe to.
+     * @param observer The observer or callback function to listen when changes are published.
+     *
+     * @returns Subscription from which you can unsubscribe to release memory resources and to prevent memory leak.
+     */
+    subscribe(topic, observer) {
+        if (!this.channels[topic]) {
+            this.channels[topic] = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        }
+        return this.channels[topic].subscribe(observer);
+    }
+    /**
+     * Publish some data to the subscribers of the given topic.
+     * @param topic The name of the topic to emit data to.
+     * @param data data in any format to pass on.
+     */
+    publish(topic, data) {
+        const subject = this.channels[topic];
+        if (!subject) {
+            // Or you can create a new subject for future subscribers
+            return;
+        }
+        subject.next(data);
+    }
+    /**
+     * When you are sure that you are done with the topic and the subscribers no longer needs to listen to a particular topic, you can
+     * destroy the observable of the topic using this method.
+     * @param topic The name of the topic to destroy.
+     */
+    destroy(topic) {
+        const subject = this.channels[topic];
+        if (!subject) {
+            return;
+        }
+        subject.complete();
+        delete this.channels[topic];
+    }
+};
+EventsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], EventsService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/custom.pipe.ts":
+/*!**************************************!*\
+  !*** ./src/app/pipes/custom.pipe.ts ***!
+  \**************************************/
+/*! exports provided: UserExtractPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserExtractPipe", function() { return UserExtractPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let UserExtractPipe = class UserExtractPipe {
+    // transform(items: any, filter: any): any {
+    //     if (filter && Array.isArray(items)) {
+    //         let filterKeys = Object.keys(filter);
+    //         return items.filter((item) => {
+    //             return filterKeys.some((keyName) => {
+    //                 //var re = new RegExp(args, 'gi'); //'gi' for case insensitive and can use 'g' if you want the search to be case sensitive.
+    //                 //return value.replace(re, "<mark>" + args + "</mark>");
+    //                 //let searchValue = new RegExp(filter[keyName], 'gi').test(item[keyName]) || filter[keyName] === '';
+    //                 return new RegExp(filter[keyName], 'gi').test(item[keyName]) || filter[keyName] === '';
+    //             });
+    //         });
+    //     } else {
+    //         return items;
+    //     }
+    // }
+    transform(items, terms) {
+        if (!items)
+            return [];
+        if (!terms)
+            return items;
+        terms = terms.toLowerCase();
+        return items.filter(it => {
+            return it.action.toLowerCase().includes(terms); // only filter country name
+        });
+    }
+};
+UserExtractPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({ name: 'userExtract' })
+], UserExtractPipe);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pipes/pipes.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/pipes/pipes.module.ts ***!
+  \***************************************/
+/*! exports provided: PipesModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PipesModule", function() { return PipesModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _custom_pipe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./custom.pipe */ "./src/app/pipes/custom.pipe.ts");
+
+
+
+let PipesModule = class PipesModule {
+};
+PipesModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_custom_pipe__WEBPACK_IMPORTED_MODULE_2__["UserExtractPipe"]],
+        imports: [],
+        exports: [_custom_pipe__WEBPACK_IMPORTED_MODULE_2__["UserExtractPipe"]],
+    })
+], PipesModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/api-services.service.ts":
+/*!**************************************************!*\
+  !*** ./src/app/services/api-services.service.ts ***!
+  \**************************************************/
+/*! exports provided: ApiServicesService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApiServicesService", function() { return ApiServicesService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+// import { Storage } from '@ionic/storage';
+let ApiServicesService = class ApiServicesService {
+    constructor(http) {
+        this.http = http;
+        this.baseUrl = 'http://dev-goalshaper-server.azurewebsites.net';
+    }
+    /***** Login User *****/
+    login(objUser) {
+        let URL = this.baseUrl + '/gs/auth/login';
+        console.log(URL);
+        return this.http.post(URL, objUser, { observe: 'response' });
+    }
+    /***** Catagories *****/
+    getCatagories(userId, enterpriseId) {
+        let URL = this.baseUrl + '/gs/actions/categories/' + userId + '/' + enterpriseId + '';
+        console.log(URL);
+        return this.http.get(URL, { observe: 'response' });
+    }
+    updateCategory(categoryId, jsonbody) {
+        // http://dev-goalshaper-server.azurewebsites.net/gs/actions/categories/2
+        let URL = this.baseUrl + '/gs/actions/categories/' + categoryId + '';
+        console.log(URL);
+        return this.http.put(URL, jsonbody, { observe: 'response' });
+    }
+    /***** Goals and Objectives *****/
+    getAllGoalsObjectives(userId, enterpriseId) {
+        let URL = this.baseUrl + '/gs/actions/categories/' + userId + '/' + enterpriseId + '';
+        console.log(URL);
+        return this.http.get(URL, { observe: 'response' });
+    }
+    getGoals(userId, enterpriseId) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/goals/all/5?userId=41
+        let URL = this.baseUrl + '/gs/goals/all/' + enterpriseId + '?userId=' + userId + '';
+        console.log(URL);
+        return this.http.get(URL, { observe: 'response' });
+    }
+    getObjectives(userId, enterpriseId) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/objectives/all/5?userId=41
+        let URL = this.baseUrl + '/gs/objectives/all/' + enterpriseId + '?userId=' + userId + '';
+        console.log(URL);
+        return this.http.get(URL, { observe: 'response' });
+    }
+    /* Goal Types */
+    getGoalTypes(enterpriseId) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/goals/types/1
+        let URL = this.baseUrl + '/gs/goals/types/' + enterpriseId + '';
+        console.log(URL);
+        return this.http.get(URL, { observe: 'response' });
+    }
+    /* Goal Levels */
+    getGoalLevels(enterpriseId) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/goals/levels/1
+        let URL = this.baseUrl + '/gs/goals/levels/' + enterpriseId + '';
+        console.log(URL);
+        return this.http.get(URL, { observe: 'response' });
+    }
+    /* Goal Creation */
+    createGoal(objUser) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/goals
+        let URL = this.baseUrl + '/gs/goals';
+        console.log(URL);
+        return this.http.post(URL, objUser, { observe: 'response' });
+    }
+    /* Objective Creation */
+    createObjective(objUser) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/objectives
+        let URL = this.baseUrl + '/gs/objectives';
+        console.log(URL);
+        return this.http.post(URL, objUser, { observe: 'response' });
+    }
+    /* Milestone Creation */
+    createMilestones(objUser) {
+        console.log("called api");
+        // https://dev-goalshaper-server.azurewebsites.net/gs/goals/milestones
+        let URL = this.baseUrl + '/gs/goals/milestones';
+        console.log(URL);
+        return this.http.post(URL, objUser, { observe: 'response' });
+    }
+    /* Goal Updation */
+    updateGoal(goalId, objUser) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/goals/11111
+        let URL = this.baseUrl + '/gs/goals/' + goalId + '';
+        console.log(URL);
+        return this.http.put(URL, objUser, { observe: 'response' });
+    }
+    /* Objective Updation */
+    updateObjective(objectiveId, objUser) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/objectives/111
+        let URL = this.baseUrl + '/gs/objectives/' + objectiveId + '';
+        console.log(URL);
+        return this.http.put(URL, objUser, { observe: 'response' });
+    }
+    /* Get Milestones */
+    // getmilestones(enterpriseId,goalId):Observable<HttpResponse<any>> {
+    //   let URL = this.baseUrl + '/gs/goals/goals/' + enterpriseId + '/' +goalId+ '';
+    //   console.log(URL);
+    //   return this.http.get<any>(URL, { observe: 'response' });
+    // }
+    // Update Milestones.
+    updateMilestones(milestoneNum, objUser) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/goals/milestones/111
+        let URL = this.baseUrl + '/gs/goals/milestones/' + milestoneNum + '';
+        console.log(URL);
+        return this.http.put(URL, objUser, { observe: 'response' });
+    }
+    // Delete Goals
+    deleteGoal(enterpriseId, goalId) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/goals/1111/2222
+        let URL = this.baseUrl + '/gs/goals/' + enterpriseId + '/' + goalId + '';
+        console.log(URL);
+        return this.http.delete(URL, { observe: 'response' });
+    }
+    deleteMilestoneOfGoal(enterpriseId, goalId, milestoneNum) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/goals/milestone/11111/11111/111111
+        let URL = this.baseUrl + '/gs/goals/milestone/' + enterpriseId + '/' + goalId + '/' + milestoneNum + '/';
+        console.log(URL);
+        return this.http.delete(URL, { observe: 'response' });
+    }
+    deleteObjective(enterpriseId, objectiveId) {
+        // https://dev-goalshaper-server.azurewebsites.net/gs/objectives/11111/1111
+        let URL = this.baseUrl + '/gs/objectives/' + enterpriseId + '/' + objectiveId + '';
+        console.log(URL);
+        return this.http.delete(URL, { observe: 'response' });
+    }
+    // Actions
+    //  "getCategories":"/gs/actions/categories/{enterprise_id}/{user_id}",
+    //  "getActions":"/gs/actions/{enterprise_id}/{user_id}/{category_id}",
+    //  "getPriorities":"{enterprise_id}",
+    //  "createActions":"/gs/actions",
+    //  "updateActions":"/gs/actions/{action_id}",
+    //  "deleteActions":"/gs/actions/{enterprise_id}/{action_id}",
+    //    //Actions
+    //    this.getCategoriesUrl=this.baseURL + this.apiConfig.actions.getCategories;
+    //    this.getActionsUrl=this.baseURL + this.apiConfig.actions.getActions;
+    //    this.getActionPrioritiesUrl = this.baseURL + this.apiConfig.actions.getPriorities;
+    //    this.createActionsUrl = this.baseURL + this.apiConfig.actions.createActions;
+    //    this.updateActionsUrl = this.baseURL + this.apiConfig.actions.updateActions;
+    //    this.deleteACtionsUrl = this.baseURL + this.apiConfig.actions.deleteActions;
+    // 1. Get Actions per category.
+    getActions(enterpriseId, userId, categoryId) {
+        let URL = this.baseUrl + '/gs/actions/' + enterpriseId + '/' + userId + '/' + categoryId;
+        console.log(URL);
+        return this.http.get(URL, { observe: 'response' });
+    }
+    // 2. Create Actions
+    createActions(data) {
+        let URL = this.baseUrl + '/gs/actions';
+        console.log(data);
+        console.log(URL);
+        return this.http.post(URL, data, { observe: 'response' });
+    }
+    // 2. Update Actions
+    updateActions(data, actionId) {
+        let URL = this.baseUrl + '/gs/actions/' + actionId;
+        console.log(data);
+        console.log(URL);
+        return this.http.put(URL, data, { observe: 'response' });
+    }
+    // 2. Delete Actions
+    deleteActions(enterpriseId, actionId) {
+        let URL = this.baseUrl + '/gs/actions/' + enterpriseId + '/' + actionId;
+        console.log(URL);
+        return this.http.delete(URL, { observe: 'response' });
+    }
+    // 1. Get Priorities.
+    getPriorities(enterpriseId) {
+        let URL = this.baseUrl + '/gs/actions/priorities/' + enterpriseId;
+        console.log(URL);
+        return this.http.get(URL, { observe: 'response' });
+    }
+    // 1. Get Priorities.
+    getMilestones(enterpriseId, goalId) {
+        let URL = this.baseUrl + '/gs/goals/milestones/' + enterpriseId + '/' + goalId;
+        console.log(URL);
+        return this.http.get(URL, { observe: 'response' });
+    }
+};
+ApiServicesService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+ApiServicesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], ApiServicesService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/auth-guard.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/services/auth-guard.service.ts ***!
+  \************************************************/
+/*! exports provided: AuthGuardService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuardService", function() { return AuthGuardService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/native-storage/ngx */ "./node_modules/@ionic-native/native-storage/ngx/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _globals_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./globals.service */ "./src/app/services/globals.service.ts");
+/* harmony import */ var _events_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../events.service */ "./src/app/events.service.ts");
+
+
+
+
+
+
+
+let AuthGuardService = class AuthGuardService {
+    constructor(globals, events, platform, global, storage, router) {
+        this.globals = globals;
+        this.events = events;
+        this.platform = platform;
+        this.global = global;
+        this.storage = storage;
+        this.router = router;
+    }
+    canActivate(route) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            yield this.platform.ready().then(() => {
+            });
+            yield this.storage.getItem('login').then((result) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+                if (result) {
+                    // this.router.navigateByUrl('/welcome');
+                    yield this.storage.getItem('getFullList').then((result) => {
+                        if (result.goalInfo.length != 0 || result.objInfo.length != 0) {
+                            this.storage.getItem('userdeatils').then(data => {
+                                console.log('enterpriseid:', +data);
+                                this.global.enterprisedId = data.user.enterprise_id;
+                                this.global.userId = data.user.user_id;
+                                this.events.publish('user:created', {
+                                    user: data
+                                });
+                            }, error => {
+                                console.log(error);
+                            });
+                            this.router.navigateByUrl('/goalsobjective');
+                        }
+                        else {
+                            this.router.navigateByUrl('/welcome');
+                        }
+                    }, (error) => {
+                        this.router.navigateByUrl('/welcome');
+                    });
+                    // End
+                }
+                else {
+                    return true;
+                }
+            }), (error) => {
+                return true;
+            });
+            return true;
+            console.log("Before Getting storage");
+        });
+    }
+};
+AuthGuardService.ctorParameters = () => [
+    { type: _globals_service__WEBPACK_IMPORTED_MODULE_5__["GlobalsService"] },
+    { type: _events_service__WEBPACK_IMPORTED_MODULE_6__["EventsService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"] },
+    { type: _globals_service__WEBPACK_IMPORTED_MODULE_5__["GlobalsService"] },
+    { type: _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_3__["NativeStorage"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+AuthGuardService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: "root"
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_globals_service__WEBPACK_IMPORTED_MODULE_5__["GlobalsService"], _events_service__WEBPACK_IMPORTED_MODULE_6__["EventsService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"], _globals_service__WEBPACK_IMPORTED_MODULE_5__["GlobalsService"], _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_3__["NativeStorage"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+], AuthGuardService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/globals.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/globals.service.ts ***!
+  \*********************************************/
+/*! exports provided: GlobalsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalsService", function() { return GlobalsService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+
+
+
+let GlobalsService = class GlobalsService {
+    constructor(loadingController, alert, toast) {
+        this.loadingController = loadingController;
+        this.alert = alert;
+        this.toast = toast;
+        this.enterprisedId = '';
+        this.userId = '';
+        this.goal_type_id_profsnal = '';
+        this.goal_type_id_persnal = '';
+    }
+    showLoading(options = {}) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            this.loader = yield this.loadingController.create({
+                message: 'Please wait...',
+                // duration: 2000
+                spinner: "lines",
+                translucent: true,
+                cssClass: 'custom-loader-class',
+                backdropDismiss: true
+            });
+            yield this.loader.present();
+        });
+    }
+    hideLoading() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const element = yield this.loadingController.getTop();
+            if (element) {
+                yield this.loadingController.dismiss();
+            }
+        });
+    }
+    presentAlert(title, subtitle, message) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const alert = yield this.alert.create({
+                cssClass: 'my-custom-class',
+                header: title,
+                subHeader: subtitle,
+                message: message,
+                buttons: ['OK']
+            });
+            yield alert.present();
+        });
+    }
+    presentAlertConfirm() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const alert = yield this.alert.create({
+                cssClass: 'my-custom-class',
+                header: 'Confirm!',
+                message: 'Message <strong>text</strong>!!!',
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: (blah) => {
+                            console.log('Confirm Cancel: blah');
+                        }
+                    }, {
+                        text: 'Okay',
+                        handler: () => {
+                            console.log('Confirm Okay');
+                        }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
+    }
+    // async showLoading() {
+    //   const loading = await this.loading.create({
+    //     // message: 'Please wait...',
+    //     // duration: 2000
+    //     spinner:"lines",
+    //     translucent: true,
+    //     cssClass:'custom-loader-class',
+    //     // backdropDismiss: true
+    //   });
+    //   await loading.present();
+    // }
+    // async hideLoading(){
+    //   await this.loading.dismiss();
+    // }
+    presentToast(msg) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const toast = yield this.toast.create({
+                message: msg,
+                duration: 2000
+            });
+            toast.present();
+        });
+    }
+};
+GlobalsService.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"] }
+];
+GlobalsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"]])
+], GlobalsService);
+
+
+
+/***/ }),
+
+/***/ "./src/environments/environment.ts":
+/*!*****************************************!*\
+  !*** ./src/environments/environment.ts ***!
+  \*****************************************/
+/*! exports provided: environment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+
+const environment = {
+    production: false
+};
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/***/ }),
+
+/***/ "./src/main.ts":
+/*!*********************!*\
+  !*** ./src/main.ts ***!
+  \*********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["enableProdMode"])();
+}
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_4__["AppModule"])
+    .catch(err => console.log(err));
+
+
+/***/ }),
+
+/***/ 0:
+/*!***************************!*\
+  !*** multi ./src/main.ts ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /Users/admin/Desktop/Practice/GitHub/goal-shaper-mobile/src/main.ts */"./src/main.ts");
+
+
+/***/ })
+
+},[[0,"runtime","vendor"]]]);
+//# sourceMappingURL=main-es2015.js.map

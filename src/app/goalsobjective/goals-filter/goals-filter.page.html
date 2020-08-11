@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Filter Options</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closemodal('CANCEL')">
+        <ion-icon name="close-outline" style="zoom:1.5;" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+      <ion-segment (ionChange)="segmentChanged1($event)">
+          <ion-segment-button value="goal">
+            <ion-label>Goals</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="objectives">
+            <ion-label>Objectives</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-segment disabled={{segmentDisabled}} (ionChange)="segmentChanged2($event)">
+        <ion-segment-button value="personal">
+          <ion-label>Personal</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="professional">
+          <ion-label>Professional</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="6" color="danger">
+        <div class="ion-text-center">Personal</div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="ion-text-center">Professional</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <!-- Default Segment -->
+
+
+
+</ion-content>
+
+<ion-footer style="border-top: solid 1px lightgray;">
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-col size="6">
+        <ion-item lines="none"  (click)="applyfilter('SAVE')" style="text-align: center; font-weight:bold; background:transparent;  border-right:solid 1px #dcdcdc;  width:100%; margin: 0 auto; padding: 0 auto; display: block !important;  text-align:center; height:50px">
+          <ion-icon style="color: #039CD9;  text-align: center;" name="checkmark-outline"></ion-icon>
+          <ion-text  style="color: #039CD9; font-weight: bold; text-align: center;" >&nbsp;&nbsp;Apply</ion-text>
+      </ion-item>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-item lines="none" tappable (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+          <ion-icon style="color: red; " name="close-circle-outline"></ion-icon>
+          <ion-text style="color: red; font-weight: bold;" class="ion-margin-start">&nbsp;&nbsp;Cancel</ion-text>
+      </ion-item>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-footer>

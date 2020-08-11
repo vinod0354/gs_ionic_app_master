@@ -1,0 +1,518 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #f09d2e;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="Medium"> Goals & Objectives</ion-title>
+    <ion-buttons slot="end">
+      <ion-button style="color: #f09d2e;" (click)="clickShowSearchbar()">
+        <ion-icon style="color: #f09d2e;" name="search"></ion-icon>
+      </ion-button>
+      <ion-button  style="color: #f09d2e;" (click)="openModal()">
+        <ion-icon style="color: #f09d2e;" name="funnel"></ion-icon>
+      </ion-button>
+      <ion-button style="color: #f09d2e;">
+        <ion-icon style="color: #f09d2e;" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-searchbar *ngIf="showSearchbar == true" [(ngModel)]="terms" (ionCancel)="hideSearchbar($event)" mode='ios' placeholder="Goal/Objective Title" cancelText ="123" showCancelButton></ion-searchbar>
+
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+
+  <ion-grid style="text-align: center;">
+    <ion-row>
+      <ion-col>
+        <ion-note
+          (click)="click_Category()"
+          [ngStyle]="{'font-weight':isCategoryEnb}"
+          >Category</ion-note
+        >
+      </ion-col>
+      <ion-col>
+        <ion-note
+          (click)="click_Duedate()"
+          [ngStyle]="{'font-weight':isDueDateEnb}"
+          >Due Date</ion-note
+        >
+      </ion-col>
+      <ion-col>
+        <ion-note (click)="click_Type()" [ngStyle]="{'font-weight':isTypeEnb}"
+          >Type</ion-note
+        >
+      </ion-col>
+      <ion-col>
+        <ion-note (click)="click_Done()" [ngStyle]="{'font-weight':isDoneEnb}"
+          >Done</ion-note
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Category start -->
+  <ion-item *ngIf="isCategory" lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="ion-no-padding">
+          <ion-card *ngFor="let categoryObj of categoryObjInfo;let i = index">
+            <ion-card-header [ngStyle]="{'background-color':categoryObj.color}">
+                  <ion-grid style="padding:0px">
+                    <ion-row class="ion-align-items-center">
+                      <ion-col class="ion-align-self-center"  style="padding:0px">
+                        <span style="float:left; font-size: large; padding-left:4px; margin-top:2px; color:white; " >{{categoryObj.name}}</span>
+                         <span *ngIf="deviceType == 'ios'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                           <span style="margin-top: 5px;">{{categoryObj.goalObjInfo.length}}</span>
+                        </span>
+                        <span *ngIf="deviceType == 'android'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                          <span style="margin-top: 5px !important; padding-top:5px !important; line-height: 1.4 !important;">{{categoryObj.goalObjInfo.length}}</span>
+                       </span>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                <!-- <ion-item  lines="none">
+                <ion-label style="color: white;">{{categoryObj.name ? categoryObj.name: '_'}}</ion-label>
+                <a class="roundbutton" style="padding: 2px;">{{categoryObj.goalObjInfo.length}}</a>
+              </ion-item> -->
+            </ion-card-header>
+
+            <ion-card-content style="text-align: center; color: red; padding:8px !important;" *ngIf="categoryObj.goalObjInfo.length == 0">No Data </ion-card-content>
+            <ion-card-content style="text-align: left;" *ngIf="categoryObj.goalObjInfo.length > 0">
+              <ion-grid>
+                <ion-row  *ngFor="let category of categoryObj.goalObjInfo | userExtract: terms;" (click)="click_UpdateCategory(category,category.category_Type)">
+
+                  <ion-col *ngIf="category.item_HeaderDate == 'Today'" color="Medium" [ngStyle]="{'color': category.item_Color}" style="width: 40px !important;" col-3>Today</ion-col>
+                  <ion-col *ngIf="category.item_HeaderDate == 'Tomorrow'" color="Medium" [ngStyle]="{'color': category.item_Color}" style="width: 40px !important;" col-3>Tomorrow</ion-col>
+
+                  <ion-col *ngIf="category.item_HeaderDate != 'Today' && category.item_HeaderDate != 'Tomorrow'" color="Medium" [ngStyle]="{'color': category.item_Color}" style="width: 40px !important;" col-3>{{category.item_HeaderDate | date: 'MMM dd' }}</ion-col>
+                  <ion-col color="light"  [ngStyle]="{'color': category.item_Color}" style="width: 20px !important;" col-3>{{category.category_Type ? category.category_Type: '-'}}</ion-col>
+                  <ion-col *ngIf="category.category_Type == 'G'" color="light" [ngStyle]="{'color': category.item_Color }" style="width: 40px !important;" col-3>{{category.goal_title ? category.goal_title: '-' }}</ion-col>
+                  <ion-col *ngIf="category.category_Type == 'O'" color="light" [ngStyle]="{'color': category.item_Color }" style="width: 40px !important;" col-3>{{category.objective ? category.objective: '-' }}</ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <!-- Category end -->
+
+  <!-- DueDate -->
+  <ion-item *ngIf="isDate" lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="ion-no-padding">
+          <ion-card *ngFor="let dueDateObj of dueDateObjInfo;let i = index">
+              <ion-card-header [ngStyle]="{'background-color':dueDateObj.color}">
+                  <ion-grid style="padding:0px">
+                    <ion-row class="ion-align-items-center">
+                      <ion-col class="ion-align-self-center"  style="padding:0px">
+                        <span style="float:left; font-size: large; padding-left:4px; margin-top:2px; color:white; " >{{dueDateObj.name}}</span>
+                         <span *ngIf="deviceType == 'ios'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                           <span style="margin-top: 5px;">{{dueDateObj.dueDateObj.length}}</span>
+                        </span>
+                        <span *ngIf="deviceType == 'android'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                          <span style="margin-top: 5px !important; padding-top:5px !important; line-height: 1.4 !important;">{{dueDateObj.dueDateObj.length}}</span>
+                       </span>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+            <!-- <ion-card-header color="bg-primary">
+              <ion-item class="backgroundDueDate1-ionitem" lines="none">
+                <ion-label style="color: white;">{{dueDateObj.name}}</ion-label>
+                <span class="roundbutton" style="padding-top: 2px;">{{dueDateObj.dueDateObj.length}}</span>
+              </ion-item> -->
+            </ion-card-header>
+
+            <ion-card-content style="text-align: center; color: red; padding:8px !important;" *ngIf="dueDateObj.dueDateObj.length == 0">No Data </ion-card-content>
+            <ion-card-content style="text-align: left;" *ngIf="dueDateObj.dueDateObj.length > 0">
+              <ion-grid>
+                <ion-row  *ngFor="let dueDate of dueDateObj.dueDateObj | userExtract: terms;" (click)="click_UpdatedueDate(dueDate,dueDate.category_Type)">
+                  <ion-col *ngIf="dueDate.item_HeaderDate == 'Today'" color="Medium" [ngStyle]="{'color': dueDate.item_Color}" style="width: 40px !important;" col-3>Today</ion-col>
+                  <ion-col *ngIf="dueDate.item_HeaderDate == 'Tomorrow'" color="Medium" [ngStyle]="{'color': dueDate.item_Color}" style="width: 40px !important;" col-3>Tomorrow</ion-col>
+
+                  <ion-col *ngIf="dueDate.item_HeaderDate != 'Today' && dueDate.item_HeaderDate != 'Tomorrow'" color="Medium" [ngStyle]="{'color': dueDate.item_Color}" style="width: 20px !important;" col-3>{{dueDate.item_HeaderDate | date: 'MMM dd' }}</ion-col>
+                  <ion-col color="light"  [ngStyle]="{'color': dueDate.item_Color}" style="width: 20px !important;" col-3>{{dueDate.category_Type ? dueDate.category_Type: '-'}}</ion-col>
+                  <ion-col *ngIf="dueDate.category_Type == 'G'" color="light"  [ngStyle]="{'color': dueDate.item_Color}" style="width: 20px !important;" col-3>{{dueDate.goal_title ? dueDate.goal_title: '-'}}</ion-col>
+                  <ion-col *ngIf="dueDate.category_Type == 'O'" color="light"  [ngStyle]="{'color': dueDate.item_Color }" style="width: 40px !important;" col-3>{{dueDate.objective ? dueDate.objective: '-' }}</ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <!-- <ion-col size="12" class="ion-no-padding">
+          <ion-card>
+            <ion-card-header color="bg-primary">
+              <ion-item class="backgroundDueDate2-ionitem" lines="none">
+                <ion-label style="color: white;">Today</ion-label>
+                <a class="roundbutton" style="padding-top: 2px;">2</a>
+              </ion-item>
+            </ion-card-header>
+
+            <ion-card-content style="text-align: left;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col color="Medium" col-3>Today</ion-col>
+                  <ion-col color="light" col-3>M</ion-col>
+                  <ion-col color="light" col-3>Milestone on list</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col color="Medium" col-3>Today</ion-col>
+                  <ion-col color="light" col-3>O</ion-col>
+                  <ion-col color="light" col-3>A long objective</ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" class="ion-no-padding">
+          <ion-card>
+            <ion-card-header color="bg-primary">
+              <ion-item class="backgroundDueDate3-ionitem" lines="none">
+                <ion-label style="color: white;">Tomorrow</ion-label>
+                <a class="roundbutton" style="padding-top: 2px;">2</a>
+              </ion-item>
+            </ion-card-header>
+
+            <ion-card-content style="text-align: left;">
+              <ion-grid>
+                <ion-row>
+                  <ion-col color="Medium" col-3>Tomorrow</ion-col>
+                  <ion-col color="light" col-3>M</ion-col>
+                  <ion-col color="light" col-3>Milestone on list</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col color="Medium" col-3>Tomorrow</ion-col>
+                  <ion-col color="light" col-3>O</ion-col>
+                  <ion-col color="light" col-3>A long objective</ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" class="ion-no-padding">
+          <ion-card>
+            <ion-card-header color="bg-primary">
+              <ion-item class="backgroundCategory2-ionitem" lines="none">
+                <ion-label style="color: white;">This week</ion-label>
+                <a class="roundbutton" style="padding: 2px;">2</a>
+              </ion-item>
+            </ion-card-header>
+
+            <ion-card-content style="text-align: left;">
+              <ion-grid>
+
+                <ion-row>
+                  <ion-col color="Medium" style="color: red;" col-3
+                    >Jan 1</ion-col
+                  >
+                  <ion-col color="light" col-3>M</ion-col>
+                  <ion-col color="light" col-3>Milestone on list</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col color="Medium" col-3>Today</ion-col>
+                  <ion-col color="light" col-3>O</ion-col>
+                  <ion-col color="light" col-3>A long objective</ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col> -->
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <!-- DueDate end -->
+
+  <!-- Type -->
+  <ion-item *ngIf="isType" lines="none">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="ion-no-padding">
+          <ion-card>
+
+             <ion-card-header class="backgroundCategory1-ionitem">
+                    <ion-grid style="padding:0px">
+                      <ion-row class="ion-align-items-center">
+                        <ion-col class="ion-align-self-center"  style="padding:0px">
+                          <span style="float:left; font-size: large; padding-left:4px; margin-top:2px; color:white; " >Goals</span>
+                           <span *ngIf="deviceType == 'ios'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                             <span style="margin-top: 5px;">{{goalInfo.length}}</span>
+                          </span>
+                          <span *ngIf="deviceType == 'android'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                            <span style="margin-top: 5px !important; padding-top:5px !important; line-height: 1.4 !important;">{{goalInfo.length}}</span>
+                         </span>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+            </ion-card-header>
+
+            <ion-card-content style="text-align: center; color: red; padding:8px !important;" *ngIf="goalInfo.length == 0">No Data </ion-card-content>
+            <ion-card-content style="text-align: left;" *ngIf="goalInfo.length > 0">
+              <ion-grid>
+                <ion-row  *ngFor="let goal of goalInfo | userExtract: terms;"(click)="click_UpdateGoal(goal,goal.goal_id)">
+                  <ion-col *ngIf="goal.item_HeaderDate == 'Today'" color="Medium" [ngStyle]="{'color': goal.item_Color}" style="width: 40px !important;" col-3>Today</ion-col>
+                  <ion-col *ngIf="goal.item_HeaderDate == 'Tomorrow'" color="Medium" [ngStyle]="{'color': goal.item_Color}" style="width: 40px !important;" col-3>Tomorrow</ion-col>
+
+                  <ion-col *ngIf="goal.item_HeaderDate != 'Today' && goal.item_HeaderDate != 'Tomorrow'" color="Medium" [ngStyle]="{'color': goal.item_Color}" style="width: 20px !important;" col-3>{{goal.item_HeaderDate | date: 'MMM dd' }}</ion-col>
+                  <ion-col color="light"  [ngStyle]="{'color': goal.item_Color}" style="width: 20px !important;" col-3>{{goal.category_Type ? goal.category_Type: '-'}}</ion-col>
+                  <ion-col *ngIf="goal.category_Type == 'G'" color="light"  [ngStyle]="{'color': goal.item_Color}" style="width: 20px !important;" col-3>{{goal.goal_title ? goal.goal_title: '-'}}</ion-col>
+                  <ion-col *ngIf="goal.category_Type == 'O'" color="light"  [ngStyle]="{'color': goal.item_Color }" style="width: 40px !important;" col-3>{{goal.objective ? goal.objective: '-' }}</ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" class="ion-no-padding">
+          <ion-card>
+              <ion-card-header class="backgroundCategory2-ionitem">
+                      <ion-grid style="padding:0px">
+                        <ion-row class="ion-align-items-center">
+                          <ion-col class="ion-align-self-center"  style="padding:0px">
+                            <span style="float:left; font-size: large; padding-left:4px; margin-top:2px; color:white; " >Objectives</span>
+                             <span *ngIf="deviceType == 'ios'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                               <span style="margin-top: 5px;">{{objInfo.length}}</span>
+                            </span>
+                            <span *ngIf="deviceType == 'android'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                              <span style="margin-top: 5px !important; padding-top:5px !important; line-height: 1.4 !important;">{{objInfo.length}}</span>
+                           </span>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+            <!-- <ion-card-header color="bg-primary">
+              <ion-item class="backgroundCategory2-ionitem" lines="none">
+                <ion-label style="color: white;">Objectives</ion-label>
+                <a class="roundbutton" style="padding: 2px;">{{objInfo.length}}</a>
+              </ion-item> -->
+            </ion-card-header>
+
+            <ion-card-content style="text-align: center; color: red; padding:8px !important;" *ngIf="objInfo.length == 0">No Data </ion-card-content>
+            <ion-card-content style="text-align: left;" *ngIf="objInfo.length > 0">
+              <ion-grid>
+                <ion-row *ngFor="let object of objInfo | userExtract: terms;" (click)="click_UpdateObjective(object,object.objective_id)">
+                  <ion-col *ngIf="object.item_HeaderDate == 'Today'" color="Medium" [ngStyle]="{'color': object.item_Color}" style="width: 40px !important;" col-3>Today</ion-col>
+                  <ion-col *ngIf="object.item_HeaderDate == 'Tomorrow'" color="Medium" [ngStyle]="{'color': object.item_Color}" style="width: 40px !important;" col-3>Tomorrow</ion-col>
+
+                  <ion-col *ngIf="object.item_HeaderDate != 'Today' && object.item_HeaderDate != 'Tomorrow'" color="Medium" [ngStyle]="{'color': object.item_Color }" style="width: 20px !important;" col-3>{{object.item_HeaderDate | date: 'MMM dd' }}</ion-col>
+                  <ion-col color="light"  [ngStyle]="{'color': object.item_Color }" style="width: 20px !important;" col-3>{{object.category_Type ? object.category_Type: '-'}}</ion-col>
+                  <ion-col *ngIf="object.category_Type == 'G'" color="light"  [ngStyle]="{'color': object.item_Color }" style="width: 20px !important;" col-3>{{object.goal_title ? object.goal_title: '-'}}</ion-col>
+                  <ion-col *ngIf="object.category_Type == 'O'" color="light"  [ngStyle]="{'color': object.item_Color }" style="width: 40px !important;" col-3>{{object.objective ? object.objective: '-' }}</ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <!-- Type end -->
+
+  <!-- Done -->
+  <ion-item *ngIf="isDone" lines="none">
+    <ion-grid>
+      <ion-row>
+          <ion-col size="12" class="ion-no-padding">
+              <ion-card>
+                <ion-card-header class="backgroundCategory1-ionitem">
+                      <ion-grid style="padding:0px">
+                        <ion-row class="ion-align-items-center">
+                          <ion-col class="ion-align-self-center"  style="padding:0px">
+                            <span style="float:left; font-size: large; padding-left:4px; margin-top:2px; color:white; " >Goals</span>
+                             <span *ngIf="deviceType == 'ios'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                               <span style="margin-top: 5px;">{{completedDateGoalInfo.length}}</span>
+                            </span>
+                            <span *ngIf="deviceType == 'android'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                              <span style="margin-top: 5px !important; padding-top:5px !important; line-height: 1.4 !important;">{{completedDateGoalInfo.length}}</span>
+                           </span>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                </ion-card-header>
+
+                <ion-card-content style="text-align: center; color: red; padding:8px !important;" *ngIf="completedDateGoalInfo.length == 0">No Data </ion-card-content>
+                <ion-card-content style="text-align: left;" *ngIf="completedDateGoalInfo.length > 0">
+                  <ion-grid>
+                    <ion-row  *ngFor="let goal of completedDateGoalInfo | userExtract: terms;" (click)="click_UpdateGoal(goal,goal.goal_id)">
+                      <ion-col *ngIf="goal.item_HeaderDate == 'Today'" color="Medium" [ngStyle]="{'color': goal.item_Color}" style="width: 40px !important;" col-3>Today</ion-col>
+                      <ion-col *ngIf="goal.item_HeaderDate == 'Tomorrow'" color="Medium" [ngStyle]="{'color': goal.item_Color}" style="width: 40px !important;" col-3>Tomorrow</ion-col>
+
+                      <ion-col *ngIf="goal.item_HeaderDate != 'Today' && goal.item_HeaderDate != 'Tomorrow'" color="Medium" [ngStyle]="{'color': goal.item_Color }" style="width: 20px !important;" col-3>{{goal.item_HeaderDate | date: 'MMM dd' }}</ion-col>
+                      <ion-col color="light"  [ngStyle]="{'color': goal.item_Color }" style="width: 20px !important;" col-3>{{goal.category_Type ? goal.category_Type: '-'}}</ion-col>
+                      <ion-col *ngIf="goal.category_Type == 'G'" color="light"  [ngStyle]="{'color': goal.item_Color }" style="width: 20px !important;" col-3>{{goal.goal_title ? goal.goal_title: '-'}}</ion-col>
+                      <ion-col *ngIf="goal.category_Type == 'O'" color="light"  [ngStyle]="{'color': goal.item_Color }" style="width: 40px !important;" col-3>{{goal.objective ? goal.objective: '-' }}</ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size="12" class="ion-no-padding">
+              <ion-card>
+                <ion-card-header class="backgroundCategory2-ionitem">
+                      <ion-grid style="padding:0px">
+                        <ion-row class="ion-align-items-center">
+                          <ion-col class="ion-align-self-center"  style="padding:0px">
+                            <span style="float:left; font-size: large; padding-left:4px; margin-top:2px; color:white; " >Objectives</span>
+                             <span *ngIf="deviceType == 'ios'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                               <span style="padding-top: 3px;">{{completedDateObjInfo.length}}</span>
+                            </span>
+                            <span *ngIf="deviceType == 'android'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; float:right;">
+                              <span style="margin-top: 5px !important; padding-top:5px !important; line-height: 1.4 !important;">{{completedDateObjInfo.length}}</span>
+                           </span>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                </ion-card-header>
+
+                <ion-card-content style="text-align: center; color: red; padding:8px !important;" *ngIf="completedDateObjInfo.length == 0">No Data </ion-card-content>
+                <ion-card-content style="text-align: left;" *ngIf="completedDateObjInfo.length > 0">
+                  <ion-grid>
+                    <ion-row *ngFor="let object of completedDateObjInfo | userExtract: terms;" (click)="click_UpdateObjective(object,object.objective_id)">
+                      <ion-col *ngIf="object.item_HeaderDate == 'Today'" color="Medium" [ngStyle]="{'color': object.item_Color}" style="width: 40px !important;" col-3>Today</ion-col>
+                      <ion-col *ngIf="object.item_HeaderDate == 'Tomorrow'" color="Medium" [ngStyle]="{'color': object.item_Color}" style="width: 40px !important;" col-3>Tomorrow</ion-col>
+
+                      <ion-col *ngIf="object.item_HeaderDate != 'Today' && object.item_HeaderDate != 'Tomorrow'" color="Medium" [ngStyle]="{'color': object.item_Color }" style="width: 20px !important;" col-3>{{object.item_HeaderDate | date: 'MMM dd' }}</ion-col>
+                      <ion-col color="light"  [ngStyle]="{'color': object.item_Color }" style="width: 20px !important;" col-3>{{object.category_Type ? object.category_Type: '-'}}</ion-col>
+                      <ion-col *ngIf="object.category_Type == 'G'"  color="light"  [ngStyle]="{'color': object.item_Color }" style="width: 20px !important;" col-3>{{object.goal_title ? object.goal_title: '-'}}</ion-col>
+                      <ion-col *ngIf="object.category_Type == 'O'"  color="light"  [ngStyle]="{'color': object.item_Color }" style="width: 40px !important;" col-3>{{object.objective ? object.objective: '-' }}</ion-col>
+
+                    </ion-row>
+                  </ion-grid>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <!-- Done end -->
+
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-grid text-align="center">
+      <ion-row text-align="center">
+        <ion-col>
+          <div>
+
+              <ion-chip text-center style="widows: 100%;color: white; background-color: chocolate;" (click)="click_CreateGoal()">
+                  <ion-label text-align="center">Create</ion-label>
+                  <ion-icon style="color: white;" name="add"></ion-icon>
+                </ion-chip>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+              <ion-chip style="height: 40px; width: 100%; color: white; background-color: chocolate;" (click)="click_CreateObj()">
+                  <span>Create</span>
+                  <ion-icon style="color: white;" name="add"></ion-icon>
+              </ion-chip>
+          </div>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  </ion-toolbar>
+</ion-footer> -->
+
+<!-- <ion-footer>
+    <ion-toolbar >
+      <ion-grid >
+        <ion-row >
+          <ion-col size="6"  class="ion-text-center">
+                <ion-button mode="ios" style="background-color: chocolate;" shape="round" expand="full" class="ion-text-wrap"  >
+                  <span style="font-size: 12px; float: left;">Create Goal</span>
+                   <ion-icon slot="end" style="color: blueviolet;" name="add"></ion-icon></ion-button>
+
+
+          </ion-col>
+          <ion-col size="6" lass="ion-text-center">
+                  <ion-button  mode="ios" style="background-color: chocolate;" shape="round" expand="full" class="ion-text-wrap" >
+                    <span style="font-size: 12px; float: left;">Create Objective</span>
+                     <ion-icon slot="end" style="color: blueviolet;" name="add"></ion-icon>
+                  </ion-button>
+
+
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    </ion-toolbar>
+  </ion-footer> -->
+
+<!-- <ion-footer>
+      <table lines="none" style="width:100%; border-radius:15px;">
+          <tr>
+              <td align="center" style="width:50%;border-top:solid 1px #dcdcdc; height:30px; text-align:center; font-weight:bold;">
+                  <ion-item lines="none" tappable  (click)="closemodal('SAVE');" style="font-weight:bold; background:transparent; border-bottom-left-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+                      <ion-label style="color: #039CD9;">Create Goal</ion-label>
+                    <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+                  </ion-item>
+              </td>
+              <td align="center" style="width:50%;border-top:solid 1px #dcdcdc; height:30px; text-align:center;">
+                  <ion-item lines="none" tappable (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent; border-bottom-right-radius:15px;  margin:0 auto;  width:100%;  text-align:center; height:50px">
+                    <ion-label style="color: red;">Create Objective</ion-label>
+                    <ion-icon style="color: red;" name="close-circle-outline"></ion-icon>
+                  </ion-item>
+              </td>
+          </tr>
+      </table>
+    </ion-footer> -->
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" size="6" class="ion-text-center">
+          <!-- <ion-item style="background-color: red;" expand="full" class="ion-text-wrap min-max-width">
+                      <ion-label>Create Goal</ion-label>
+                        <ion-icon style="color: red;" name="add"></ion-icon>
+                    </ion-item> -->
+
+          <!-- <ion-chip text-center style="width: 100%; height: 40px; color: white; background-color: #f09d2e;" (click)="click_CreateGoal()">
+                        <ion-label text-align="center">   Create Goal</ion-label>
+                        <ion-icon style="color: white;" name="add"></ion-icon>
+                      </ion-chip> -->
+          <ion-button
+            shape="round"
+            size="medium"
+            fill="solid"
+            style="--background: #f09d2e; width: 155px;"
+            (click)="click_CreateGoal()">
+             <ion-icon style="color: white;" name="add"></ion-icon>
+              &nbsp;&nbsp;Goal</ion-button>
+        </ion-col>
+
+        <ion-col size-sm="6" size="6" class="ion-text-center">
+          <!-- <ion-item expand="full" class="ion-text-wrap min-max-width">
+                        <ion-label>Create Objective</ion-label>
+
+                        <ion-icon style="color: red;" name="add"></ion-icon>
+                    </ion-item> -->
+          <!-- <ion-chip text-center style="width: 100%; height: 40px; color: white; background-color: #f09d2e;" (click)="click_CreateObj()">
+                        <ion-label text-align="center"> Create Objective</ion-label>
+                        <ion-icon style="color: white;" name="add"></ion-icon>
+                      </ion-chip> -->
+          <ion-button
+            shape="round"
+            size="medium"
+            fill="solid"
+            style="--background: #f09d2e; width: 155px;"
+            (click)="click_CreateObj()"> <ion-icon style="color: white;" name="add"></ion-icon>
+            Objective </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
+
+<style>
+  .min-max-width {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+</style>

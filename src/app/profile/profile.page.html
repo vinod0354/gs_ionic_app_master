@@ -1,0 +1,159 @@
+
+
+
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button style="color: #f09d2e;"></ion-menu-button>
+      </ion-buttons>
+      <ion-title color="Medium"> Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content style="text-align: center;"  mode="ios">
+
+<!-- <form onsubmit="processForm(event)"> -->
+  <br><br>
+  <img src="{{ profilephoto }}"  style="width:90px; height:90px; border-radius:90px;" alt="Profile Image">
+  <br><br>
+  <a style="text-align: center; text-decoration: underline; color: black; border-bottom: solid 1px black;" (click)="presentActionSheet()">Edit</a>
+
+    <!-- <img src="{{ profilephoto }}" (click)="presentActionSheet()" width="20%" height="20%" alt="Profile Image"> -->
+    <ion-list class="ion-no-margin ion-no-padding" lines="none">
+        <ion-item>
+          <ion-label style="font-size: 16px;" position="stacked">User Name</ion-label>
+          <ion-input style="font-size: 15px; color: black;" class="roundedInput" required disabled  type="text" [(ngModel)]="username" oninput="handleFirstNameValue(event)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label style="font-size: 16px;" position="stacked">Role </ion-label>
+          <ion-input style="font-size: 15px; color: black;" class="roundedInput" required disabled type="text" [(ngModel)]="rolename" oninput="handleLastNameValue(event)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="font-size: 16px;" position="stacked">First Name </ion-label>
+            <ion-input style="font-size: 15px; color: black;" class="roundedInput" required  type="text" [(ngModel)]="firstname" oninput="handleLastNameValue(event)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="font-size: 16px;" position="stacked">Last Name </ion-label>
+            <ion-input style="font-size: 15px; color: black;" class="roundedInput" required  type="text" [(ngModel)]="lastname" oninput="handleLastNameValue(event)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="font-size: 16px;" position="stacked">Email </ion-label>
+            <ion-input style="font-size: 15px; color: black;" class="roundedInput" required  type="text" [(ngModel)]="email" oninput="handleLastNameValue(event)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="font-size: 16px;" position="stacked">Designation </ion-label>
+            <ion-input style="font-size: 15px; color: black;" class="roundedInput" required  type="text" [(ngModel)]="designation" oninput="handleLastNameValue(event)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="font-size: 16px;" position="stacked">Employee Id </ion-label>
+            <ion-input style="font-size: 15px; color: black;" class="roundedInput" required  type="text" [(ngModel)]="employeeid" oninput="handleLastNameValue(event)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style="font-size: 16px;" position="stacked">Phone Number </ion-label>
+            <ion-input style="font-size: 15px; color: black;" class="roundedInput" required  type="text" [(ngModel)]="phonenumber" oninput="handleLastNameValue(event)"></ion-input>
+        </ion-item>
+
+    </ion-list>
+    <!-- <br><br> -->
+
+    <!-- <ion-grid>
+        <ion-row class="ion-align-items-center" style="margin:0px;padding:0px">
+          <ion-col class="ion-align-self-center" style="margin:0px;padding:0px">
+            <ion-chip style="background-color: #f09d2e;" (click)="saveProfileData()">
+                <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+                <ion-label style="font-weight: bold; font-size: 16px; color: #039CD9;">Update</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+    </ion-grid> -->
+  
+
+<!-- </form> -->
+
+</ion-content>
+
+  
+<!-- <ion-footer class="ion-align-items-center" style="border-top: solid 1px lightgray;">
+  <ion-grid>
+      <ion-row class="bar bar-footer bar-light footer-buttons">
+        <ion-col class="bar bar-footer bar-light footer-buttons" size="12">
+          <ion-item class="ion-align-items-center" lines="none" (click)="closemodal('SAVE');" style="text-align: center; font-weight:bold; background:transparent; width:100%;  text-align:center !important; height:50px">
+            <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+            <ion-text  style="color: #039CD9; font-weight: bold;" class="ion-margin-start">Save</ion-text>
+        </ion-item>
+        </ion-col>
+       
+      </ion-row>
+    </ion-grid>
+
+</ion-footer> -->
+
+<!-- <ion-footer  style="text-align: center; border-top: solid 1px lightgray; background-color: white;">
+    <ion-grid>
+      <ion-row class="bar bar-footer bar-light footer-buttons" style="margin:0px;padding:0px" >
+        <ion-col class="bar bar-footer bar-light footer-buttons" style="margin:0px;padding:0px">
+          <ion-chip  (click)="saveProfileData()">
+            <ion-icon style="font-weight: bold;color: #039CD9;" name="checkmark-outline"></ion-icon>
+            <ion-label style="font-weight: bold; color: #039CD9;">Save</ion-label>
+          </ion-chip>
+          <ion-item lines="none" (click)="closemodal('SAVE');" style="text-align: center; font-weight:bold; background:transparent;  width:100%;  text-align:center; height:50px">
+            <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
+            <ion-text  style="color: #039CD9; font-weight: bold;" class="ion-margin-start">Save</ion-text>
+        </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-footer> -->
+
+<!-- <ion-footer>
+  <ion-grid >
+    <ion-row class="ion-align-items-center" style="margin:0px;padding:0px" >
+      <ion-col class="ion-align-self-center" style="margin:0px;padding:0px" >
+        <ion-text color="dark">
+          <h4 style="text-align: center;  font-size: 16px;" (click)="closeModal()">Cancel</h4>
+        </ion-text>
+      </ion-col>
+      <ion-col class="ion-align-self-center" style="margin:0px;padding:0px">
+        <ion-text color="primary">
+          <h4 style="text-align: center; font-weight: bold; font-size: 16px;" (click)="saveProfileData()">Save</h4>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer> -->
+
+<ion-footer style="border-top: solid 1px lightgray; background-color: white;">
+  <ion-grid>
+      <ion-row class="ion-text-center">
+
+        <ion-col  size="4" lines="none"  >
+          <ion-item lines="none" tappable  (click)="saveProfileData();"  style="font-weight:bold; background:transparent; width:100%;   text-align:center; height:50px">
+        </ion-item>
+        </ion-col>
+
+        <ion-col   style="text-align: center !important;" size="4" lines="none"  >
+          <ion-item class="cen" lines="none" tappable (click)="saveProfileData();" style="font-weight:bold; background-color: white; background:transparent; width:100%;  text-align:center !important; height:50px">
+            <ion-icon style="color: #039CD9; font-weight: bold;" name="checkmark-outline"></ion-icon>
+            <ion-text style="color: #039CD9; font-weight: bold;" >Save</ion-text>
+        </ion-item>
+        </ion-col>
+
+        <ion-col   size="4">
+          <ion-item lines="none" tappable  (click)="saveProfileData();"  style="font-weight:bold; background:transparent; width:100%;  text-align:center; height:50px">
+        </ion-item>
+        </ion-col>
+
+
+      </ion-row>
+    </ion-grid>
+
+</ion-footer>
+
