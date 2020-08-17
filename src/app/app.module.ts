@@ -19,6 +19,8 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { DatePipe } from '@angular/common';
 import { PipesModule } from './pipes/pipes.module';
 import { Camera } from '@ionic-native/camera/ngx';
+import { ChartsModule } from 'ng2-charts';
+import { Ng5SliderModule } from 'ng5-slider';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { Camera } from '@ionic-native/camera/ngx';
     AppRoutingModule,
     CategoryModalPageModule,
     BrowserAnimationsModule,
-    PipesModule
+    PipesModule,
+    ChartsModule,
+    Ng5SliderModule,
   ],
   providers: [
     StatusBar,

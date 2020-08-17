@@ -64,12 +64,15 @@ export class LoginPage implements OnInit {
               this.global.userId = currentUser.user.user_id;
               this.storage.setItem('enterprisedId', currentUser.user.enterprise_id);
               this.storage.setItem('userId', currentUser.user.user_id);
+              this.storage.setItem('username', currentUser.user.user_name);
               this.storage.setItem('userdeatils', currentUser);
-
+              localStorage.setItem('username', currentUser.user.user_name);
               this.storage.setItem('login', true);
 
               if(this.checkLengthGoal.length != 0 || this.checkLengthObjective.length != 0){
                 this.route.navigate(['/goalsobjective']);
+              }else if(currentUser.user.is_firsttime=='Y'){
+                this.route.navigate(['/forgot-password']);
               }else{
                 this.route.navigate(['/welcome']);
               }

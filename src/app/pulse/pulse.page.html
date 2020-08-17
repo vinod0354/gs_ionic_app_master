@@ -1,0 +1,282 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #f09d2e;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="Medium">Pulse</ion-title>
+    <ion-buttons slot="end">
+      <!-- <ion-button style="color: #f09d2e;">
+        <ion-icon style="color: #f09d2e;" name="search"></ion-icon>
+      </ion-button>
+      <ion-button  style="color: #f09d2e;">
+        <ion-icon style="color: #f09d2e;" name="funnel"></ion-icon>
+      </ion-button> -->
+      <ion-button style="color: #f09d2e;">
+        <ion-icon style="color: #f09d2e;" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form>
+  <div [ngSwitch]="segment">
+
+    <ion-list *ngSwitchCase="'personal'" class="padding">
+      <!--Ng Slider -->
+        <div class="form-group custom-slider" style="padding-top:30px;">
+          <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+       </div>
+        <!--Ng Slider -->
+        <div class="form-group" style="padding: 10px;">
+          <div style="padding-bottom: 30px;padding-top:15px;">
+            <ion-label >
+              I feel fulfilled personally
+            </ion-label>
+          </div>
+          <ion-input type="text" class="form-control input-class" placeholder="Add Comments"></ion-input>
+        </div>
+        <!--Button-->
+      <div class="text-center" style="padding-top: 20px;">
+      <label style="color: #e98604;"><ion-icon name="lock-closed-outline" style="padding-right:10px;"></ion-icon>Only you can see this</label><br><br>
+      <ion-button  class="buttons"><ion-icon name="add-circle" style="padding-right:10px;"></ion-icon>Add</ion-button>
+    </div>
+    <!--button-->
+
+    <!-- History Table -->
+    <div class="col-12 padding">
+      <ion-label>History</ion-label>
+   </div>
+    <ion-card class="card" style="max-height: 68vh;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+      <ion-card-content style="padding: 10px 15px 10px 15px !important;overflow-y: auto">
+                <div class="col-12 padding">
+                  <ion-label>2020</ion-label>
+                </div>
+              <div class="table-responsive">
+                  
+                  <table>
+                    <tbody>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 26</td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>                      
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 19</td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 03 </td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    </tr>
+                  
+                    </tbody>
+                  </table>
+              </div>
+              <div class="col-12 padding">
+                  <ion-label>2019</ion-label>
+              </div>
+              <div class="table-responsive">
+                  <table>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 26</td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>                      
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 19</td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 03 </td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 26</td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>                      
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 19</td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 03 </td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 26</td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>                      
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 19</td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jun 03 </td>
+                        <td>Compliment from boss</td>
+                        <td><ion-icon name="lock-closed-outline"></ion-icon></td>
+                    </tr>
+                  </table>
+              </div>
+               <!-- History Table -->
+      </ion-card-content>
+    </ion-card>
+    </ion-list>
+    <!-- History Table -->
+
+
+   
+
+
+    <ion-list *ngSwitchCase="'profession'" class="padding">
+       <!--Ng Slider -->
+        <div class="form-group custom-slider" style="padding-top:30px;">
+          <ng5-slider [(value)]="value2" [options]="options2"></ng5-slider>
+       </div>
+        <!--Ng Slider -->
+      <div class="form-group" style="padding: 10px;">
+        <div class="" style="padding-bottom: 30px;padding-top:15px;">
+          <ion-label >
+          I feel engaged professionally
+        </ion-label></div>
+      </div>
+       <!--Ng Slider -->
+        <div class="form-group custom-slider2" style="padding-top:30px;">
+          <ng5-slider [(value)]="value3" [options]="options3"></ng5-slider>
+       </div>
+        <!--Ng Slider -->
+      <div class="form-group" style="padding: 10px;">
+        <div class="" style="padding-bottom: 30px;padding-top: 15px;">
+          <ion-label>
+            I expect to be here 12 months
+          </ion-label>
+        </div>
+        <ion-input type="text" class="form-control input-class" placeholder="Add Comments"></ion-input>
+      </div>
+      <div class="text-center" style="padding-top: 20px;">
+        <label><ion-icon name="lock-open-outline" style="padding-right: 10px;"></ion-icon>Submit with name</label><br><br>
+        <label style="color: #1089CE;"><ion-icon name="lock-closed-outline" style="padding-right: 10px;color: #1089CE;"></ion-icon>Submit Anonymously</label><br><br>
+        <ion-button class="buttons"><ion-icon name="arrow-up-circle" style="padding-right:5px;"></ion-icon>Submit</ion-button>
+      </div>
+
+       <!-- History Table -->
+
+      <div class="col-12 padding">
+        <ion-label>History</ion-label>
+     </div>
+      <ion-card class="card" style="max-height: 68vh;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+        <ion-card-content style="padding: 10px 15px 10px 15px !important;overflow-y: auto">
+                <div class="col-12 padding">
+                    <ion-label>2020</ion-label>
+                  </div>
+                <div class="table-responsive">
+                    
+                    <table>
+                      <tbody>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 26</td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>                      
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 19</td>
+                          <td>Compliment from boss</td>
+                          <td> <ion-icon name="lock-open-outline"></ion-icon></td>
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 03 </td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>
+                      </tr>
+                    
+                      </tbody>
+                    </table>
+                </div>
+                <div class="col-12 padding">
+                    <ion-label>2019</ion-label>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 26</td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>                      
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 19</td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 03 </td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 26</td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>                      
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 19</td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 03 </td>
+                          <td>Compliment from boss</td>
+                          <td> <ion-icon name="lock-open-outline"></ion-icon></td>
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 26</td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>                      
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 19</td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>
+                      </tr>
+                      <tr>
+                          <td style="vertical-align: middle;">Jun 03 </td>
+                          <td>Compliment from boss</td>
+                          <td><ion-icon name="lock-open-outline"></ion-icon></td>
+                      </tr>
+                    </table>
+                </div>
+        </ion-card-content>
+      </ion-card>
+
+       <!-- History Table -->
+       
+    </ion-list>
+  </div>
+
+</form>
+  
+  
+
+</ion-content>
+
+<ion-footer>
+  <ion-segment class="segment-button" [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
+    
+    <ion-segment-button value="profession">
+      Professional
+    </ion-segment-button>
+    <ion-segment-button value="personal">
+      Personal
+    </ion-segment-button>
+
+  </ion-segment>
+</ion-footer>

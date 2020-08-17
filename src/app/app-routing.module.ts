@@ -71,7 +71,8 @@ const routes: Routes = [
   {
     path: 'action-creation',
     loadChildren: () => import('./action-creation/action-creation.module').then( m => m.ActionCreationPageModule)
-  },  {
+  },
+  {
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
   },
@@ -86,10 +87,15 @@ const routes: Routes = [
   {
     path: 'compass',
     loadChildren: () => import('./compass/compass.module').then( m => m.CompassPageModule)
+  },  {
+    path: 'pulse',
+    loadChildren: () => import('./pulse/pulse.module').then( m => m.PulsePageModule)
+  },
+  {
+    path: 'progress-tracker',
+    loadChildren: () => import('./progress-tracker/progress-tracker.module').then( m => m.ProgressTrackerPageModule)
   }
 
-
-  
 
 
 ];

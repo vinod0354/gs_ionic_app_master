@@ -23,6 +23,12 @@ login(objUser: any): Observable<HttpResponse<any>> {
   return this.http.post<any>(URL, objUser, { observe: 'response' });
 }
 
+/***** Change Password *****/
+changePassword(body): Observable<HttpResponse<any>> {
+  let url = this.baseUrl + '/gs/user/changePassword';
+  return this.http.post<any>(url, body,{ observe: 'response' });
+}
+
 /***** Catagories *****/
 getCatagories(userId,enterpriseId):Observable<HttpResponse<any>> {
   let URL = this.baseUrl + '/gs/actions/categories/' + userId + '/' + enterpriseId + '';
