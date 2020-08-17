@@ -78,6 +78,14 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'guiding-principles',
+    loadChildren: () => import('./guiding-principles/guiding-principles.module').then( m => m.GuidingPrinciplesPageModule)
+  },
+  {
+    path: 'compass',
+    loadChildren: () => import('./compass/compass.module').then( m => m.CompassPageModule)
   }
 
 

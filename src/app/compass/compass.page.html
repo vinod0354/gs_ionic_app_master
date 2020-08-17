@@ -1,0 +1,204 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #f09d2e;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="Medium"> Compass</ion-title>
+</ion-toolbar>
+</ion-header>
+<ion-content>
+  <div style="display: block; padding-top:20px;">
+    <canvas id="yudhatp-chart"  width="100" height="100"></canvas>
+  </div>
+
+  <form>
+    <ion-grid style="padding-left:30px; padding-top:20px;" >
+      <ion-row > 
+          <ion-col size="9">
+            <ion-icon name="ellipse" style="color: #296A85;" class="icon"></ion-icon>
+            <ion-label for="role-id">Work</ion-label> 
+          </ion-col>
+          <ion-col size="3">
+             <ion-input class="box"></ion-input>
+          </ion-col>
+      </ion-row>
+    <ion-row> 
+      <ion-col size="9" >
+         <ion-icon name="ellipse" style="color: #31B5CE;" class="icon"></ion-icon>
+        <ion-label for="role-id">Health</ion-label>  
+      </ion-col>
+      <ion-col size="3">
+         <ion-input class="box"></ion-input>
+      </ion-col>
+    </ion-row> 
+    <ion-row> 
+      <ion-col size="9" >
+         <ion-icon name="ellipse" style="color: #FFCE56;" class="icon"></ion-icon>
+         <ion-label for="role-id">Home</ion-label>  
+      </ion-col>
+      <ion-col size="3">
+         <ion-input class="box"></ion-input>
+      </ion-col>
+    </ion-row> 
+    <ion-row> 
+      <ion-col size="9" >
+         <ion-icon name="ellipse" style="color: #316B3F;" class="icon"></ion-icon>
+        <ion-label for="role-id">Finances</ion-label>  
+      </ion-col>
+      <ion-col size="3">
+         <ion-input class="box"></ion-input>
+      </ion-col>
+    </ion-row> 
+    <ion-row> 
+      <ion-col size="9" >
+         <ion-icon name="ellipse" style="color: #DAF7A6;" class="icon"></ion-icon>
+         <ion-label for="role-id">Social</ion-label>   
+      </ion-col>
+      <ion-col size="3">
+         <ion-input class="box"></ion-input>
+      </ion-col>
+    </ion-row> 
+    <ion-row> 
+      <ion-col size="9" >
+         <ion-icon name="ellipse" style="color: #8331CE;" class="icon"></ion-icon>
+        <ion-label for="role-id">Projects</ion-label>
+      </ion-col>
+      <ion-col size="3">
+         <ion-input class="box"></ion-input>
+      </ion-col>
+    </ion-row> 
+    <ion-row> 
+      <ion-col size="9" >
+         <ion-icon name="ellipse" style="color: #9ed127;" class="icon"></ion-icon>
+          <ion-label for="role-id">Personal Development</ion-label>   
+      </ion-col>
+      <ion-col size="3">
+         <ion-input class="box"></ion-input>
+      </ion-col>
+    </ion-row> 
+    <ion-row> 
+      <ion-col size="9" >
+         <ion-icon name="ellipse" style="color: #2A3486;" class="icon"></ion-icon>
+          <ion-label for="role-id">Mischellaneous</ion-label>   
+      </ion-col>
+      <ion-col size="3">
+         <ion-input class="box"></ion-input>
+      </ion-col>
+    </ion-row>    
+</ion-grid>
+<ion-row>
+   <ion-col size="9">
+     <ion-label style="padding-left:50px; font-weight:bold; ">Overall Average</ion-label> 
+   </ion-col>
+   <ion-col size="3">
+      <ion-label style="padding-left:10px;">3.5</ion-label>
+   </ion-col>  
+</ion-row>
+<ion-row style="padding-left: 20px; padding-right: 20px;">
+   <ion-col>
+      <ion-input type="text" class="form-control input-class" placeholder="Add Comments"></ion-input>
+   </ion-col>
+</ion-row>
+  <div style="text-align:center;">
+    <ion-button
+            shape="round"
+            size="medium"
+            fill="solid"
+            style="--background: #9ed127;" 
+            class="buttons;"
+            >
+             <ion-icon style="color: white;" name="add-circle"></ion-icon>
+              &nbsp;&nbsp;Add</ion-button>
+  </div>
+  
+</form>
+<div class="col-12" style="padding-top:20px;">
+  <label style="padding-left:20px; ">History</label>
+</div>
+        <ion-card>
+           <div class="card" style="max-height: 68vh;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+              <div class="card-body" style="padding: 10px 15px 10px 15px !important;overflow-y: auto">
+                  <div class="col-12" class="space">
+                     <label>2020</label>
+                  </div>
+                 <div class="table-responsive">
+                    
+                    <table >
+                       <tbody>
+                       <tr>
+                          <td style="vertical-align: middle;" class="space"  >Jun 26</td>
+                          <td class="space" >Compliant from boss</td>                     
+                       </tr>
+                       <tr>
+                          <td style="vertical-align: middle;" class="space">Jun 19</td>
+                          <td class="space">Compliant from boss</td>
+                       </tr>
+                       <tr>
+                          <td style="vertical-align: middle;" class="space">Jun 03 </td>
+                          <td class="space">Compliant from boss</td>
+                       </tr>
+                    
+                       </tbody>
+                    </table>
+                 </div>
+                 <div class="col-6" class="space">
+                    <label>2019</label>
+                 </div>
+                 <div class="table-responsive">
+                    <table  >
+                      <tbody>
+                        <tr>
+                           <td style="vertical-align: middle;" class="space">Jun 26</td>
+                           <td class="space">Compliant from boss</td>
+                           <!-- <td> <i class="fa fa-unlock-alt" aria-hidden="true"></i></td>                       -->
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: middle;" class="space">Jun 19</td>
+                           <td class="space">Compliant from boss</td>
+                           <!-- <td> <i class="fa fa-unlock-alt" aria-hidden="true"></i></td> -->
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: middle;" class="space">Jun 03 </td>
+                           <td class="space">Compliant from boss</td>
+                           <!-- <td> <i class="fa fa-unlock-alt" aria-hidden="true"></i></td> -->
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: middle;" class="space">Jun 26</td>
+                           <td class="space">Compliant from boss</td>
+                           <!-- <td> <i class="fa fa-unlock-alt" aria-hidden="true"></i></td>                       -->
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: middle;" class="space">Jun 19</td>
+                           <td class="space">Compliant from boss</td>
+                           <!-- <td> <i class="fa fa-unlock-alt" aria-hidden="true"></i></td> -->
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: middle;" class="space">Jun 03 </td>
+                           <td class="space">Compliant from boss</td>
+                           <!-- <td> <i class="fa fa-unlock-alt" aria-hidden="true"></i></td> -->
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: middle;" class="space">Jun 26</td>
+                           <td class="space">Compliant from boss</td>
+                           <!-- <td> <i class="fa fa-unlock-alt" aria-hidden="true"></i></td>                       -->
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: middle;" class="space">Jun 19</td>
+                           <td class="space">Compliant from boss</td>
+                           <!-- <td> <i class="fa fa-unlock-alt" aria-hidden="true"></i></td> -->
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: middle;" class="space">Jun 03 </td>
+                           <td class="space">Compliant from boss</td>
+                           <!-- <td> <i class="fa fa-unlock-alt" aria-hidden="true"></i></td> -->
+                        </tr>
+                      </tbody>
+                    </table>
+                 </div>
+              </div>
+           </div>
+       
+</ion-card>
+  
+</ion-content>
+
