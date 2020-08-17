@@ -169,9 +169,11 @@
               style="--background: #f09d2e;"
               type="submit"
               [disabled]="form.invalid"
-              >Login</ion-button
-            >
+              >Login</ion-button>
           </div>
+          <p class="ion-text-center">
+            <a [routerLink]="['/forgot-password']">Forgot Password ?</a>
+          </p>
         </ion-col>
       </ion-row>
     </ion-grid>

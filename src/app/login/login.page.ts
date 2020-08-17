@@ -72,7 +72,7 @@ export class LoginPage implements OnInit {
               if(this.checkLengthGoal.length != 0 || this.checkLengthObjective.length != 0){
                 this.route.navigate(['/goalsobjective']);
               }else if(currentUser.user.is_firsttime=='Y'){
-                this.route.navigate(['/forgot-password']);
+                this.route.navigate(['/change-password']);
               }else{
                 this.route.navigate(['/welcome']);
               }

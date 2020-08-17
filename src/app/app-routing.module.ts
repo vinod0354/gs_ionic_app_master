@@ -94,6 +94,14 @@ const routes: Routes = [
   {
     path: 'progress-tracker',
     loadChildren: () => import('./progress-tracker/progress-tracker.module').then( m => m.ProgressTrackerPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'change-password',
+    loadChildren: () => import('./change-password/change-password.module').then( m => m.ChangePasswordPageModule)
   }
 
 

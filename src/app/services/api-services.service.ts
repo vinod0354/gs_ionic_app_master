@@ -29,6 +29,13 @@ changePassword(body): Observable<HttpResponse<any>> {
   return this.http.post<any>(url, body,{ observe: 'response' });
 }
 
+/***** Forgot-Password *****/
+forgotpassword(body: any): Observable<HttpResponse<any>> {
+  let URL = this.baseUrl + '/gs/user/forgotpassword/';
+  console.log(URL);
+  return this.http.get<string>(URL + body,  {observe: 'response' });
+}
+
 /***** Catagories *****/
 getCatagories(userId,enterpriseId):Observable<HttpResponse<any>> {
   let URL = this.baseUrl + '/gs/actions/categories/' + userId + '/' + enterpriseId + '';
