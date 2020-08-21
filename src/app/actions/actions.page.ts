@@ -7,7 +7,7 @@ import { GlobalsService } from '../services/globals.service';
 import { ApiServicesService } from '../services/api-services.service';
 import { DatePipe } from '@angular/common';
 import { SearchPage } from '../search/search.page';
-
+import * as moment from 'moment';
 
 
 mobiscroll.settings = {
@@ -21,6 +21,8 @@ const now = new Date();
   styleUrls: ['./actions.page.scss'],
 })
 export class ActionsPage implements OnInit {
+
+	segment: string;
 
 	displayIfNoCategories = false;
   	allCatogeries: any[] = [];
@@ -52,16 +54,18 @@ export class ActionsPage implements OnInit {
 	thisWeekActionList = [];
 	beyondList = [];
 	searchBy: any;
-  chunkCount = 0;
-  chunkTotalcount = this.chunkCount.toString().padStart(2, '0');
+	chunkCount = 0;
+	chunkTotalcount = this.chunkCount.toString().padStart(2, '0');
 	catogeryNames:any[] = [];
 	catogeryNames_1= ['moviesList'];
 	visible = false;
+	sortvisible = false;
 	markedDay: Date;
 	markedDays = [];
 	markedDays_strings = [];
 
-
+	days = [];
+	daysRequired = 6;
 
 //   listviewOptions: MbscListviewOptions = {
 //       theme: 'material',
@@ -92,7 +96,37 @@ export class ActionsPage implements OnInit {
    }
 
   ngOnInit() {
-    this.getCategoriesforActions();
+	this.getCategoriesforActions();
+	this.segment = 'find';
+
+	for (let i = 0; i <= this.daysRequired; i++) {
+		if (i == 0) {
+			this.days.push( 
+				{displayDate : 'Do Today',
+					formatDate:moment().add(i, 'days').format('YYYY-MM-DD')
+				}
+			 );
+		}else if(i == 1) {
+			this.days.push(
+				{displayDate : 'Tomorrow',
+					formatDate:moment().add(i, 'days').format('YYYY-MM-DD')
+				}
+			);
+		}else {
+			this.days.push( 
+				{displayDate : moment().add(i, 'days').format('dddd Do'),
+					formatDate:moment().add(i, 'days').format('YYYY-MM-DD')
+				}
+			 );
+		}
+	
+	}
+
+	console.log(this.days)
+  }
+
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
   }
 
   async openModal(type,input) {
@@ -368,8 +402,13 @@ export class ActionsPage implements OnInit {
   return Math.floor((utc2 - utc1) / _MS_PER_DAY);
 }
 
-	clickheader(data) {
-		this.chunkActions[data].visible = !this.chunkActions[data].visible;
+	clickheader(data, src) {
+		if(src == 'find') {
+			this.chunkActions[data].visible = !this.chunkActions[data].visible;
+		} else {
+			this.chunkActions[data].sortvisible = !this.chunkActions[data].sortvisible;
+		}
+		
 		// console.log('Header clicked');
 		// console.log(data);
 
@@ -549,6 +588,7 @@ this.updateOnDragDrop(this.dumpActions[event.currentIndex]);
 				if(this.chunkActions.length > 0){
 					this.displayIfNoCategories = false;
 					this.chunkActions[this.click_header_index]['visible'] = true;
+					this.chunkActions[this.click_header_index]['sortvisible'] = true;
 				}else{
 					this.displayIfNoCategories = true;
 				}

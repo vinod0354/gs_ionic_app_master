@@ -27,16 +27,34 @@
   </ion-refresher>
 
   
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
-    <ion-fab-button (click)="openModal('create','')">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-<div class="scrolling-wrapper-flexbox">
-<!-- First Block -->
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-row>
+      <ion-col size="10">
+        <ion-segment class="segment-button" [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
+          <ion-segment-button value="find">
+            Find
+          </ion-segment-button>
+          <ion-segment-button value="sort">
+            Sort
+          </ion-segment-button>
+          <ion-segment-button value="do">
+            Do
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+      <ion-col size="2">
+        <ion-fab-button (click)="openModal('create','')">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+    </ion-row>
+  </ion-fab> -->
+    <div [ngSwitch]="segment">
+      <div class="scrolling-wrapper-flexbox" *ngSwitchCase="'find'">
+        <!-- First Block -->
         <div class="card" style="width:75%; margin-right:5px">
-          <ion-card >
-            <ion-card-header   style="background-color: white; padding:5px; border-bottom: lightgray 1px solid;">
+          <ion-card style="border: none; box-shadow: none;">
+            <!-- <ion-card-header   style="background-color: white; padding:5px; border-bottom: lightgray 1px solid;">
               <ion-grid style="padding:0px">
                 <ion-row class="ion-align-items-center">
                   <ion-col class="ion-align-self-center"  style="padding:4px">
@@ -44,50 +62,61 @@
                   </ion-col>
                 </ion-row>
               </ion-grid>
-            </ion-card-header>
+            </ion-card-header> -->
             <ion-card-content>
-
-    <div
-
-    cdkDropList
-    id = 'moviesList'
-    [cdkDropListData]="dumpActions"
-    [cdkDropListConnectedTo]="catogeryNames"
-      class="example-list"
-      (cdkDropListDropped)="onDropFind($event)">
-      <!-- <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div> -->
-      <ion-card  (click)="openModal('find',item)" style="flex-direction: row;cursor: move;" *ngFor="let item of dumpActions | userExtract: terms;" cdkDrag>
-
-      <!-- <ion-card  (click)="openModal('find',item)" style="flex-direction: row;cursor: move;" *ngFor="let item of dumpActions | userExtract: searchBy ;" cdkDrag> -->
-        <ion-card-header>
-          <ion-grid style="padding:0px">
-            <ion-row class="ion-align-items-center">
-              <ion-col class="ion-align-self-center"  style="padding:4px">
-                <span style="float:left; padding-left:4px; padding-top:4px" >{{item.action}}</span>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card-header>
-      </ion-card>
-
-      <ion-row *ngIf="dumpActions.length == 0">
-        <ion-col>
-          <div style="text-align: center;">
-              No Actions
-          </div>
-        </ion-col>
-      </ion-row>
-
-    </div>
-    <div style="text-align:center; margin-left:5px; margin-right:5px; padding: 5px; border:lightgray 1px solid; margin-top:10px; margin-bottom:10px; background-color: rgba(211, 211, 211, 0.329);"  (click)="openModal('create','')">Add a quick action</div>
-
+              <!-- <div style="text-align:center; margin-left:5px; margin-right:5px; padding: 5px; border:lightgray 1px solid; margin-top:10px; margin-bottom:10px; background-color: rgba(211, 211, 211, 0.329);"  (click)="openModal('create','')">Add a quick action</div> -->
+              <ion-row>
+                <ion-col size="10">
+                  <input type="text" class="default-input" placeholder="Add action">
+                </ion-col>
+                <ion-col size="2" class="ion-text-center">
+                  <i class="fa fa-plus" style="color: #f18a11;" (click)="openModal('create','')"></i>
+                </ion-col>
+              </ion-row>
+              <div
+                cdkDropList
+                id = 'moviesList'
+                [cdkDropListData]="dumpActions"
+                [cdkDropListConnectedTo]="catogeryNames"
+                class="example-list"
+                (cdkDropListDropped)="onDropFind($event)">
+                <ion-card  (click)="openModal('find',item)" style="flex-direction: row;cursor: move; height: 60px;" *ngFor="let item of dumpActions | userExtract: terms;" cdkDrag>
+                  <ion-card-header>
+                    <ion-grid style="padding:0px">
+                      <ion-row class="ion-align-items-center">
+                        <ion-col class="ion-align-self-center"  style="padding:4px">
+                          <span style="float:left; padding-left:4px; padding-top:4px" ><i class="icon-find"></i>{{item.action}}</span>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card-header>
+                </ion-card>
+  
+                <!-- <ion-row *ngIf="dumpActions.length == 0">
+                  <ion-col>
+                    <div style="text-align: center;">
+                        No Actions
+                    </div>
+                  </ion-col>
+                </ion-row> -->
+              </div>
+              
+  
             </ion-card-content>
           </ion-card>
+
+          <ion-row *ngIf="dumpActions.length == 0">
+            <ion-col>
+              <div style="text-align: center;">
+                  <img src="assets/img/action-rings.png" alt="" style="height: 200px;">
+              </div>
+            </ion-col>
+          </ion-row>
         </div>
-      <!-- Second Block -->
+        <!-- Second Block -->
         <div class="card" style="width:80%; margin-right:5px">
-          <ion-card >
-            <ion-card-header   style="background-color: white; padding:5px; border-bottom: lightgray 1px solid;">
+          <ion-card style="border: none; box-shadow: none;">
+            <!-- <ion-card-header   style="background-color: white; padding:5px; border-bottom: lightgray 1px solid;">
               <ion-grid style="padding:0px">
                 <ion-row class="ion-align-items-center">
                   <ion-col class="ion-align-self-center"  style="padding:4px">
@@ -95,8 +124,8 @@
                   </ion-col>
                 </ion-row>
               </ion-grid>
-            </ion-card-header>
-
+            </ion-card-header> -->
+  
             <ion-row *ngIf="displayIfNoCategories">
               <ion-col>
                 <div style="text-align: center;">
@@ -104,242 +133,384 @@
                 </div>
               </ion-col>
             </ion-row>
-
-
-              <ion-card *ngFor="let data of chunkActions;let i = index">
-                <ion-card-header (click)="data.visible = !data.visible;clickedheader(i)" [ngStyle]="{'background-color':data.color}">
+              
+            <ion-card *ngFor="let data of chunkActions;let i = index" [ngStyle]="{'border-color': data.color}">
+                <ion-card-header (click)="data.visible = !data.visible;clickedheader(i, 'find')">
                   <ion-grid style="padding:0px">
                     <ion-row class="ion-align-items-center">
                       <ion-col class="ion-align-self-center"  style="padding:0px">
-                        <span style="float:left; font-size: large; padding:4px; margin-top:2px; color:white; " >{{data.name}}</span>
+                        <span style="float:left; font-size: large; padding:4px; margin-top:2px;" >{{data.name}}</span>
                         <!-- <span style="text-align:center;vertical-align: middle; color:white; font-size: large; float:right;">
                           <span style="padding:5px">{{data.actions.length}}</span>
                         </span> -->
-
-                        <span *ngIf="deviceType=='ios'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
+  
+                        <!-- <span *ngIf="deviceType=='ios'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
                           <span style="margin-top: 5px;">{{data.actions.length}}</span>
-                       </span>
-
-                       <span  *ngIf="deviceType=='android'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
-                        <span style="margin-top: 5px; line-height: 1.7;">{{data.actions.length}}</span>
-                     </span>
-
-
+                        </span> -->
+  
+                        <!-- <span  *ngIf="deviceType=='android'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
+                          <span style="margin-top: 5px; line-height: 1.7;">{{data.actions.length}}</span>
+                        </span> -->
                       </ion-col>
                     </ion-row>
                   </ion-grid>
                 </ion-card-header>
                 <ion-card-content *ngIf="data.visible" >
-
+  
                   <div
-                  cdkDropList
-                        id = "{{data.name}}"
-                        [cdkDropListData]="data.actions"
-                        [cdkDropListConnectedTo]="['moviesList']"
-                        class="movie-list"
-                  class="example-list"
-                  (cdkDropListDropped)="onDrop($event)">
-                  <div   class="card" style="margin: 0px;border: none;" cdkDrag>
-                  <div  *cdkDragPlaceholder style="border: none;"></div>
-                </div>
-                <ion-card >
-                  <ion-card-header (click)="openModal('sortplus',data)">
-                    <ion-grid style="padding:0px" >
-                      <ion-row class="ion-align-items-center">
-                        <ion-col class="ion-align-self-center"  style="padding:4px">
-                          <span style="float:left; padding-left:4px; padding-top:4px" >Add Quick Action</span>
-                        </ion-col>
-                      </ion-row>
-                    </ion-grid>
-                  </ion-card-header>
-                </ion-card>
-
-                <div   class="card" style="margin: 0px;border: none;" cdkDrag>
-                  <div  *cdkDragPlaceholder style="border: none;"></div>
+                    cdkDropList
+                    id = "{{data.name}}"
+                    [cdkDropListData]="data.actions"
+                    [cdkDropListConnectedTo]="['moviesList']"
+                    class="movie-list"
+                    class="example-list"
+                    (cdkDropListDropped)="onDrop($event)">
+                    <div   class="card" style="margin: 0px;border: none;" cdkDrag>
+                      <div  *cdkDragPlaceholder style="border: none;"></div>
+                    </div>
+                    <!-- <ion-card >
+                      <ion-card-header (click)="openModal('sortplus',data)">
+                        <ion-grid style="padding:0px" >
+                          <ion-row class="ion-align-items-center">
+                            <ion-col class="ion-align-self-center"  style="padding:4px">
+                              <span style="float:left; padding-left:4px; padding-top:4px" >Add Quick Action</span>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-header>
+                    </ion-card> -->
+                    <ion-row>
+                      <ion-col size="10">
+                        <input type="text" class="default-input" placeholder="Add action" [ngStyle]="{'border-color': data.color}">
+                      </ion-col>
+                      <ion-col size="2" class="ion-text-center">
+                        <i class="fa fa-plus" [ngStyle]="{'color': data.color}" (click)="openModal('sortplus',data)"></i>
+                      </ion-col>
+                    </ion-row>
+  
+                    <div   class="card" style="margin: 0px;border: none;" cdkDrag>
+                      <div  *cdkDragPlaceholder style="border: none;"></div>
+                    </div>
+                    <!-- <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div> -->
+                    <ion-card style="flex-direction: row;cursor: move; height: 60px;" *ngFor="let data2 of data.actions | userExtract: terms;" (click)="openModal('edit',data2)" cdkDrag>
+                    <!-- <ion-card style="flex-direction: row;cursor: move;" *ngFor="let data2 of data.actions | userExtract: searchBy ;" (click)="openModal('edit',data2)" cdkDrag> -->
+                      <ion-card-header>
+                        <ion-grid style="padding:0px">
+                          <ion-row class="ion-align-items-center">
+                            <ion-col class="ion-align-self-center"  style="padding:4px">
+                              <span style="float:left; padding-left:4px; padding-top:4px" ><i class="icon-sort" [ngStyle]="{'border-color':data.color}"></i>{{data2.action}}</span>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-header>
+                    </ion-card>
                   </div>
-                  <!-- <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div> -->
-                  <ion-card style="flex-direction: row;cursor: move;" *ngFor="let data2 of data.actions | userExtract: terms;" (click)="openModal('edit',data2)" cdkDrag>
-                  <!-- <ion-card style="flex-direction: row;cursor: move;" *ngFor="let data2 of data.actions | userExtract: searchBy ;" (click)="openModal('edit',data2)" cdkDrag> -->
-                    <ion-card-header>
-                      <ion-grid style="padding:0px">
-                        <ion-row class="ion-align-items-center">
-                          <ion-col class="ion-align-self-center"  style="padding:4px">
-                            <span style="float:left; padding-left:4px; padding-top:4px" >{{data2.action}}</span>
-                          </ion-col>
-                        </ion-row>
-                      </ion-grid>
-                    </ion-card-header>
-                  </ion-card>
-                </div>
-
-
                 </ion-card-content>
               </ion-card>
           </ion-card>
         </div>
-<!-- Third Block -->
-<div class="card" style="width:100%; margin-right:5px">
-<ion-card >
-  <ion-card-header   style="background-color: white; padding:5px; border-bottom: lightgray 1px solid;">
-    <ion-grid style="padding:0px">
-      <ion-row class="ion-align-items-center">
-        <ion-col class="ion-align-self-center"  style="padding:0px">
-          <span style="float:left; font-size: large; padding:4px; margin-top:2px; color:black;font-weight: bold; " >Do</span>  <span style="padding-top: 5px; color:black; font-size: large; float:right;width:30px;height:30px;border-radius:30px;border:lightgray 1px solid">{{doActions.length<10 ? '0'+doActions.length : doActions.length }}</span>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card-header>
-  <ion-card-content>
-    <mbsc-form-group>
-      <mbsc-calendar [(ngModel)]="markedDay" display="inline" (onSet)="getDetailsofClick($event)" [marked]="markedDays"></mbsc-calendar>
-  </mbsc-form-group>
-    <div>
-      <ion-card style="margin-bottom: 5px !important">
-      <ion-card-header class="ion-no-padding" (click)="visible = !visible" style="--background:red;padding:0px !important">
-        <ion-item lines="none" style="--background:red">
-          <ion-label style="color:white !important;margin: 0px !important;">Overdue</ion-label>
-          <!-- <ion-text slot="end">{{overdueActionList.length}}</ion-text> -->
-          <span class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
-            <span style="margin-top: 5px;">{{overdueActionList.length}}</span>
-         </span>
-        </ion-item>
-      </ion-card-header>
-      <ion-card-content *ngIf="visible" class="ion-padding-top">
-        <ion-grid>
-          <ion-row *ngIf="overdueActionList.length == 0">
-            <ion-col>
-              <div style="text-align: center;">
-                  No Actions
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row *ngFor="let item1 of overdueActionList | userExtract: terms;" (click)="openModal('edit',item1)"  style="font-weight: normal;">
-          <!-- <ion-row *ngFor="let item1 of overdueActionList | userExtract: searchBy ;" (click)="openModal('edit',item1)"  style="font-weight: normal;"> -->
-            <ion-col size="1"
-              ><ion-text color="light" [style.background-color]="item1.color"
-                >{{item1.category_name | slice:0:1}}</ion-text
-              ></ion-col
-            >
-            <ion-col size="3">{{item1.target_date ? (item1.target_date | date: 'd MMM') : ''}}</ion-col>
-            <ion-col size="1">{{item1.priority_name | slice:0:1}}</ion-col>
-            <ion-col size="6">{{item1.action | slice:0:15}}</ion-col>
-          </ion-row>
-
-        </ion-grid>
-
-      </ion-card-content>
-    </ion-card>
-
-      <ion-card style="margin-bottom: 5px !important">
-      <ion-card-header class="ion-no-padding" (click)="visible2 = !visible2" style="--background:orange;padding:0px !important">
-        <ion-item lines="none" style="--background:orange">
-          <ion-label style="color:white !important;margin: 0px !important;">Today</ion-label>
-          <!-- <ion-text slot="end">{{todayActionList.length}}</ion-text> -->
-          <span class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
-            <span style="margin-top: 5px;">{{todayActionList.length}}</span>
-         </span>
-        </ion-item>
-      </ion-card-header>
-
-
-      <ion-card-content *ngIf="visible2" class="ion-padding-top">
-        <ion-grid>
-          <ion-row *ngIf="todayActionList.length == 0">
-            <ion-col>
-              <div style="text-align: center;">
-                  No Actions
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row *ngFor="let item2 of todayActionList | userExtract: terms;" (click)="openModal('edit',item2)"  style="font-weight: normal;">
-          <!-- <ion-row *ngFor="let item2 of todayActionList | userExtract: searchBy ;" (click)="openModal('edit',item2)"  style="font-weight: normal;"> -->
-            <ion-col size="1"
-              ><ion-text color="light"  [style.background-color]="item2.color"
-                >{{item2.category_name | slice:0:1}}</ion-text
-              ></ion-col
-            >
-            <ion-col size="2">{{item2.target_date ? (item2.target_date | date: 'd MMM') : ''}} </ion-col>
-            <ion-col size="2">{{item2.priority_name | slice:0:1}}</ion-col>
-            <ion-col size="5">{{item2.action | slice:0:15}}</ion-col>
-          </ion-row>
-
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-    <ion-card style="margin-bottom: 5px !important">
-      <ion-card-header class="ion-no-padding" (click)="visible3 = !visible3" style="--background:green;padding:0px !important">
-        <ion-item lines="none" style="--background:green">
-          <ion-label style="color:white !important; margin: 0px !important;">This Week</ion-label>
-          <!-- <ion-text slot="end">{{thisWeekActionList.length}}</ion-text> -->
-          <span class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
-            <span style="margin-top: 5px;">{{thisWeekActionList.length}}</span>
-         </span>
-        </ion-item>
-      </ion-card-header>
-      <ion-card-content *ngIf="visible3" class="ion-padding-top">
-        <ion-grid>
-          <ion-row *ngIf="thisWeekActionList.length == 0">
-            <ion-col>
-              <div style="text-align: center;">
-                  No Actions
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row  *ngFor="let item3 of thisWeekActionList | userExtract: terms;" (click)="openModal('edit',item3)" style="font-weight: normal;">
-          <!-- <ion-row  *ngFor="let item3 of thisWeekActionList | userExtract: searchBy ;" (click)="openModal('edit',item3)" style="font-weight: normal;"> -->
-            <ion-col size="1">
-              <ion-text color="light"  [style.background-color]="item3.color">{{item3.category_name | slice:0:1}}</ion-text>
+        
+      </div>
+      <div class="scrolling-wrapper-flexbox" *ngSwitchCase="'sort'">
+        <!-- Second Block -->
+        <div class="card" style="width:80%; margin-right:5px">
+          <ion-card style="border: none; box-shadow: none;">
+            <!-- <ion-card-header   style="background-color: white; padding:5px; border-bottom: lightgray 1px solid;">
+              <ion-grid style="padding:0px">
+                <ion-row class="ion-align-items-center">
+                  <ion-col class="ion-align-self-center"  style="padding:4px">
+                    <span style="float:left; font-size: large; padding:4px; margin-top:2px; color:black;font-weight: bold; " >Sort</span>  <span style="padding-top: 5px; color:black; font-size: larger; float:right;width:30px;height:30px;border-radius:30px;border:lightgray 1px solid"> {{chunkTotalcount}}</span>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-header> -->
+  
+            <ion-row *ngIf="displayIfNoCategories">
+              <ion-col>
+                <div style="text-align: center;">
+                    No Categories
+                </div>
               </ion-col>
-            <ion-col size="2">{{item3.target_date ? (item3.target_date | date: 'd MMM') : ''}}</ion-col>
-            <ion-col size="2">{{item3.priority_name | slice:0:1}}</ion-col>
-            <ion-col size="5">{{item3.action | slice:0:15}}</ion-col>
-          </ion-row>
-
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
-    <ion-card style="margin-bottom: 5px !important">
-      <ion-card-header class="ion-no-padding" (click)="visible4 = !visible4" style="--background:blueviolet;padding:0px !important">
-        <ion-item lines="none" style="--background:blueviolet;">
-          <ion-label style="color:white !important; margin: 0px !important;">Beyond</ion-label>
-          <!-- <ion-text slot="end">{{thisWeekActionList.length}}</ion-text> -->
-          <span class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
-            <span style="margin-top: 5px;">{{beyondList.length}}</span>
-         </span>
-        </ion-item>
-      </ion-card-header>
-      <ion-card-content *ngIf="visible4" class="ion-padding-top">
-        <ion-grid>
-          <ion-row *ngIf="beyondList.length == 0">
-            <ion-col>
-              <div style="text-align: center;">
-                  No Actions
+            </ion-row>
+              
+            <ion-card *ngFor="let data of chunkActions;let i = index" [ngStyle]="{'border-color': data.color}">
+                <ion-card-header (click)="data.sortvisible = !data.sortvisible;clickedheader(i, 'sort')">
+                  <ion-grid style="padding:0px">
+                    <ion-row class="ion-align-items-center">
+                      <ion-col class="ion-align-self-center"  style="padding:0px">
+                        <span style="float:left; font-size: large; padding:4px; margin-top:2px;" >{{data.name}}</span>
+                        <!-- <span style="text-align:center;vertical-align: middle; color:white; font-size: large; float:right;">
+                          <span style="padding:5px">{{data.actions.length}}</span>
+                        </span> -->
+  
+                        <!-- <span *ngIf="deviceType=='ios'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
+                          <span style="margin-top: 5px;">{{data.actions.length}}</span>
+                        </span> -->
+  
+                        <!-- <span  *ngIf="deviceType=='android'" class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
+                          <span style="margin-top: 5px; line-height: 1.7;">{{data.actions.length}}</span>
+                        </span> -->
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-card-header>
+                <ion-card-content *ngIf="data.sortvisible" >
+  
+                  <div
+                    cdkDropList
+                    id = "{{data.name}}"
+                    [cdkDropListData]="data.actions"
+                    [cdkDropListConnectedTo]="['moviesList']"
+                    class="movie-list"
+                    class="example-list"
+                    (cdkDropListDropped)="onDrop($event)">
+                    <div   class="card" style="margin: 0px;border: none;" cdkDrag>
+                      <div  *cdkDragPlaceholder style="border: none;"></div>
+                    </div>
+                    <!-- <ion-card >
+                      <ion-card-header (click)="openModal('sortplus',data)">
+                        <ion-grid style="padding:0px" >
+                          <ion-row class="ion-align-items-center">
+                            <ion-col class="ion-align-self-center"  style="padding:4px">
+                              <span style="float:left; padding-left:4px; padding-top:4px" >Add Quick Action</span>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-header>
+                    </ion-card> -->
+                    <ion-row>
+                      <ion-col size="10">
+                        <input type="text" class="default-input" placeholder="Add action" [ngStyle]="{'border-color': data.color}">
+                      </ion-col>
+                      <ion-col size="2" class="ion-text-center">
+                        <i class="fa fa-plus" [ngStyle]="{'color': data.color}" (click)="openModal('sortplus',data)"></i>
+                      </ion-col>
+                    </ion-row>
+  
+                    <div   class="card" style="margin: 0px;border: none;" cdkDrag>
+                      <div  *cdkDragPlaceholder style="border: none;"></div>
+                    </div>
+                    <!-- <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div> -->
+                    <ion-card style="flex-direction: row;cursor: move; height: 60px;" *ngFor="let data2 of data.actions | userExtract: terms;" (click)="openModal('edit',data2)" cdkDrag>
+                    <!-- <ion-card style="flex-direction: row;cursor: move;" *ngFor="let data2 of data.actions | userExtract: searchBy ;" (click)="openModal('edit',data2)" cdkDrag> -->
+                      <ion-card-header>
+                        <ion-grid style="padding:0px">
+                          <ion-row class="ion-align-items-center">
+                            <ion-col class="ion-align-self-center"  style="padding:4px">
+                              <span style="float:left; padding-left:4px; padding-top:4px" ><i class="icon-sort" [ngStyle]="{'border-color':data.color}"></i>{{data2.action}}</span>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-header>
+                    </ion-card>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+          </ion-card>
+        </div>
+        <!-- Third Block -->
+        <div class="card" style="width:80%; margin-right:5px">
+          <ion-card style="border: none; box-shadow: none;">
+            <ion-card *ngFor="let day of days" style="height: 60px;">
+              <ion-card-header>
+                <ion-grid style="padding:0px">
+                  <ion-row class="ion-align-items-center">
+                    <ion-col class="ion-align-self-center"  style="padding:0px">
+                      <span style="float:left; font-size: large; padding:4px; margin-top:2px;" >{{ day.displayDate }}</span>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-header>
+            </ion-card>
+            <ion-card style="height: 60px;">
+              <ion-card-header>
+                <ion-grid style="padding:0px">
+                  <ion-row class="ion-align-items-center">
+                    <ion-col class="ion-align-self-center"  style="padding:0px">
+                      <span style="float:left; font-size: large; padding:4px; margin-top:2px;">Another Date</span>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-header>
+            </ion-card>
+          </ion-card>
+        </div>
+      </div>
+      <div *ngSwitchCase="'do'">
+        <!-- Third Block -->
+        <div class="card" style="width:100%; margin-right:5px">
+          <ion-card >
+            <ion-card-header   style="background-color: white; padding:5px; border-bottom: lightgray 1px solid;">
+              <ion-grid style="padding:0px">
+                <ion-row class="ion-align-items-center">
+                  <ion-col class="ion-align-self-center"  style="padding:0px">
+                    <span style="float:left; font-size: large; padding:4px; margin-top:2px; color:black;font-weight: bold; " >Do</span>  <span style="padding-top: 5px; color:black; font-size: large; float:right;width:30px;height:30px;border-radius:30px;border:lightgray 1px solid">{{doActions.length<10 ? '0'+doActions.length : doActions.length }}</span>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-header>
+            <ion-card-content>
+              <mbsc-form-group>
+                <mbsc-calendar [(ngModel)]="markedDay" display="inline" (onSet)="getDetailsofClick($event)" [marked]="markedDays"></mbsc-calendar>
+              </mbsc-form-group>
+              <div>
+                <ion-card style="margin-bottom: 5px !important">
+                  <ion-card-header class="ion-no-padding" (click)="visible = !visible" style="--background:red;padding:0px !important">
+                    <ion-item lines="none" style="--background:red">
+                      <ion-label style="color:white !important;margin: 0px !important;">Overdue</ion-label>
+                      <!-- <ion-text slot="end">{{overdueActionList.length}}</ion-text> -->
+                      <span class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
+                        <span style="margin-top: 5px;">{{overdueActionList.length}}</span>
+                    </span>
+                    </ion-item>
+                  </ion-card-header>
+                  <ion-card-content *ngIf="visible" class="ion-padding-top">
+                    <ion-grid>
+                      <ion-row *ngIf="overdueActionList.length == 0">
+                        <ion-col>
+                          <div style="text-align: center;">
+                              No Actions
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row *ngFor="let item1 of overdueActionList | userExtract: terms;" (click)="openModal('edit',item1)"  style="font-weight: normal;">
+                      <!-- <ion-row *ngFor="let item1 of overdueActionList | userExtract: searchBy ;" (click)="openModal('edit',item1)"  style="font-weight: normal;"> -->
+                        <ion-col size="1">
+                          <ion-text color="light" [style.background-color]="item1.color">{{item1.category_name | slice:0:1}}</ion-text>
+                        </ion-col>
+                        <ion-col size="3">{{item1.target_date ? (item1.target_date | date: 'd MMM') : ''}}</ion-col>
+                        <ion-col size="1">{{item1.priority_name | slice:0:1}}</ion-col>
+                        <ion-col size="6">{{item1.action | slice:0:15}}</ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card-content>
+                </ion-card>
+  
+                <ion-card style="margin-bottom: 5px !important">
+                  <ion-card-header class="ion-no-padding" (click)="visible2 = !visible2" style="--background:orange;padding:0px !important">
+                    <ion-item lines="none" style="--background:orange">
+                      <ion-label style="color:white !important;margin: 0px !important;">Today</ion-label>
+                      <!-- <ion-text slot="end">{{todayActionList.length}}</ion-text> -->
+                      <span class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
+                        <span style="margin-top: 5px;">{{todayActionList.length}}</span>
+                    </span>
+                    </ion-item>
+                  </ion-card-header>
+  
+  
+                  <ion-card-content *ngIf="visible2" class="ion-padding-top">
+                    <ion-grid>
+                      <ion-row *ngIf="todayActionList.length == 0">
+                        <ion-col>
+                          <div style="text-align: center;">
+                              No Actions
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row *ngFor="let item2 of todayActionList | userExtract: terms;" (click)="openModal('edit',item2)"  style="font-weight: normal;">
+                      <!-- <ion-row *ngFor="let item2 of todayActionList | userExtract: searchBy ;" (click)="openModal('edit',item2)"  style="font-weight: normal;"> -->
+                        <ion-col size="1">
+                          <ion-text color="light"  [style.background-color]="item2.color">{{item2.category_name | slice:0:1}}</ion-text>
+                        </ion-col>
+                        <ion-col size="2">{{item2.target_date ? (item2.target_date | date: 'd MMM') : ''}} </ion-col>
+                        <ion-col size="2">{{item2.priority_name | slice:0:1}}</ion-col>
+                        <ion-col size="5">{{item2.action | slice:0:15}}</ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card-content>
+                </ion-card> 
+                <ion-card style="margin-bottom: 5px !important">
+                  <ion-card-header class="ion-no-padding" (click)="visible3 = !visible3" style="--background:green;padding:0px !important">
+                    <ion-item lines="none" style="--background:green">
+                      <ion-label style="color:white !important; margin: 0px !important;">This Week</ion-label>
+                      <!-- <ion-text slot="end">{{thisWeekActionList.length}}</ion-text> -->
+                      <span class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
+                        <span style="margin-top: 5px;">{{thisWeekActionList.length}}</span>
+                    </span>
+                    </ion-item>
+                  </ion-card-header>
+                  <ion-card-content *ngIf="visible3" class="ion-padding-top">
+                    <ion-grid>
+                      <ion-row *ngIf="thisWeekActionList.length == 0">
+                        <ion-col>
+                          <div style="text-align: center;">
+                              No Actions
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row  *ngFor="let item3 of thisWeekActionList | userExtract: terms;" (click)="openModal('edit',item3)" style="font-weight: normal;">
+                      <!-- <ion-row  *ngFor="let item3 of thisWeekActionList | userExtract: searchBy ;" (click)="openModal('edit',item3)" style="font-weight: normal;"> -->
+                        <ion-col size="1">
+                          <ion-text color="light"  [style.background-color]="item3.color">{{item3.category_name | slice:0:1}}</ion-text>
+                        </ion-col>
+                        <ion-col size="2">{{item3.target_date ? (item3.target_date | date: 'd MMM') : ''}}</ion-col>
+                        <ion-col size="2">{{item3.priority_name | slice:0:1}}</ion-col>
+                        <ion-col size="5">{{item3.action | slice:0:15}}</ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card-content>
+                </ion-card>
+                <ion-card style="margin-bottom: 5px !important">
+                  <ion-card-header class="ion-no-padding" (click)="visible4 = !visible4" style="--background:blueviolet;padding:0px !important">
+                    <ion-item lines="none" style="--background:blueviolet;">
+                      <ion-label style="color:white !important; margin: 0px !important;">Beyond</ion-label>
+                      <!-- <ion-text slot="end">{{thisWeekActionList.length}}</ion-text> -->
+                      <span class="roundbutton" style="text-align:center;vertical-align: middle; color:red; padding-top:3px !important; font-size:small; float:right;">
+                        <span style="margin-top: 5px;">{{beyondList.length}}</span>
+                    </span>
+                    </ion-item>
+                  </ion-card-header>
+                  <ion-card-content *ngIf="visible4" class="ion-padding-top">
+                    <ion-grid>
+                      <ion-row *ngIf="beyondList.length == 0">
+                        <ion-col>
+                          <div style="text-align: center;">
+                              No Actions
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row  *ngFor="let item4 of beyondList | userExtract: terms;" (click)="openModal('edit',item4)" style="font-weight: normal;">
+                      <!-- <ion-row  *ngFor="let item3 of thisWeekActionList | userExtract: searchBy ;" (click)="openModal('edit',item3)" style="font-weight: normal;"> -->
+                        <ion-col size="1">
+                          <ion-text color="light"  [style.background-color]="item4.color">{{item4.category_name | slice:0:1}}</ion-text>
+                        </ion-col>
+                        <ion-col size="2">{{item4.target_date ? (item4.target_date | date: 'd MMM') : ''}}</ion-col>
+                        <ion-col size="2">{{item4.priority_name | slice:0:1}}</ion-col>
+                        <ion-col size="5">{{item4.action | slice:0:15}}</ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card-content>
+                </ion-card>
               </div>
-            </ion-col>
-          </ion-row>
-          <ion-row  *ngFor="let item4 of beyondList | userExtract: terms;" (click)="openModal('edit',item4)" style="font-weight: normal;">
-          <!-- <ion-row  *ngFor="let item3 of thisWeekActionList | userExtract: searchBy ;" (click)="openModal('edit',item3)" style="font-weight: normal;"> -->
-            <ion-col size="1">
-              <ion-text color="light"  [style.background-color]="item4.color">{{item4.category_name | slice:0:1}}</ion-text>
-              </ion-col>
-            <ion-col size="2">{{item4.target_date ? (item4.target_date | date: 'd MMM') : ''}}</ion-col>
-            <ion-col size="2">{{item4.priority_name | slice:0:1}}</ion-col>
-            <ion-col size="5">{{item4.action | slice:0:15}}</ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ion-card>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
     </div>
-  </ion-card-content>
-</ion-card>
-</div>
-</div>
 </ion-content>
 
-
-
-
-
+<ion-footer text-center no-border transparent>
+  <ion-row>
+    <ion-col size="10">
+      <ion-segment class="segment-button" [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="find">
+          Find
+        </ion-segment-button>
+        <ion-segment-button value="sort">
+          Sort
+        </ion-segment-button>
+        <ion-segment-button value="do">
+          Do
+        </ion-segment-button>
+      </ion-segment>
+    </ion-col>
+    <ion-col size="2" style="padding: 10px 5px 10px 5px;">
+      <ion-fab-button (click)="openModal('create','')">
+        <ion-icon name="add" style="border: 2px solid white;border-radius: 50%;"></ion-icon>
+      </ion-fab-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
 
    <!-- <mbsc-listview [options]="listviewOptions">
           <mbsc-listview-item *ngFor="let item of listviewItems">
