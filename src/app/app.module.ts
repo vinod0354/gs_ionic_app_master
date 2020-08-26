@@ -19,10 +19,11 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { DatePipe } from '@angular/common';
 import { PipesModule } from './pipes/pipes.module';
 import { Camera } from '@ionic-native/camera/ngx';
+import { FocusDirective } from './focus.directive';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FocusDirective],
   entryComponents: [],
   imports: [ 
     MbscModule,  

@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Actions</ion-title>
   </ion-toolbar>
@@ -13,167 +13,250 @@
     <ion-item *ngIf="!showMoreInfoDetails" style="color: skyblue;cursor: pointer;" lines="none" (click)=toggleDetails()>
       <ion-label>More information</ion-label>
       <ion-icon style="color: orange;" name="caret-down-outline"></ion-icon>
-  </ion-item>
-
-  <ion-item *ngIf="showMoreInfoDetails" lines="none" style="color: skyblue; cursor: pointer;" (click)=toggleDetails()>
-      <ion-label>Less information</ion-label>
-      <ion-icon style="color: orange;" name="caret-up-outline"></ion-icon>
-  </ion-item>
-      <ion-item *ngIf="showMoreInfoDetails">
-        <ion-input placeholder="Description"  value="{{actions.description}}" type="text" (ionChange)="editDescription($event)"></ion-input>
-      </ion-item>
-
-      <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
-        <ion-label style="color: skyblue;">Schedule Date</ion-label>
-        <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31"  style="color: gray;" pickerFormat="DD-MMM-YYYY" [(ngModel)]="actions.scheduled_date" placeholder="Select Date"></ion-datetime>
     </ion-item>
 
-      <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
-          <ion-label style="color: skyblue;">Target Date</ion-label>
-          <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31" style="color: gray;" [(ngModel)]="actions.target_date" placeholder="Select Date"></ion-datetime>
-      </ion-item>
+    <ion-item *ngIf="showMoreInfoDetails" lines="none" style="color: skyblue; cursor: pointer;" (click)=toggleDetails()>
+        <ion-label>Less information</ion-label>
+        <ion-icon style="color: orange;" name="caret-up-outline"></ion-icon>
+    </ion-item>
+    <ion-item *ngIf="showMoreInfoDetails">
+      <ion-input placeholder="Description"  value="{{actions.description}}" type="text" (ionChange)="editDescription($event)"></ion-input>
+    </ion-item>
 
-      <ion-item *ngIf="showMoreInfoDetails" lines="none">
-          <ion-label style="color: skyblue;">Complete Date</ion-label>
-          <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31" style="color: grey;" [(ngModel)]="actions.completed_date" placeholder="Complete Date"></ion-datetime>
-      </ion-item>
+    <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
+      <ion-label style="color: skyblue;">Schedule Date</ion-label>
+      <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31"  style="color: gray;" pickerFormat="DD-MMM-YYYY" [(ngModel)]="actions.scheduled_date" placeholder="Select Date"></ion-datetime>
+    </ion-item>
 
-      <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
-        <ion-label style="color: skyblue;">Category</ion-label>
-        <ion-select [(ngModel)]="actions.action_category_id">
-          <!-- <ion-select-option value="">Select Category</ion-select-option> -->
-          <ion-select-option *ngIf="(modalData.target_date.includes('1900') || modalType == 'create' || modalData.target_date == '') && actions.action_category_id != miscellaneousCatogeryID"   value="">None</ion-select-option>
-                        <ion-select-option *ngIf='actions.action_category_id == miscellaneousCatogeryID' value="{{actions.action_category_id}}">None</ion-select-option>
-          <ion-select-option *ngFor="let catogery of modalCatogeries" value="{{catogery.category_id}}">{{catogery.name}}</ion-select-option>
-          <!-- <ion-select-option value="Hello">Hello</ion-select-option>
-          <ion-select-option value="Personal">Personal</ion-select-option> -->
-        </ion-select>
+    <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
+      <ion-label style="color: skyblue;">Target Date</ion-label>
+      <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31" style="color: gray;" [(ngModel)]="actions.target_date" placeholder="Select Date"></ion-datetime>
+    </ion-item>
+
+    <ion-item *ngIf="showMoreInfoDetails" lines="none">
+      <ion-label style="color: skyblue;">Complete Date</ion-label>
+      <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31" style="color: grey;" [(ngModel)]="actions.completed_date" placeholder="Complete Date"></ion-datetime>
+    </ion-item>
+
+    <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
+      <ion-label style="color: skyblue;">Category</ion-label>
+      <ion-select [(ngModel)]="actions.action_category_id">
+        <ion-select-option *ngIf="(modalData.target_date.includes('1900') || modalType == 'create' || modalData.target_date == '') && actions.action_category_id != miscellaneousCatogeryID"   value="">None</ion-select-option>
+        <ion-select-option *ngIf='actions.action_category_id == miscellaneousCatogeryID' value="{{actions.action_category_id}}">None</ion-select-option>
+        <ion-select-option *ngFor="let catogery of modalCatogeries" value="{{catogery.category_id}}">{{catogery.name}}</ion-select-option>
+      </ion-select>
     </ion-item>
 
     <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
       <ion-label style="color: skyblue;">Priority</ion-label>
       <ion-select  [(ngModel)]="actions.priority_id" >
-        <!-- <ion-select-option value="">Select Priority</ion-select-option> -->
         <ion-select-option  *ngFor="let priority of modalActions" value="{{priority.priority_id}}">{{priority.name}}</ion-select-option>
-        <!-- <ion-select-option value="Medium">Medium</ion-select-option>
-        <ion-select-option value="Low">Low</ion-select-option> -->
       </ion-select>
-  </ion-item>
+    </ion-item>
 
-  <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
-    <ion-label style="color: skyblue;">Goal</ion-label>
-    <ion-select [(ngModel)]="actions.goal_id" (ionChange)="onChangeGoals($event)">
-      <ion-select-option value="">Select Goal</ion-select-option>
-      <ion-select-option *ngFor="let goal of modalGoals" [value]="goal.goal_id">{{goal.goal_title}}</ion-select-option>
-      <!-- <ion-select-option value="Medium">Medium</ion-select-option>
-      <ion-select-option value="Low">Low</ion-select-option> -->
-    </ion-select>
-</ion-item>
+    <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
+      <ion-label style="color: skyblue;">Goal</ion-label>
+      <ion-select [(ngModel)]="actions.goal_id" (ionChange)="onChangeGoals($event)">
+        <ion-select-option value="">Select Goal</ion-select-option>
+        <ion-select-option *ngFor="let goal of modalGoals" [value]="goal.goal_id">{{goal.goal_title}}</ion-select-option>
+      </ion-select>
+    </ion-item>
 
 
-<ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
-  <ion-label style="color: skyblue;">Milestones</ion-label>
-  <ion-select [(ngModel)]="actions.milestone_id">
-    <ion-select-option value="">Select Milestone</ion-select-option>
-    <ion-select-option  *ngFor="let item of allMilestones" [value]="item.milestone_id">{{item.milestone}}</ion-select-option>
-    <!-- <ion-select-option value="Medium">Medium</ion-select-option>
-    <ion-select-option value="Low">Low</ion-select-option> -->
-  </ion-select>
-</ion-item>
+    <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
+      <ion-label style="color: skyblue;">Milestones</ion-label>
+      <ion-select [(ngModel)]="actions.milestone_id">
+        <ion-select-option value="">Select Milestone</ion-select-option>
+        <ion-select-option  *ngFor="let item of allMilestones" [value]="item.milestone_id">{{item.milestone}}</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-<ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
-  <ion-label style="color: skyblue;">Objective</ion-label>
-  <ion-select  [(ngModel)]="actions.objective_id" >
-    <ion-select-option value="">Select Objective</ion-select-option>
-    <ion-select-option *ngFor="let objective of modalObjectives" [value]="objective.objective_id">{{objective.objective}}</ion-select-option>
-    <!-- <ion-select-option value="Medium">Medium</ion-select-option>
-    <ion-select-option value="Low">Low</ion-select-option> -->
-  </ion-select>
-</ion-item>
+    <ion-item *ngIf="showMoreInfoDetails" lines="none" style="padding-right: 0px !important;">
+      <ion-label style="color: skyblue;">Objective</ion-label>
+      <ion-select  [(ngModel)]="actions.objective_id" >
+        <ion-select-option value="">Select Objective</ion-select-option>
+        <ion-select-option *ngFor="let objective of modalObjectives" [value]="objective.objective_id">{{objective.objective}}</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-</ion-list>
+  </ion-list>
 </ion-content>
 
 <ion-footer style="border-top: solid 1px lightgray;">
   <ion-grid>
     <ion-row class="ion-text-center">
-      <!-- <ion-col size="6" *ngIf="(modalType == 'create') || (modalType == 'sortplus') " style="border-right: lightgrey 1px solid">
-
-      <div style="text-align: center; margin-top: 4px;" (click)="saveActions();">
-        <ion-icon style="color: #039CD9; margin-top:4px; " name="checkmark-outline"></ion-icon> <span style="margin-left: 4px;color: #039CD9; font-weight: bold;">Save</span>
-      </div>
-      </ion-col> -->
-
-
       <ion-col size="6" *ngIf="(modalType == 'create') || (modalType == 'sortplus') ">
         <ion-item lines="none" tappable (click)="saveActions();" style="font-weight:bold; background:transparent;border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px">
           <ion-icon style="color: #039CD9;margin-left: 16px;" name="checkmark-outline"></ion-icon>
           <ion-text  style="color: #039CD9; font-weight: bold;" class="ion-margin-start">Save</ion-text>
-      </ion-item>
+        </ion-item>
       </ion-col>
-
-
-
-      <!-- <ion-col  size="4" *ngIf="(modalType == 'edit') || (modalType == 'find')" style="border-right: lightgrey 1px solid">
-      <div style="text-align: center; margin-top: 4px;" (click)="saveActions();">
-        <ion-icon style="color: #039CD9; margin-top:4px;" name="checkmark-outline"></ion-icon> <span style="margin-left: 4px;color: #039CD9; font-weight: bold;">Update</span>
-      </div>
-      </ion-col> -->
-
-
       <ion-col size="4" *ngIf="(modalType == 'edit') || (modalType == 'find')">
         <ion-item lines="none" tappable (click)="saveActions();" style="font-weight:bold; background:transparent; border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px">
           <ion-icon style="color: #039CD9;" name="checkmark-outline"></ion-icon>
           <ion-text  style="color: #039CD9; padding-left:10px; font-weight: bold;" >Update</ion-text>
-      </ion-item>
+        </ion-item>
       </ion-col>
-
-
-      <!-- <ion-col  size="4" *ngIf="(modalType != 'create') &&( modalType != 'sortplus')" style="border-left: lightgrey 1px solid; border-right: lightgrey 1px solid">
-      <div style="text-align: center; margin-top: 4px;"  tappable (click)="openDeleteConfirmDialog()">
-        <ion-icon style="color: red;margin-top:4px;" name="trash-outline"></ion-icon> <span style="margin-left: 4px;color: red; font-weight: bold;">Delete</span>
-      </div>
-      </ion-col> -->
-
       <ion-col size="4" *ngIf="(modalType != 'create') &&( modalType != 'sortplus')">
         <ion-item lines="none" tappable  (click)="openDeleteConfirmDialog()" style="font-weight:bold; background:transparent; border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px">
           <ion-icon size="small" style="color: red; " name="trash-outline"></ion-icon>
           <ion-text style="color: red; padding-left:10px; font-weight: bold;" >Delete</ion-text>
-      </ion-item>
+        </ion-item>
       </ion-col>
-
-
-
-
-      <!-- <ion-col size="4" *ngIf="(modalType != 'create')" style="border-left: lightgrey 1px solid">
-        <div style="text-align: center; margin-top: 4px;"  tappable (click)="closemodal('CANCEL');">
-          <ion-icon style="color: red;margin-top:4px;" name="close-circle-outline"></ion-icon> <span style="margin-left: 4px; color: red; font-weight: bold;">Cancel</span>
-        </div>
-      </ion-col> -->
-
-
       <ion-col size="4" *ngIf="(modalType != 'create')">
         <ion-item lines="none" tappable  (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent;   margin:0 auto;  width:100%;  text-align:center; height:50px">
           <ion-icon style="color: red; " name="close-circle-outline"></ion-icon>
           <ion-text style="color: red; padding-left:10px; font-weight: bold;" >Cancel</ion-text>
-      </ion-item>
+        </ion-item>
       </ion-col>
-
-      <!-- <ion-col size="6" *ngIf="(modalType == 'create')" style="border-left: lightgrey 1px solid">
-        <div style="text-align: center; margin-top: 4px; "  tappable (click)="closemodal('CANCEL');">
-          <ion-icon style="color: red;margin-top:4px;" name="close-circle-outline"></ion-icon> <span style="margin-left: 4px; color: red; font-weight: bold;">Cancel</span>
-        </div>
-      </ion-col> -->
-
       <ion-col size="6" *ngIf="(modalType == 'create')">
         <ion-item lines="none" tappable (click)="closemodal('CANCEL');" style="font-weight:bold; background:transparent;  margin:0 auto;  width:100%;  text-align:center; height:50px">
           <ion-icon style="color: red; margin-left: 10px;" name="close-circle-outline"></ion-icon>
           <ion-text style="color: red; font-weight: bold;" class="ion-margin-start">Cancel</ion-text>
-      </ion-item>
+        </ion-item>
       </ion-col>
-
-
-
     </ion-row>
   </ion-grid>
-</ion-footer>
+</ion-footer> -->
+
+<!-- New Form -->
+<ion-content>
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="ion-text-right">
+            <span (click)="closemodal('CANCEL');"><i class="fa fa-times" style="color: #f78f11;"></i></span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="(modalType == 'create') || (modalType == 'sortplus')">
+        <ion-col>
+          <div class="">
+            <ion-item>
+              <ion-input placeholder="Title" [(ngModel)]="actions.action" type="text" (ionChange)="editTitle($event)"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="(modalType == 'edit') || (modalType == 'find')">
+        <ion-col>
+          <div class="ion-text-center" *ngIf="isEdit">
+            <span style="font-size: 26px; color: #363648;" (click)="onEdit()">{{ actions.action }}</span>
+          </div>
+          <div class="" *ngIf="isEditable">
+            <ion-item>
+              <ion-input placeholder="Title"  [(ngModel)]="actions.action" type="text" (ionChange)="editTitle($event)" (ionBlur)="onBlur($event);"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-row>
+            <ion-col size="3" style="padding-top: 15px; padding-left: 10px;">
+              <ion-label class="lable">Do</ion-label>
+            </ion-col>
+            <ion-col size="9">
+              <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31" style="color: gray;" [(ngModel)]="actions.target_date" placeholder="Add Date"></ion-datetime>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="6">
+          <ion-row>
+            <ion-col size="3" style="padding-top: 15px;">
+              <ion-label class="lable">Due</ion-label>
+            </ion-col>
+            <ion-col size="9">
+              <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]="min_date" max="2099-10-31"  style="color: gray;" pickerFormat="DD-MMM-YYYY" [(ngModel)]="actions.scheduled_date" placeholder="Add Date"></ion-datetime>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="ion-text-right">
+            <span (click)=toggleDetails() style="color: #f78f11;">
+              Advanced&nbsp;
+              <i class="fa fa-angle-down" *ngIf="!showMoreInfoDetails" style="color: #f78f11;"></i>
+              <i class="fa fa-angle-up" *ngIf="showMoreInfoDetails" style="color: #f78f11;"></i>
+            </span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="showMoreInfoDetails">
+        <ion-col size="2" style="padding-top: 15px;">
+          <div style="margin-left: 5px;">
+            <ion-label class="lable des-icon"><i class="fa fa-list-ul"></i></ion-label>
+          </div>
+        </ion-col>
+        <ion-col size="10">
+          <ion-input placeholder="Add a description" type="text" value="{{actions.description}}" (ionChange)="editDescription($event)"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="showMoreInfoDetails" style="margin-top: 10px;">
+        <ion-col size=12>
+          <ion-item lines="none">
+            <ion-label class="lable">Category</ion-label>
+            <ion-select [(ngModel)]="actions.action_category_id">
+              <ion-select-option *ngIf="(modalData.target_date.includes('1900') || modalType == 'create' || modalData.target_date == '') && actions.action_category_id != miscellaneousCatogeryID"   value="">None</ion-select-option>
+              <ion-select-option *ngIf='actions.action_category_id == miscellaneousCatogeryID' value="{{actions.action_category_id}}">None</ion-select-option>
+              <ion-select-option *ngFor="let catogery of modalCatogeries" value="{{catogery.category_id}}">{{catogery.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="showMoreInfoDetails">
+        <ion-col size=12>
+          <ion-item lines="none">
+            <ion-label class="lable">Goal</ion-label>
+            <ion-select [(ngModel)]="actions.goal_id" (ionChange)="onChangeGoals($event)">
+              <ion-select-option value="">Select</ion-select-option>
+              <ion-select-option *ngFor="let goal of modalGoals" [value]="goal.goal_id">{{goal.goal_title}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="showMoreInfoDetails">
+        <ion-col size=12>
+          <ion-item lines="none">
+            <ion-label class="lable">Milestone</ion-label>
+            <ion-select [(ngModel)]="actions.milestone_id">
+              <ion-select-option value="">Select</ion-select-option>
+              <ion-select-option  *ngFor="let item of allMilestones" [value]="item.milestone_id">{{item.milestone}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="(modalType != 'create') &&( modalType != 'sortplus')" style="margin: 10px;">
+        <ion-col>
+          <div class="ion-text-center" (click)="openDeleteConfirmDialog()">
+            <ion-label class="lable des-icon" style="padding: 10px 12px 10px 12px;"><i class="fa fa-minus" style="color: #ed7702;"></i></ion-label>
+            <span>&nbsp;&nbsp;Delete Action</span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="(modalType != 'create') &&( modalType != 'sortplus')">
+        <ion-col>
+          <div class="ion-text-center">
+            <ion-button shape="round" class="action-btn"><span style="background: white; padding: 10px; border-radius: 50%;"><i class="fa fa-check" style="color: #9ac81b;;"></i></span>&nbsp;&nbsp;Action Done</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="(modalType == 'edit') || (modalType == 'find')">
+        <ion-col>
+          <div class="ion-text-center">
+            <ion-button shape="round" class="save-btn" (click)="saveActions();">Save Changes</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="(modalType == 'create') || (modalType == 'sortplus')">
+        <ion-col>
+          <div class="ion-text-center">
+            <ion-button shape="round" class="save-btn" (click)="saveActions();">Save</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>

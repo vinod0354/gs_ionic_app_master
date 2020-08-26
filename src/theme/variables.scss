@@ -83,6 +83,27 @@
       height: 45%;
   }
 }
+
+.action-modal-new {
+  .modal-wrapper {
+      position: absolute;
+      display: block;
+      width:93%;
+      height: 95%;
+      border-radius: 4px;
+  }
+}
+
+.action-modal-date {
+  .modal-wrapper {
+      position: absolute;
+      display: block;
+      width:93%;
+      height: 90%;
+      border-radius: 4px;
+  }
+}
+
 .custom-modal1 {
   .modal-wrapper {
       position: absolute;

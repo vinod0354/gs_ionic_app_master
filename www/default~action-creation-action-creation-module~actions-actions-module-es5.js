@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar>\n    <ion-title>Actions</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n\n    <ion-item>\n        <ion-input placeholder=\"Title\"  [(ngModel)]=\"actions.action\" type=\"text\" (ionChange)=\"editTitle($event)\"></ion-input>\n    </ion-item>\n    <ion-item *ngIf=\"!showMoreInfoDetails\" style=\"color: skyblue;cursor: pointer;\" lines=\"none\" (click)=toggleDetails()>\n      <ion-label>More information</ion-label>\n      <ion-icon style=\"color: orange;\" name=\"caret-down-outline\"></ion-icon>\n  </ion-item>\n\n  <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"color: skyblue; cursor: pointer;\" (click)=toggleDetails()>\n      <ion-label>Less information</ion-label>\n      <ion-icon style=\"color: orange;\" name=\"caret-up-outline\"></ion-icon>\n  </ion-item>\n      <ion-item *ngIf=\"showMoreInfoDetails\">\n        <ion-input placeholder=\"Description\"  value=\"{{actions.description}}\" type=\"text\" (ionChange)=\"editDescription($event)\"></ion-input>\n      </ion-item>\n\n      <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n        <ion-label style=\"color: skyblue;\">Schedule Date</ion-label>\n        <ion-datetime displayFormat='DD-MMM-YYYY' [min]=\"min_date\" max=\"2099-10-31\"  style=\"color: gray;\" [(ngModel)]=\"actions.scheduled_date\" placeholder=\"Select Date\"></ion-datetime>\n    </ion-item>\n\n      <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n          <ion-label style=\"color: skyblue;\">Target Date</ion-label>\n          <ion-datetime displayFormat='DD-MMM-YYYY' [min]=\"min_date\" max=\"2099-10-31\" style=\"color: gray;\" [(ngModel)]=\"actions.target_date\" placeholder=\"Select Date\"></ion-datetime>\n      </ion-item>\n\n      <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\">\n          <ion-label style=\"color: skyblue;\">Complete Date</ion-label>\n          <ion-datetime displayFormat='DD-MMM-YYYY' [min]=\"min_date\" max=\"2099-10-31\" style=\"color: grey;\" [(ngModel)]=\"actions.completed_date\" placeholder=\"Complete Date\"></ion-datetime>\n      </ion-item>\n\n      <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n        <ion-label style=\"color: skyblue;\">Category</ion-label>\n        <ion-select [(ngModel)]=\"actions.action_category_id\">\n          <ion-select-option value=\"\">Select Category</ion-select-option>\n          <ion-select-option *ngFor=\"let catogery of modalCatogeries\" value=\"{{catogery.category_id}}\">{{catogery.name}}</ion-select-option>\n          <!-- <ion-select-option value=\"Hello\">Hello</ion-select-option>\n          <ion-select-option value=\"Personal\">Personal</ion-select-option> -->\n        </ion-select>\n    </ion-item>\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n      <ion-label style=\"color: skyblue;\">Priority</ion-label>\n      <ion-select  [(ngModel)]=\"actions.priority_id\" >\n        <!-- <ion-select-option value=\"\">Select Priority</ion-select-option> -->\n        <ion-select-option  *ngFor=\"let priority of modalActions\" value=\"{{priority.priority_id}}\">{{priority.name}}</ion-select-option>\n        <!-- <ion-select-option value=\"Medium\">Medium</ion-select-option>\n        <ion-select-option value=\"Low\">Low</ion-select-option> -->\n      </ion-select>\n  </ion-item>\n\n  <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n    <ion-label style=\"color: skyblue;\">Goal</ion-label>\n    <ion-select [(ngModel)]=\"actions.goal_id\" (ionChange)=\"onChangeGoals($event)\">\n      <ion-select-option value=\"\">Select Goal</ion-select-option>\n      <ion-select-option *ngFor=\"let goal of modalGoals\" [value]=\"goal.goal_id\">{{goal.goal_title}}</ion-select-option>\n      <!-- <ion-select-option value=\"Medium\">Medium</ion-select-option>\n      <ion-select-option value=\"Low\">Low</ion-select-option> -->\n    </ion-select>\n</ion-item>\n\n\n<ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n  <ion-label style=\"color: skyblue;\">Milestones</ion-label>\n  <ion-select [(ngModel)]=\"actions.milestone_id\">\n    <ion-select-option value=\"\">Select Milestone</ion-select-option>\n    <ion-select-option  *ngFor=\"let item of allMilestones\" [value]=\"item.milestone_id\">{{item.milestone}}</ion-select-option>\n    <!-- <ion-select-option value=\"Medium\">Medium</ion-select-option>\n    <ion-select-option value=\"Low\">Low</ion-select-option> -->\n  </ion-select>\n</ion-item>\n\n<ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n  <ion-label style=\"color: skyblue;\">Objective</ion-label>\n  <ion-select  [(ngModel)]=\"actions.objective_id\" >\n    <ion-select-option value=\"\">Select Objective</ion-select-option>\n    <ion-select-option *ngFor=\"let objective of modalObjectives\" [value]=\"objective.objective_id\">{{objective.objective}}</ion-select-option>\n    <!-- <ion-select-option value=\"Medium\">Medium</ion-select-option>\n    <ion-select-option value=\"Low\">Low</ion-select-option> -->\n  </ion-select>\n</ion-item>\n\n</ion-list>\n</ion-content>\n\n<ion-footer style=\"border-top: solid 1px lightgray;\">\n  <ion-grid>\n    <ion-row class=\"ion-text-center\">\n      <!-- <ion-col size=\"6\" *ngIf=\"(modalType == 'create') || (modalType == 'sortplus') \" style=\"border-right: lightgrey 1px solid\">\n\n      <div style=\"text-align: center; margin-top: 4px;\" (click)=\"saveActions();\">\n        <ion-icon style=\"color: #039CD9; margin-top:4px; \" name=\"checkmark-outline\"></ion-icon> <span style=\"margin-left: 4px;color: #039CD9; font-weight: bold;\">Save</span>\n      </div>\n      </ion-col> -->\n\n\n      <ion-col size=\"6\" *ngIf=\"(modalType == 'create') || (modalType == 'sortplus') \">\n        <ion-item lines=\"none\" tappable (click)=\"saveActions();\" style=\"font-weight:bold; background:transparent;border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: #039CD9;margin-left: 16px;\" name=\"checkmark-outline\"></ion-icon>\n          <ion-text  style=\"color: #039CD9; font-weight: bold;\" class=\"ion-margin-start\">Save</ion-text>\n      </ion-item>\n      </ion-col>\n\n\n\n      <!-- <ion-col  size=\"4\" *ngIf=\"(modalType == 'edit') || (modalType == 'find')\" style=\"border-right: lightgrey 1px solid\">\n      <div style=\"text-align: center; margin-top: 4px;\" (click)=\"saveActions();\">\n        <ion-icon style=\"color: #039CD9; margin-top:4px;\" name=\"checkmark-outline\"></ion-icon> <span style=\"margin-left: 4px;color: #039CD9; font-weight: bold;\">Update</span>\n      </div>\n      </ion-col> -->\n\n\n      <ion-col size=\"4\" *ngIf=\"(modalType == 'edit') || (modalType == 'find')\">\n        <ion-item lines=\"none\" tappable (click)=\"saveActions();\" style=\"font-weight:bold; background:transparent; border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: #039CD9;\" name=\"checkmark-outline\"></ion-icon>\n          <ion-text  style=\"color: #039CD9; padding-left:10px; font-weight: bold;\" >Update</ion-text>\n      </ion-item>\n      </ion-col>\n\n\n      <!-- <ion-col  size=\"4\" *ngIf=\"(modalType != 'create') &&( modalType != 'sortplus')\" style=\"border-left: lightgrey 1px solid; border-right: lightgrey 1px solid\">\n      <div style=\"text-align: center; margin-top: 4px;\"  tappable (click)=\"openDeleteConfirmDialog()\">\n        <ion-icon style=\"color: red;margin-top:4px;\" name=\"trash-outline\"></ion-icon> <span style=\"margin-left: 4px;color: red; font-weight: bold;\">Delete</span>\n      </div>\n      </ion-col> -->\n\n      <ion-col size=\"4\" *ngIf=\"(modalType != 'create') &&( modalType != 'sortplus')\">\n        <ion-item lines=\"none\" tappable  (click)=\"openDeleteConfirmDialog()\" style=\"font-weight:bold; background:transparent; border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon size=\"small\" style=\"color: red; \" name=\"trash-outline\"></ion-icon>\n          <ion-text style=\"color: red; padding-left:10px; font-weight: bold;\" >Delete</ion-text>\n      </ion-item>\n      </ion-col>\n\n\n\n\n      <!-- <ion-col size=\"4\" *ngIf=\"(modalType != 'create')\" style=\"border-left: lightgrey 1px solid\">\n        <div style=\"text-align: center; margin-top: 4px;\"  tappable (click)=\"closemodal('CANCEL');\">\n          <ion-icon style=\"color: red;margin-top:4px;\" name=\"close-circle-outline\"></ion-icon> <span style=\"margin-left: 4px; color: red; font-weight: bold;\">Cancel</span>\n        </div>\n      </ion-col> -->\n\n\n      <ion-col size=\"4\" *ngIf=\"(modalType != 'create')\">\n        <ion-item lines=\"none\" tappable  (click)=\"closemodal('CANCEL');\" style=\"font-weight:bold; background:transparent;   margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: red; \" name=\"close-circle-outline\"></ion-icon>\n          <ion-text style=\"color: red; padding-left:10px; font-weight: bold;\" >Cancel</ion-text>\n      </ion-item>\n      </ion-col>\n\n      <!-- <ion-col size=\"6\" *ngIf=\"(modalType == 'create')\" style=\"border-left: lightgrey 1px solid\">\n        <div style=\"text-align: center; margin-top: 4px; \"  tappable (click)=\"closemodal('CANCEL');\">\n          <ion-icon style=\"color: red;margin-top:4px;\" name=\"close-circle-outline\"></ion-icon> <span style=\"margin-left: 4px; color: red; font-weight: bold;\">Cancel</span>\n        </div>\n      </ion-col> -->\n\n      <ion-col size=\"6\" *ngIf=\"(modalType == 'create')\">\n        <ion-item lines=\"none\" tappable (click)=\"closemodal('CANCEL');\" style=\"font-weight:bold; background:transparent;  margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: red; margin-left: 10px;\" name=\"close-circle-outline\"></ion-icon>\n          <ion-text style=\"color: red; font-weight: bold;\" class=\"ion-margin-start\">Cancel</ion-text>\n      </ion-item>\n      </ion-col>\n\n\n\n    </ion-row>\n  </ion-grid>\n</ion-footer>\n";
+    __webpack_exports__["default"] = "<!-- <ion-header>\n  <ion-toolbar>\n    <ion-title>Actions</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n\n    <ion-item>\n        <ion-input placeholder=\"Title\"  [(ngModel)]=\"actions.action\" type=\"text\" (ionChange)=\"editTitle($event)\"></ion-input>\n    </ion-item>\n    <ion-item *ngIf=\"!showMoreInfoDetails\" style=\"color: skyblue;cursor: pointer;\" lines=\"none\" (click)=toggleDetails()>\n      <ion-label>More information</ion-label>\n      <ion-icon style=\"color: orange;\" name=\"caret-down-outline\"></ion-icon>\n    </ion-item>\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"color: skyblue; cursor: pointer;\" (click)=toggleDetails()>\n        <ion-label>Less information</ion-label>\n        <ion-icon style=\"color: orange;\" name=\"caret-up-outline\"></ion-icon>\n    </ion-item>\n    <ion-item *ngIf=\"showMoreInfoDetails\">\n      <ion-input placeholder=\"Description\"  value=\"{{actions.description}}\" type=\"text\" (ionChange)=\"editDescription($event)\"></ion-input>\n    </ion-item>\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n      <ion-label style=\"color: skyblue;\">Schedule Date</ion-label>\n      <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]=\"min_date\" max=\"2099-10-31\"  style=\"color: gray;\" pickerFormat=\"DD-MMM-YYYY\" [(ngModel)]=\"actions.scheduled_date\" placeholder=\"Select Date\"></ion-datetime>\n    </ion-item>\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n      <ion-label style=\"color: skyblue;\">Target Date</ion-label>\n      <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]=\"min_date\" max=\"2099-10-31\" style=\"color: gray;\" [(ngModel)]=\"actions.target_date\" placeholder=\"Select Date\"></ion-datetime>\n    </ion-item>\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\">\n      <ion-label style=\"color: skyblue;\">Complete Date</ion-label>\n      <ion-datetime mode='ios' displayFormat='DD-MMM-YYYY' [min]=\"min_date\" max=\"2099-10-31\" style=\"color: grey;\" [(ngModel)]=\"actions.completed_date\" placeholder=\"Complete Date\"></ion-datetime>\n    </ion-item>\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n      <ion-label style=\"color: skyblue;\">Category</ion-label>\n      <ion-select [(ngModel)]=\"actions.action_category_id\">\n        <ion-select-option *ngIf=\"(modalData.target_date.includes('1900') || modalType == 'create' || modalData.target_date == '') && actions.action_category_id != miscellaneousCatogeryID\"   value=\"\">None</ion-select-option>\n        <ion-select-option *ngIf='actions.action_category_id == miscellaneousCatogeryID' value=\"{{actions.action_category_id}}\">None</ion-select-option>\n        <ion-select-option *ngFor=\"let catogery of modalCatogeries\" value=\"{{catogery.category_id}}\">{{catogery.name}}</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n      <ion-label style=\"color: skyblue;\">Priority</ion-label>\n      <ion-select  [(ngModel)]=\"actions.priority_id\" >\n        <ion-select-option  *ngFor=\"let priority of modalActions\" value=\"{{priority.priority_id}}\">{{priority.name}}</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n      <ion-label style=\"color: skyblue;\">Goal</ion-label>\n      <ion-select [(ngModel)]=\"actions.goal_id\" (ionChange)=\"onChangeGoals($event)\">\n        <ion-select-option value=\"\">Select Goal</ion-select-option>\n        <ion-select-option *ngFor=\"let goal of modalGoals\" [value]=\"goal.goal_id\">{{goal.goal_title}}</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n      <ion-label style=\"color: skyblue;\">Milestones</ion-label>\n      <ion-select [(ngModel)]=\"actions.milestone_id\">\n        <ion-select-option value=\"\">Select Milestone</ion-select-option>\n        <ion-select-option  *ngFor=\"let item of allMilestones\" [value]=\"item.milestone_id\">{{item.milestone}}</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item *ngIf=\"showMoreInfoDetails\" lines=\"none\" style=\"padding-right: 0px !important;\">\n      <ion-label style=\"color: skyblue;\">Objective</ion-label>\n      <ion-select  [(ngModel)]=\"actions.objective_id\" >\n        <ion-select-option value=\"\">Select Objective</ion-select-option>\n        <ion-select-option *ngFor=\"let objective of modalObjectives\" [value]=\"objective.objective_id\">{{objective.objective}}</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n  </ion-list>\n</ion-content>\n\n<ion-footer style=\"border-top: solid 1px lightgray;\">\n  <ion-grid>\n    <ion-row class=\"ion-text-center\">\n      <ion-col size=\"6\" *ngIf=\"(modalType == 'create') || (modalType == 'sortplus') \">\n        <ion-item lines=\"none\" tappable (click)=\"saveActions();\" style=\"font-weight:bold; background:transparent;border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: #039CD9;margin-left: 16px;\" name=\"checkmark-outline\"></ion-icon>\n          <ion-text  style=\"color: #039CD9; font-weight: bold;\" class=\"ion-margin-start\">Save</ion-text>\n        </ion-item>\n      </ion-col>\n      <ion-col size=\"4\" *ngIf=\"(modalType == 'edit') || (modalType == 'find')\">\n        <ion-item lines=\"none\" tappable (click)=\"saveActions();\" style=\"font-weight:bold; background:transparent; border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: #039CD9;\" name=\"checkmark-outline\"></ion-icon>\n          <ion-text  style=\"color: #039CD9; padding-left:10px; font-weight: bold;\" >Update</ion-text>\n        </ion-item>\n      </ion-col>\n      <ion-col size=\"4\" *ngIf=\"(modalType != 'create') &&( modalType != 'sortplus')\">\n        <ion-item lines=\"none\" tappable  (click)=\"openDeleteConfirmDialog()\" style=\"font-weight:bold; background:transparent; border-right:solid 1px #dcdcdc;   margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon size=\"small\" style=\"color: red; \" name=\"trash-outline\"></ion-icon>\n          <ion-text style=\"color: red; padding-left:10px; font-weight: bold;\" >Delete</ion-text>\n        </ion-item>\n      </ion-col>\n      <ion-col size=\"4\" *ngIf=\"(modalType != 'create')\">\n        <ion-item lines=\"none\" tappable  (click)=\"closemodal('CANCEL');\" style=\"font-weight:bold; background:transparent;   margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: red; \" name=\"close-circle-outline\"></ion-icon>\n          <ion-text style=\"color: red; padding-left:10px; font-weight: bold;\" >Cancel</ion-text>\n        </ion-item>\n      </ion-col>\n      <ion-col size=\"6\" *ngIf=\"(modalType == 'create')\">\n        <ion-item lines=\"none\" tappable (click)=\"closemodal('CANCEL');\" style=\"font-weight:bold; background:transparent;  margin:0 auto;  width:100%;  text-align:center; height:50px\">\n          <ion-icon style=\"color: red; margin-left: 10px;\" name=\"close-circle-outline\"></ion-icon>\n          <ion-text style=\"color: red; font-weight: bold;\" class=\"ion-margin-start\">Cancel</ion-text>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-footer> -->\n\n<!-- New Form -->\n<ion-content>\n  <ion-list>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <div class=\"ion-text-right\">\n            <span (click)=\"closemodal('CANCEL');\"><i class=\"fa fa-times\" style=\"color: #f78f11;\"></i></span>\n          </div>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <div class=\"ion-text-center\">\n            <span style=\"font-size: 26px; color: #363648;\">{{ actions.action }}</span>\n          </div>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col size=\"6\">\n          <ion-row>\n            <ion-col size=\"4\" style=\"padding-top: 15px; padding-left: 10px;\">\n              <ion-label class=\"lable\">Do</ion-label>\n            </ion-col>\n            <ion-col size=\"8\">\n              <ion-input placeholder=\"Title\"  [(ngModel)]=\"actions.action\" type=\"date\" (ionChange)=\"editTitle($event)\"></ion-input>\n            </ion-col>\n          </ion-row>\n        </ion-col>\n        <ion-col size=\"6\">\n          <ion-row>\n            <ion-col size=\"4\" style=\"padding-top: 15px;\">\n              <ion-label class=\"lable\">Due</ion-label>\n            </ion-col>\n            <ion-col size=\"8\">\n              <ion-input placeholder=\"Title\"  [(ngModel)]=\"actions.action\" type=\"date\" (ionChange)=\"editTitle($event)\"></ion-input>\n            </ion-col>\n          </ion-row>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <div class=\"ion-text-right\">\n            <span (click)=toggleDetails() style=\"color: #f78f11;\">\n              Advanced&nbsp;\n              <i class=\"fa fa-angle-down\" *ngIf=\"!showMoreInfoDetails\" style=\"color: #f78f11;\"></i>\n              <i class=\"fa fa-angle-up\" *ngIf=\"showMoreInfoDetails\" style=\"color: #f78f11;\"></i>\n            </span>\n          </div>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"showMoreInfoDetails\">\n        <ion-col size=\"2\" style=\"padding-top: 15px;\">\n          <div style=\"margin-left: 5px;\">\n            <ion-label class=\"lable des-icon\"><i class=\"fa fa-list-ul\"></i></ion-label>\n          </div>\n        </ion-col>\n        <ion-col size=\"10\">\n          <ion-input placeholder=\"Add a description\" type=\"text\" value=\"{{actions.description}}\" (ionChange)=\"editDescription($event)\"></ion-input>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"showMoreInfoDetails\" style=\"margin-top: 10px;\">\n        <ion-col size=12>\n          <ion-item lines=\"none\">\n            <ion-label class=\"lable\">Priority</ion-label>\n            <ion-select  [(ngModel)]=\"actions.priority_id\" >\n              <ion-select-option  *ngFor=\"let priority of modalActions\" value=\"{{priority.priority_id}}\">{{priority.name}}</ion-select-option>\n            </ion-select>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"showMoreInfoDetails\">\n        <ion-col size=12>\n          <ion-item lines=\"none\">\n            <ion-label class=\"lable\">Category</ion-label>\n            <ion-select [(ngModel)]=\"actions.action_category_id\">\n              <ion-select-option *ngIf=\"(modalData.target_date.includes('1900') || modalType == 'create' || modalData.target_date == '') && actions.action_category_id != miscellaneousCatogeryID\"   value=\"\">None</ion-select-option>\n              <ion-select-option *ngIf='actions.action_category_id == miscellaneousCatogeryID' value=\"{{actions.action_category_id}}\">None</ion-select-option>\n              <ion-select-option *ngFor=\"let catogery of modalCatogeries\" value=\"{{catogery.category_id}}\">{{catogery.name}}</ion-select-option>\n            </ion-select>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"showMoreInfoDetails\">\n        <ion-col size=12>\n          <ion-item lines=\"none\">\n            <ion-label class=\"lable\">Goal</ion-label>\n            <ion-select [(ngModel)]=\"actions.goal_id\" (ionChange)=\"onChangeGoals($event)\">\n              <ion-select-option value=\"\">Select</ion-select-option>\n              <ion-select-option *ngFor=\"let goal of modalGoals\" [value]=\"goal.goal_id\">{{goal.goal_title}}</ion-select-option>\n            </ion-select>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"showMoreInfoDetails\">\n        <ion-col size=12>\n          <ion-item lines=\"none\">\n            <ion-label class=\"lable\">Milestone</ion-label>\n            <ion-select [(ngModel)]=\"actions.milestone_id\">\n              <ion-select-option value=\"\">Select</ion-select-option>\n              <ion-select-option  *ngFor=\"let item of allMilestones\" [value]=\"item.milestone_id\">{{item.milestone}}</ion-select-option>\n            </ion-select>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf=\"showMoreInfoDetails\" style=\"margin: 10px;\">\n        <ion-col>\n          <div class=\"ion-text-center\">\n            <ion-label class=\"lable des-icon\" style=\"padding: 10px 12px 10px 12px;\"><i class=\"fa fa-minus\" style=\"color: #ed7702;\"></i></ion-label>\n            <span>&nbsp;&nbsp;Delete Action</span>\n          </div>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <div class=\"ion-text-center\">\n            <ion-button shape=\"round\" class=\"action-btn\"><span style=\"background: white; padding: 10px; border-radius: 50%;\"><i class=\"fa fa-check\" style=\"color: #9ac81b;;\"></i></span>&nbsp;&nbsp;Action Done</ion-button>\n          </div>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n          <div class=\"ion-text-center\">\n            <ion-button shape=\"round\" class=\"save-btn\" (click)=\"closemodal('CANCEL');\">Save Changes</ion-button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-list>\n</ion-content>\n";
     /***/
   },
 
@@ -175,7 +175,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = ".custom {\n  --ion-item-padding-end:0px !important;\n  padding: 0px !important;\n  margin: 0px !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9EZXNrdG9wL1ByYWN0aWNlL0dpdEh1Yi9nb2FsLXNoYXBlci1tb2JpbGUvc3JjL2FwcC9hY3Rpb24tY3JlYXRpb24vYWN0aW9uLWNyZWF0aW9uLnBhZ2Uuc2NzcyIsInNyYy9hcHAvYWN0aW9uLWNyZWF0aW9uL2FjdGlvbi1jcmVhdGlvbi5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxxQ0FBQTtFQUNBLHVCQUFBO0VBQ0Esc0JBQUE7QUNDSiIsImZpbGUiOiJzcmMvYXBwL2FjdGlvbi1jcmVhdGlvbi9hY3Rpb24tY3JlYXRpb24ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmN1c3RvbXtcclxuICAgIC0taW9uLWl0ZW0tcGFkZGluZy1lbmQ6MHB4ICFpbXBvcnRhbnQ7XHJcbiAgICBwYWRkaW5nOiAwcHggIWltcG9ydGFudDtcclxuICAgIG1hcmdpbjogMHB4ICFpbXBvcnRhbnQ7XHJcbn0iLCIuY3VzdG9tIHtcbiAgLS1pb24taXRlbS1wYWRkaW5nLWVuZDowcHggIWltcG9ydGFudDtcbiAgcGFkZGluZzogMHB4ICFpbXBvcnRhbnQ7XG4gIG1hcmdpbjogMHB4ICFpbXBvcnRhbnQ7XG59Il19 */";
+    __webpack_exports__["default"] = ".custom {\n  --ion-item-padding-end:0px !important;\n  padding: 0px !important;\n  margin: 0px !important;\n}\n\n.lable {\n  font-size: 18px;\n  font-weight: bold;\n  color: #464644;\n}\n\n.des-icon {\n  padding: 10px;\n  border: 1px solid #fafafa;\n  border-radius: 50%;\n  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);\n}\n\n.action-btn {\n  width: 230px;\n  height: 72px;\n  font-size: 15px;\n  font-weight: bold;\n  --background: #9ac81b;\n  --box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);\n}\n\n.save-btn {\n  width: 230px;\n  height: 72px;\n  font-size: 15px;\n  font-weight: bold;\n  color: #ed7702;\n  border: solid 2px #ed7702;\n  border-radius: 36px;\n  --background: white;\n  --box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWN0aW9uLWNyZWF0aW9uL0M6XFxVc2Vyc1xcdmlub2RcXE9uZURyaXZlXFxEb2N1bWVudHNcXEdvYWwgc2hhcGVyXFwxMC0wOC0yMDIwXFxnb2FsLXNoYXBlci1tb2JpbGUtbWFzdGVyL3NyY1xcYXBwXFxhY3Rpb24tY3JlYXRpb25cXGFjdGlvbi1jcmVhdGlvbi5wYWdlLnNjc3MiLCJzcmMvYXBwL2FjdGlvbi1jcmVhdGlvbi9hY3Rpb24tY3JlYXRpb24ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUNBQUE7RUFDQSx1QkFBQTtFQUNBLHNCQUFBO0FDQ0o7O0FERUE7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0FDQ0o7O0FERUE7RUFDSSxhQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLG9GQUFBO0FDQ0o7O0FERUE7RUFDSSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtFQUNBLHFCQUFBO0VBQ0Esc0ZBQUE7QUNDSjs7QURFQTtFQUNJLFlBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtFQUNBLHNGQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9hY3Rpb24tY3JlYXRpb24vYWN0aW9uLWNyZWF0aW9uLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jdXN0b217XHJcbiAgICAtLWlvbi1pdGVtLXBhZGRpbmctZW5kOjBweCAhaW1wb3J0YW50O1xyXG4gICAgcGFkZGluZzogMHB4ICFpbXBvcnRhbnQ7XHJcbiAgICBtYXJnaW46IDBweCAhaW1wb3J0YW50O1xyXG59XHJcblxyXG4ubGFibGV7XHJcbiAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGNvbG9yOiAjNDY0NjQ0O1xyXG59XHJcblxyXG4uZGVzLWljb24ge1xyXG4gICAgcGFkZGluZzogMTBweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNmYWZhZmE7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICBib3gtc2hhZG93OiAwIDZweCAxMnB4IDAgcmdiYSgwLCAwLCAwLCAwLjA4KSwgMCAtNnB4IDEycHggMCByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSk7XHJcbn1cclxuXHJcbi5hY3Rpb24tYnRuIHtcclxuICAgIHdpZHRoOiAyMzBweDtcclxuICAgIGhlaWdodDogNzJweDtcclxuICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgLS1iYWNrZ3JvdW5kOiAjOWFjODFiO1xyXG4gICAgLS1ib3gtc2hhZG93OiAwIDZweCAxMnB4IDAgcmdiYSgwLCAwLCAwLCAwLjA4KSwgMCAtNnB4IDEycHggMCByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSk7XHJcbn1cclxuXHJcbi5zYXZlLWJ0biB7XHJcbiAgICB3aWR0aDogMjMwcHg7XHJcbiAgICBoZWlnaHQ6IDcycHg7XHJcbiAgICBmb250LXNpemU6IDE1cHg7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGNvbG9yOiAjZWQ3NzAyO1xyXG4gICAgYm9yZGVyOiBzb2xpZCAycHggI2VkNzcwMjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDM2cHg7XHJcbiAgICAtLWJhY2tncm91bmQ6IHdoaXRlO1xyXG4gICAgLS1ib3gtc2hhZG93OiAwIDZweCAxMnB4IDAgcmdiYSgwLCAwLCAwLCAwLjA4KSwgMCAtNnB4IDEycHggMCByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNSk7XHJcbn0iLCIuY3VzdG9tIHtcbiAgLS1pb24taXRlbS1wYWRkaW5nLWVuZDowcHggIWltcG9ydGFudDtcbiAgcGFkZGluZzogMHB4ICFpbXBvcnRhbnQ7XG4gIG1hcmdpbjogMHB4ICFpbXBvcnRhbnQ7XG59XG5cbi5sYWJsZSB7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGNvbG9yOiAjNDY0NjQ0O1xufVxuXG4uZGVzLWljb24ge1xuICBwYWRkaW5nOiAxMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjZmFmYWZhO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGJveC1zaGFkb3c6IDAgNnB4IDEycHggMCByZ2JhKDAsIDAsIDAsIDAuMDgpLCAwIC02cHggMTJweCAwIHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcbn1cblxuLmFjdGlvbi1idG4ge1xuICB3aWR0aDogMjMwcHg7XG4gIGhlaWdodDogNzJweDtcbiAgZm9udC1zaXplOiAxNXB4O1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgLS1iYWNrZ3JvdW5kOiAjOWFjODFiO1xuICAtLWJveC1zaGFkb3c6IDAgNnB4IDEycHggMCByZ2JhKDAsIDAsIDAsIDAuMDgpLCAwIC02cHggMTJweCAwIHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcbn1cblxuLnNhdmUtYnRuIHtcbiAgd2lkdGg6IDIzMHB4O1xuICBoZWlnaHQ6IDcycHg7XG4gIGZvbnQtc2l6ZTogMTVweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGNvbG9yOiAjZWQ3NzAyO1xuICBib3JkZXI6IHNvbGlkIDJweCAjZWQ3NzAyO1xuICBib3JkZXItcmFkaXVzOiAzNnB4O1xuICAtLWJhY2tncm91bmQ6IHdoaXRlO1xuICAtLWJveC1zaGFkb3c6IDAgNnB4IDEycHggMCByZ2JhKDAsIDAsIDAsIDAuMDgpLCAwIC02cHggMTJweCAwIHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcbn0iXX0= */";
     /***/
   },
 
@@ -303,6 +303,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           if (this.modalType == 'create') {
+            this.modalData = {
+              "action": "",
+              "objective_id": "",
+              "created_user_id": this.globals.userId,
+              "scheduled_date": "",
+              "completed_date": "",
+              "target_date": "",
+              "description": "",
+              "remarks": "",
+              "priority_id": this.modalActions[2].priority_id,
+              "action_category_id": "",
+              "enterprise_id": this.globals.enterprisedId,
+              "goal_id": "",
+              "milestone_id": ""
+            };
             this.actions = {
               "action": "",
               "objective_id": "",
@@ -327,6 +342,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               category_id = this.modalData.category_id;
             }
 
+            this.modalData = {
+              "action": "",
+              "objective_id": "",
+              "scheduled_date": "",
+              "completed_date": "",
+              "target_date": "",
+              "description": "",
+              "remarks": "",
+              "priority_id": this.modalActions[2].priority_id,
+              "action_category_id": this.actions.action_category_id ? this.actions.action_category_id : "",
+              "enterprise_id": this.globals.enterprisedId,
+              "goal_id": "",
+              "milestone_id": ""
+            };
             this.actions = {
               "action": "",
               "objective_id": "",
@@ -374,16 +403,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "closemodal",
         value: function closemodal(data) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+            var dummyData;
             return regeneratorRuntime.wrap(function _callee$(_context) {
               while (1) {
                 switch (_context.prev = _context.next) {
                   case 0:
-                    _context.next = 2;
+                    dummyData = this.actions;
+                    dummyData['close'] = data;
+                    console.log();
+                    _context.next = 5;
                     return this.modal.dismiss({
-                      data: data
+                      data: dummyData
                     });
 
-                  case 2:
+                  case 5:
                   case "end":
                     return _context.stop();
                 }
@@ -397,30 +430,49 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this2 = this;
 
           var action_id = "null";
-          this.globals.showLoading('Please wait');
           console.log(this.actions);
           console.log("Save actions clicked....");
 
-          if (this.modalType == 'create') {
-            if (!this.showMoreInfoDetails) {
-              console.log("Miscellaneous....only action short");
-              this.actions = {
-                "action": this.actions.action ? this.actions.action : "",
-                "objective_id": "null",
-                "created_user_id": this.globals.userId,
-                "scheduled_date": "",
-                "completed_date": "",
-                "target_date": "",
-                "description": "",
-                "remarks": "null",
-                "priority_id": this.modalActions[2].priority_id ? this.modalActions[2].priority_id : "null",
-                "action_category_id": this.miscellaneousCatogeryID ? this.miscellaneousCatogeryID : "null",
-                "enterprise_id": this.globals.enterprisedId,
-                "goal_id": "null",
-                "milestone_id": "null"
-              };
-            } else {
-              console.log("Miscellaneous....only action full");
+          if ((this.actions.action_category_id == "" || this.actions.action_category_id == this.miscellaneousCatogeryID) && this.actions.target_date != "") {
+            this.presentToast("Please, select Category.");
+            return;
+          } else {
+            this.globals.showLoading('Please wait');
+
+            if (this.modalType == 'create') {
+              if (!this.showMoreInfoDetails) {
+                console.log("Miscellaneous....only action short");
+                this.actions = {
+                  "action": this.actions.action ? this.actions.action : "",
+                  "objective_id": "null",
+                  "created_user_id": this.globals.userId,
+                  "scheduled_date": "",
+                  "completed_date": "",
+                  "target_date": "",
+                  "description": "",
+                  "remarks": "null",
+                  "priority_id": this.modalActions[2].priority_id ? this.modalActions[2].priority_id : "null",
+                  "action_category_id": this.miscellaneousCatogeryID ? this.miscellaneousCatogeryID : "null",
+                  "enterprise_id": this.globals.enterprisedId,
+                  "goal_id": "null",
+                  "milestone_id": "null"
+                };
+              } else {
+                console.log("Miscellaneous....only action full");
+                this.actions.priority_id = this.actions.priority_id ? this.actions.priority_id : this.modalActions[2].priority_id;
+                this.actions.goal_id = this.actions.goal_id ? this.actions.goal_id : "null";
+                this.actions.milestone_id = this.actions.milestone_id ? this.actions.milestone_id : "null";
+                this.actions.enterprise_id = this.globals.enterprisedId;
+                this.actions.scheduled_date = this.actions.scheduled_date ? this.datapipe.transform(this.actions.scheduled_date, 'yyyy-MM-dd hh:mm:ss') : ""; //this.actions.scheduled_date  ? new Date(this.actions.scheduled_date).toUTCString() : "null";
+
+                this.actions.completed_date = this.actions.completed_date ? this.datapipe.transform(this.actions.completed_date, 'yyyy-MM-dd hh:mm:ss') : ""; //this.actions.completed_date  ? new Date(this.actions.completed_date).toUTCString() : "null";
+
+                this.actions.target_date = this.actions.target_date ? this.datapipe.transform(this.actions.target_date, 'yyyy-MM-dd hh:mm:ss') : ""; //this.actions.target_date ? new Date(this.actions.target_date).toUTCString() : "null";
+
+                this.actions.objective_id = this.actions.objective_id ? this.actions.objective_id : 'null';
+                this.actions.action_category_id = this.actions.action_category_id ? this.actions.action_category_id : this.miscellaneousCatogeryID ? this.miscellaneousCatogeryID : "null"; //this.datepipe.transform(this.ObjectiveInfo.scheduledDate, 'yyyy-MM-dd hh:mm:ss hh:mm:ss')
+              }
+            } else if (this.modalType == 'sortplus') {
               this.actions.priority_id = this.actions.priority_id ? this.actions.priority_id : this.modalActions[2].priority_id;
               this.actions.goal_id = this.actions.goal_id ? this.actions.goal_id : "null";
               this.actions.milestone_id = this.actions.milestone_id ? this.actions.milestone_id : "null";
@@ -433,37 +485,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               this.actions.objective_id = this.actions.objective_id ? this.actions.objective_id : 'null';
               this.actions.action_category_id = this.actions.action_category_id ? this.actions.action_category_id : this.miscellaneousCatogeryID ? this.miscellaneousCatogeryID : "null"; //this.datepipe.transform(this.ObjectiveInfo.scheduledDate, 'yyyy-MM-dd hh:mm:ss hh:mm:ss')
+            } else {
+              console.log('Editing existing action');
+              this.actions = {
+                "action": this.actions.action ? this.actions.action : "",
+                "objective_id": this.actions.objective_id ? this.actions.objective_id : "null",
+                "created_user_id": this.globals.userId,
+                "scheduled_date": this.actions.scheduled_date ? this.datapipe.transform(this.actions.scheduled_date, 'yyyy-MM-dd hh:mm:ss') : "",
+                "completed_date": this.actions.completed_date ? this.datapipe.transform(this.actions.completed_date, 'yyyy-MM-dd hh:mm:ss') : "",
+                "target_date": this.actions.target_date ? this.datapipe.transform(this.actions.target_date, 'yyyy-MM-dd hh:mm:ss') : "",
+                "description": this.actions.description ? this.actions.description : "",
+                "remarks": this.actions.remarks ? this.actions.remarks : "null",
+                "priority_id": this.actions.priority_id ? this.actions.priority_id : "null",
+                "action_category_id": this.actions.action_category_id ? this.actions.action_category_id : "null",
+                "enterprise_id": this.globals.enterprisedId,
+                "goal_id": this.actions.goal_id ? this.actions.goal_id : "null",
+                "milestone_id": this.actions.milestone_id ? this.actions.milestone_id : "null"
+              };
             }
-          } else if (this.modalType == 'sortplus') {
-            this.actions.priority_id = this.actions.priority_id ? this.actions.priority_id : this.modalActions[2].priority_id;
-            this.actions.goal_id = this.actions.goal_id ? this.actions.goal_id : "null";
-            this.actions.milestone_id = this.actions.milestone_id ? this.actions.milestone_id : "null";
-            this.actions.enterprise_id = this.globals.enterprisedId;
-            this.actions.scheduled_date = this.actions.scheduled_date ? this.datapipe.transform(this.actions.scheduled_date, 'yyyy-MM-dd hh:mm:ss') : ""; //this.actions.scheduled_date  ? new Date(this.actions.scheduled_date).toUTCString() : "null";
-
-            this.actions.completed_date = this.actions.completed_date ? this.datapipe.transform(this.actions.completed_date, 'yyyy-MM-dd hh:mm:ss') : ""; //this.actions.completed_date  ? new Date(this.actions.completed_date).toUTCString() : "null";
-
-            this.actions.target_date = this.actions.target_date ? this.datapipe.transform(this.actions.target_date, 'yyyy-MM-dd hh:mm:ss') : ""; //this.actions.target_date ? new Date(this.actions.target_date).toUTCString() : "null";
-
-            this.actions.objective_id = this.actions.objective_id ? this.actions.objective_id : 'null';
-            this.actions.action_category_id = this.actions.action_category_id ? this.actions.action_category_id : this.miscellaneousCatogeryID ? this.miscellaneousCatogeryID : "null"; //this.datepipe.transform(this.ObjectiveInfo.scheduledDate, 'yyyy-MM-dd hh:mm:ss hh:mm:ss')
-          } else {
-            console.log('Editing existing action');
-            this.actions = {
-              "action": this.actions.action ? this.actions.action : "",
-              "objective_id": this.actions.objective_id ? this.actions.objective_id : "null",
-              "created_user_id": this.globals.userId,
-              "scheduled_date": this.actions.scheduled_date ? this.datapipe.transform(this.actions.scheduled_date, 'yyyy-MM-dd hh:mm:ss') : "",
-              "completed_date": this.actions.completed_date ? this.datapipe.transform(this.actions.completed_date, 'yyyy-MM-dd hh:mm:ss') : "",
-              "target_date": this.actions.target_date ? this.datapipe.transform(this.actions.target_date, 'yyyy-MM-dd hh:mm:ss') : "",
-              "description": this.actions.description ? this.actions.description : "",
-              "remarks": this.actions.remarks ? this.actions.remarks : "null",
-              "priority_id": this.actions.priority_id ? this.actions.priority_id : "null",
-              "action_category_id": this.actions.action_category_id ? this.actions.action_category_id : "null",
-              "enterprise_id": this.globals.enterprisedId,
-              "goal_id": this.actions.goal_id ? this.actions.goal_id : "null",
-              "milestone_id": this.actions.milestone_id ? this.actions.milestone_id : "null"
-            };
           }
 
           console.log(this.actions);
@@ -660,6 +699,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onChangeGoals(event) {
           var _this4 = this;
 
+          this.allMilestones = [];
+          this.actions.milestone_id = '';
           console.log("Select Event triggered");
           this.globals.showLoading();
           console.log(event);

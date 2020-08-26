@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, EventEmitter } from '@angular/core';
 import { GlobalsService } from '../services/globals.service';
 import { ApiServicesService } from '../services/api-services.service';
 import { DatePipe } from '@angular/common';
@@ -31,6 +31,8 @@ export class ActionCreationPage implements OnInit {
   allMilestones = [];
 
   show_expander = true;
+  isEditable : boolean = false;
+  isEdit = true;
 
   actions:any = {
     "action": "",
@@ -197,6 +199,15 @@ export class ActionCreationPage implements OnInit {
     await this.modal.dismiss({data:dummyData});
 
 
+  }
+
+  onEdit(){
+    this.isEditable = !this.isEditable;
+    this.isEdit = !this.isEdit
+  }
+
+  onBlur(event){
+    this.isEdit = !this.isEdit
   }
  
     saveActions(){

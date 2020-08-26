@@ -3,3 +3,37 @@
     padding: 0px !important;
     margin: 0px !important;
 }
+
+.lable{
+    font-size: 18px;
+    font-weight: bold;
+    color: #464644;
+}
+
+.des-icon {
+    padding: 10px;
+    border: 1px solid #fafafa;
+    border-radius: 50%;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);
+}
+
+.action-btn {
+    width: 230px;
+    height: 72px;
+    font-size: 15px;
+    font-weight: bold;
+    --background: #9ac81b;
+    --box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);
+}
+
+.save-btn {
+    width: 230px;
+    height: 72px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ed7702;
+    border: solid 2px #ed7702;
+    border-radius: 36px;
+    --background: white;
+    --box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);
+}

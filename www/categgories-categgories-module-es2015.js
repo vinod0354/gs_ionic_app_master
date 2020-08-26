@@ -101,7 +101,7 @@ CateggoriesPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".round {\n  border: 1px solid #ccc;\n  border-radius: 50%;\n  height: 15px;\n  left: 0;\n  top: 0;\n  width: 15px;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG1pbi9EZXNrdG9wL1ByYWN0aWNlL0dpdEh1Yi9nb2FsLXNoYXBlci1tb2JpbGUvc3JjL2FwcC9jYXRlZ2dvcmllcy9jYXRlZ2dvcmllcy5wYWdlLnNjc3MiLCJzcmMvYXBwL2NhdGVnZ29yaWVzL2NhdGVnZ29yaWVzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDRTtFQUNFLHNCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsT0FBQTtFQUNBLE1BQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7QUNBSiIsImZpbGUiOiJzcmMvYXBwL2NhdGVnZ29yaWVzL2NhdGVnZ29yaWVzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiAgXG4gIC5yb3VuZHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgICBoZWlnaHQ6IDE1cHg7XG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDE1cHg7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB9XG5cbi8vIC5iYWNrZ3JvdW5kLWZhYmJ1dHRvbntcbi8vICAgICAtLWJhY2tncm91bmQ6ICNGMDlEMkUgIWltcG9ydGFudDtcbi8vIH1cblxuLy8gLmJnLXJlZHtcbi8vICAgYmFja2dyb3VuZC1jb2xvcjogcmVkICFpbXBvcnRhbnQ7XG4vLyB9XG4gICIsIi5yb3VuZCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgaGVpZ2h0OiAxNXB4O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxNXB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".round {\n  border: 1px solid #ccc;\n  border-radius: 50%;\n  height: 15px;\n  left: 0;\n  top: 0;\n  width: 15px;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2F0ZWdnb3JpZXMvQzpcXFVzZXJzXFx2aW5vZFxcT25lRHJpdmVcXERvY3VtZW50c1xcR29hbCBzaGFwZXJcXDEwLTA4LTIwMjBcXGdvYWwtc2hhcGVyLW1vYmlsZS1tYXN0ZXIvc3JjXFxhcHBcXGNhdGVnZ29yaWVzXFxjYXRlZ2dvcmllcy5wYWdlLnNjc3MiLCJzcmMvYXBwL2NhdGVnZ29yaWVzL2NhdGVnZ29yaWVzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDRTtFQUNFLHNCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsT0FBQTtFQUNBLE1BQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7QUNBSiIsImZpbGUiOiJzcmMvYXBwL2NhdGVnZ29yaWVzL2NhdGVnZ29yaWVzLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiAgXG4gIC5yb3VuZHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgICBoZWlnaHQ6IDE1cHg7XG4gICAgbGVmdDogMDtcbiAgICB0b3A6IDA7XG4gICAgd2lkdGg6IDE1cHg7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB9XG5cbi8vIC5iYWNrZ3JvdW5kLWZhYmJ1dHRvbntcbi8vICAgICAtLWJhY2tncm91bmQ6ICNGMDlEMkUgIWltcG9ydGFudDtcbi8vIH1cblxuLy8gLmJnLXJlZHtcbi8vICAgYmFja2dyb3VuZC1jb2xvcjogcmVkICFpbXBvcnRhbnQ7XG4vLyB9XG4gICIsIi5yb3VuZCB7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgaGVpZ2h0OiAxNXB4O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxNXB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59Il19 */");
 
 /***/ }),
 
@@ -133,6 +133,7 @@ let CateggoriesPage = class CateggoriesPage {
         this.apiService = apiService;
         this.global = global;
         this.categoryInfo = [];
+        this.catogery_names_list = [];
     }
     ngOnInit() {
         console.log('Category init Method');
@@ -154,6 +155,10 @@ let CateggoriesPage = class CateggoriesPage {
             this.global.hideLoading();
             console.log(result.body);
             this.categoryInfo = result.body;
+            this.catogery_names_list = [];
+            for (let i = 0; i < this.categoryInfo.length; i++) {
+                this.catogery_names_list.push(this.categoryInfo[i].name);
+            }
         }, (error) => {
             this.global.hideLoading();
             console.log(error);
@@ -166,7 +171,8 @@ let CateggoriesPage = class CateggoriesPage {
                 component: _category_modal_category_modal_page__WEBPACK_IMPORTED_MODULE_3__["CategoryModalPage"],
                 cssClass: 'custom-modal',
                 componentProps: {
-                    passCatagory: category
+                    passCatagory: category,
+                    filterList: this.catogery_names_list
                 }
             });
             modal.onWillDismiss().then(dataReturned => {

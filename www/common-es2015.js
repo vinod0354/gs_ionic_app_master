@@ -419,6 +419,19 @@ const openURL = async (url, ev, direction) => {
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/action-date/action-date.page.html":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/action-date/action-date.page.html ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <div class=\"ion-text-right\">\n          <span (click)=\"closemodal('CANCEL');\"><i class=\"fa fa-times\" style=\"color: #f78f11;\"></i></span>\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col size=\"12\">\n        <div>\n          <span style=\"font-size: 18px; color: #757575;\">Take Cosmo for a walk</span>\n        </div>\n      </ion-col>\n      <ion-col size=\"12\">\n        <div>\n          <span style=\"font-size: 26px; color: #363648;\">Choose a due date</span>\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <mbsc-form-group>\n        <mbsc-calendar [(ngModel)]=\"markedDay\" display=\"inline\" (onSet)=\"getDetailsofClick($event)\" [marked]=\"markedDays\"></mbsc-calendar>\n      </mbsc-form-group>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <div class=\"ion-text-center\">\n          <ion-button shape=\"round\" class=\"save-btn\" (click)=\"closemodal('CANCEL');\">Ok</ion-button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/search/search.page.html":
 /*!*******************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/search/search.page.html ***!
@@ -429,6 +442,205 @@ const openURL = async (url, ev, direction) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("\n<ion-content>\n  <ion-searchbar showCancelButton=\"focus\" (ionChange)=\"handleinput($event)\"></ion-searchbar>\n  <div style=\"text-align: center;\">\n    <ion-button (click)=\"closemodal()\" shape=\"round\">Search</ion-button>\n  </div>\n</ion-content>\n");
+
+/***/ }),
+
+/***/ "./src/app/action-date/action-date-routing.module.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/action-date/action-date-routing.module.ts ***!
+  \***********************************************************/
+/*! exports provided: ActionDatePageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionDatePageRoutingModule", function() { return ActionDatePageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _action_date_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./action-date.page */ "./src/app/action-date/action-date.page.ts");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _action_date_page__WEBPACK_IMPORTED_MODULE_3__["ActionDatePage"]
+    }
+];
+let ActionDatePageRoutingModule = class ActionDatePageRoutingModule {
+};
+ActionDatePageRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], ActionDatePageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/action-date/action-date.module.ts":
+/*!***************************************************!*\
+  !*** ./src/app/action-date/action-date.module.ts ***!
+  \***************************************************/
+/*! exports provided: ActionDatePageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionDatePageModule", function() { return ActionDatePageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _action_date_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./action-date-routing.module */ "./src/app/action-date/action-date-routing.module.ts");
+/* harmony import */ var _action_date_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./action-date.page */ "./src/app/action-date/action-date.page.ts");
+/* harmony import */ var _mobiscroll_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mobiscroll/angular */ "./node_modules/@mobiscroll/angular/dist/esm5/mobiscroll.angular.min.js");
+
+
+
+
+
+
+
+
+let ActionDatePageModule = class ActionDatePageModule {
+};
+ActionDatePageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _action_date_routing_module__WEBPACK_IMPORTED_MODULE_5__["ActionDatePageRoutingModule"],
+            _mobiscroll_angular__WEBPACK_IMPORTED_MODULE_7__["MbscModule"]
+        ],
+        declarations: [_action_date_page__WEBPACK_IMPORTED_MODULE_6__["ActionDatePage"]]
+    })
+], ActionDatePageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/action-date/action-date.page.scss":
+/*!***************************************************!*\
+  !*** ./src/app/action-date/action-date.page.scss ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".save-btn {\n  width: 175px;\n  height: 72px;\n  font-size: 15px;\n  font-weight: bold;\n  color: #ed7702;\n  border: solid 2px #ed7702;\n  border-radius: 36px;\n  --background: white;\n  --box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWN0aW9uLWRhdGUvQzpcXFVzZXJzXFx2aW5vZFxcT25lRHJpdmVcXERvY3VtZW50c1xcR29hbCBzaGFwZXJcXDEwLTA4LTIwMjBcXGdvYWwtc2hhcGVyLW1vYmlsZS1tYXN0ZXIvc3JjXFxhcHBcXGFjdGlvbi1kYXRlXFxhY3Rpb24tZGF0ZS5wYWdlLnNjc3MiLCJzcmMvYXBwL2FjdGlvbi1kYXRlL2FjdGlvbi1kYXRlLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFlBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsY0FBQTtFQUNBLHlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQkFBQTtFQUNBLHNGQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9hY3Rpb24tZGF0ZS9hY3Rpb24tZGF0ZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2F2ZS1idG4ge1xyXG4gICAgd2lkdGg6IDE3NXB4O1xyXG4gICAgaGVpZ2h0OiA3MnB4O1xyXG4gICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICBjb2xvcjogI2VkNzcwMjtcclxuICAgIGJvcmRlcjogc29saWQgMnB4ICNlZDc3MDI7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzNnB4O1xyXG4gICAgLS1iYWNrZ3JvdW5kOiB3aGl0ZTtcclxuICAgIC0tYm94LXNoYWRvdzogMCA2cHggMTJweCAwIHJnYmEoMCwgMCwgMCwgMC4wOCksIDAgLTZweCAxMnB4IDAgcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjUpO1xyXG59IiwiLnNhdmUtYnRuIHtcbiAgd2lkdGg6IDE3NXB4O1xuICBoZWlnaHQ6IDcycHg7XG4gIGZvbnQtc2l6ZTogMTVweDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGNvbG9yOiAjZWQ3NzAyO1xuICBib3JkZXI6IHNvbGlkIDJweCAjZWQ3NzAyO1xuICBib3JkZXItcmFkaXVzOiAzNnB4O1xuICAtLWJhY2tncm91bmQ6IHdoaXRlO1xuICAtLWJveC1zaGFkb3c6IDAgNnB4IDEycHggMCByZ2JhKDAsIDAsIDAsIDAuMDgpLCAwIC02cHggMTJweCAwIHJnYmEoMjU1LCAyNTUsIDI1NSwgMC41KTtcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/action-date/action-date.page.ts":
+/*!*************************************************!*\
+  !*** ./src/app/action-date/action-date.page.ts ***!
+  \*************************************************/
+/*! exports provided: ActionDatePage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionDatePage", function() { return ActionDatePage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _mobiscroll_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mobiscroll/angular */ "./node_modules/@mobiscroll/angular/dist/esm5/mobiscroll.angular.min.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+
+
+
+
+_mobiscroll_angular__WEBPACK_IMPORTED_MODULE_2__["mobiscroll"].settings = {
+    theme: 'ios',
+    themeVariant: 'light'
+};
+const now = new Date();
+let ActionDatePage = class ActionDatePage {
+    constructor(modal) {
+        this.modal = modal;
+        this.markedDays = [];
+        this.actions = {
+            "action": "",
+            "objective_id": null,
+            "created_user_id": null,
+            "scheduled_date": "",
+            "completed_date": "",
+            "target_date": "",
+            "description": "null",
+            "remarks": "null",
+            "priority_id": null,
+            "action_category_id": null,
+            "enterprise_id": null,
+            "goal_id": null,
+            "milestone_id": null
+        };
+    }
+    ngOnInit() {
+    }
+    getDetailsofClick(data) {
+        console.log(data);
+        // this.processCalenderEvents(data.valueText);
+        console.log(new Date(data.valueText));
+        console.log(this.markedDay);
+    }
+    closemodal(data) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            let dummyData = this.actions;
+            dummyData['close'] = data;
+            console.log();
+            yield this.modal.dismiss({ data: dummyData });
+        });
+    }
+};
+ActionDatePage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ActionDatePage.prototype, "modalType", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ActionDatePage.prototype, "modalData", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ActionDatePage.prototype, "modalActions", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ActionDatePage.prototype, "modalCatogeries", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ActionDatePage.prototype, "modalGoals", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ActionDatePage.prototype, "modalObjectives", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], ActionDatePage.prototype, "miscellaneousCatogeryID", void 0);
+ActionDatePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-action-date',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./action-date.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/action-date/action-date.page.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./action-date.page.scss */ "./src/app/action-date/action-date.page.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"]])
+], ActionDatePage);
+
+
 
 /***/ }),
 

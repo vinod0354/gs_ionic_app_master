@@ -20769,7 +20769,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   /***/
   function _(module, exports, __webpack_require__) {
     __webpack_require__(
-    /*! /Users/admin/Desktop/Practice/GitHub/goal-shaper-mobile/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js */
+    /*! C:\Users\vinod\OneDrive\Documents\Goal shaper\10-08-2020\goal-shaper-mobile-master\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
     "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js");
 
     __webpack_require__(
@@ -20777,15 +20777,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/zone.js/dist/zone-legacy.js");
 
     __webpack_require__(
-    /*! /Users/admin/Desktop/Practice/GitHub/goal-shaper-mobile/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js */
+    /*! C:\Users\vinod\OneDrive\Documents\Goal shaper\10-08-2020\goal-shaper-mobile-master\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\jit-polyfills.js */
     "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js");
 
     __webpack_require__(
-    /*! /Users/admin/Desktop/Practice/GitHub/goal-shaper-mobile/node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-jit-polyfills.js */
+    /*! C:\Users\vinod\OneDrive\Documents\Goal shaper\10-08-2020\goal-shaper-mobile-master\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-jit-polyfills.js */
     "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-jit-polyfills.js");
 
     module.exports = __webpack_require__(
-    /*! /Users/admin/Desktop/Practice/GitHub/goal-shaper-mobile/src/polyfills.ts */
+    /*! C:\Users\vinod\OneDrive\Documents\Goal shaper\10-08-2020\goal-shaper-mobile-master\src\polyfills.ts */
     "./src/polyfills.ts");
     /***/
   }

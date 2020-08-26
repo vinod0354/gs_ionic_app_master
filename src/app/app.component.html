@@ -28,7 +28,11 @@
         <ion-list lines="none" id="inbox-list">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item lines="none" (click)="selectedIndex = i;clickedItem(p)" routerDirection="root" [routerLink]="[p.url]" detail="false" [class.selected]="selectedIndex == i">
-              <ion-label>{{ p.title }}</ion-label>
+              <ion-icon [name]="p.icon" slot="start" style="width:25px; height: 25px;"></ion-icon>
+              <ion-label>
+                <h2 class="title" style="padding-top:15px;">{{ p.title }}</h2>
+                <h3>{{ p.subtitle }}</h3>
+              </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

@@ -14,6 +14,7 @@ import { ActionCreationPageModule } from '../action-creation/action-creation.mod
 import { DatePipe } from '@angular/common';
 import { SearchPageModule } from '../search/search.module';
 import { PipesModule } from '../pipes/pipes.module';
+import { ActionDatePageModule } from '../action-date/action-date.module';
 
 @NgModule({
   imports: [ 
@@ -25,7 +26,8 @@ import { PipesModule } from '../pipes/pipes.module';
     ActionsPageRoutingModule,
     SearchPageModule,
     PipesModule,
-    ActionCreationPageModule
+    ActionCreationPageModule,
+    ActionDatePageModule
   ],
   declarations: [ActionsPage],
   providers:[DatePipe]

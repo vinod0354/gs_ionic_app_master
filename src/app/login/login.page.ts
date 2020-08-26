@@ -13,8 +13,8 @@ import { EventsService } from '../events.service';
 })
 export class LoginPage implements OnInit {
 
-  username ='';
-  password ='';
+  username ='dev.goalshaper@gmail.com';
+  password ='goalshaper1';
   checkLengthGoal = [];
   checkLengthObjective = [];
 

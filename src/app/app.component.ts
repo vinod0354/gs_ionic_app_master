@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
     {
       title: 'Actions',
       url: '/actions',
-      icon: 'mail'
+      icon: 'mail',
+      subtitle: 'Create and complete towards yours Goals'
     },
     // {
     //   title: 'Goals',
@@ -30,12 +31,38 @@ export class AppComponent implements OnInit {
     {
       title: 'Goals & Objectives',
       url: '/goalsobjective',
-      icon: 'mail'
+      icon: 'mail',
+      subtitle: 'Set your targets'
     },
     {
       title: 'Categories',
       url: '/categgories',
-      icon: 'paper-plane'
+      icon: 'paper-plane',
+      subtitle: 'Define your focus areas'
+    },
+    {
+      title: 'Guiding Principles',
+      url: '/guiding-principles',
+      icon: 'paper-plane',
+      subtitle: 'Spot your North star'
+    },
+    {
+      title: 'Compass',
+      url: '/compass',
+      icon: 'paper-plane',
+      subtitle: 'See where you are heading and course correct'
+    },
+    {
+      title: 'Pulse',
+      url: '/pulse',
+      icon: 'paper-plane',
+      subtitle: 'Quick goal health check'
+    },
+    {
+      title: 'Progress Tracker',
+      url: '/progress-tracker',
+      icon: 'paper-plane',
+      subtitle: 'See where you are heading and course correct'
     },
     {
       title: 'Calendar',

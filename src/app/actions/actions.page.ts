@@ -8,6 +8,8 @@ import { ApiServicesService } from '../services/api-services.service';
 import { DatePipe } from '@angular/common';
 import { SearchPage } from '../search/search.page';
 import * as moment from 'moment';
+import { ActionDatePageModule } from '../action-date/action-date.module';
+import { ActionDatePage } from '../action-date/action-date.page';
 
 
 mobiscroll.settings = {
@@ -67,6 +69,26 @@ export class ActionsPage implements OnInit {
 	days = [];
 	daysRequired = 6;
 
+	collapse_all = true;
+
+	//Toggle//
+	categoryToggle = false;
+
+	// Do Tabs //
+		// isCategory = true;
+		isDo = true;
+		isDue = false;
+		// isPriority = false;
+		// isCategoryEnb = "normal";
+		isDoEnb = "bold";
+		isDueEnb = "normal";
+		// isPriorityEnb = "normal";
+		// isCaActive = "#363648"
+		isDoActive = "#265b8f"
+		isDuActive = "#363648"
+		// isPrActive = "#363648"
+	// End Do Tabs //
+
 //   listviewOptions: MbscListviewOptions = {
 //       theme: 'material',
 //       themeVariant: 'light',
@@ -103,19 +125,25 @@ export class ActionsPage implements OnInit {
 		if (i == 0) {
 			this.days.push( 
 				{displayDate : 'Do Today',
-					formatDate:moment().add(i, 'days').format('YYYY-MM-DD')
+					formatDate:moment().add(i, 'days').format('YYYY-MM-DD'),
+					actions:[],
+					id:"chooseDate"
 				}
 			 );
 		}else if(i == 1) {
 			this.days.push(
 				{displayDate : 'Tomorrow',
-					formatDate:moment().add(i, 'days').format('YYYY-MM-DD')
+					formatDate:moment().add(i, 'days').format('YYYY-MM-DD'),
+					actions:[],
+					id:"chooseDate"
 				}
 			);
 		}else {
 			this.days.push( 
 				{displayDate : moment().add(i, 'days').format('dddd Do'),
-					formatDate:moment().add(i, 'days').format('YYYY-MM-DD')
+					formatDate:moment().add(i, 'days').format('YYYY-MM-DD'),
+					actions:[],
+					id:"chooseDate"
 				}
 			 );
 		}
@@ -128,6 +156,76 @@ export class ActionsPage implements OnInit {
   segmentChanged(ev: any) {
     console.log('Segment changed', ev);
   }
+
+  segmentTab(ev: any) {
+    console.log('Segment changed', ev);
+  }
+
+  //Do Tab Click//
+//   click_Category(){
+//     console.log("clicked click_Category");
+//     this.isCategory = true;
+//     this.isDo = false;
+//     this.isDue = false;
+//     this.isPriority = false;
+//     this.isCategoryEnb = "bold";
+//     this.isDoEnb = "normal";
+//     this.isDueEnb = "normal";
+// 	this.isPriorityEnb = "normal";
+// 	this.isCaActive = "#265b8f";
+// 	this.isDoActive = "#363648"
+// 	this.isDuActive = "#363648"
+// 	this.isPrActive = "#363648"
+//   }
+
+  click_Do(){
+    console.log("clicked click_Category");
+    // this.isCategory = false;
+    this.isDo = true;
+    this.isDue = false;
+    // this.isPriority = false;
+    // this.isCategoryEnb = "normal";
+    this.isDoEnb = "bold";
+    this.isDueEnb = "normal";
+	// this.isPriorityEnb = "normal";
+	// this.isCaActive = "#363648";
+	this.isDoActive = "#265b8f"
+	this.isDuActive = "#363648"
+	// this.isPrActive = "#363648"
+  }
+
+  click_Due(){
+    console.log("clicked click_Category");
+    // this.isCategory = false;
+    this.isDo = false;
+    this.isDue = true;
+    // this.isPriority = false;
+    // this.isCategoryEnb = "normal";
+    this.isDoEnb = "normal";
+    this.isDueEnb = "bold";
+	// this.isPriorityEnb = "normal";
+	// this.isCaActive = "#363648";
+	this.isDoActive = "#363648"
+	this.isDuActive = "#265b8f"
+	// this.isPrActive = "#363648"
+  }
+
+//   click_Priority(){
+//     console.log("clicked click_Category");
+//     this.isCategory = false;
+//     this.isDo = false;
+//     this.isDue = false;
+//     this.isPriority = true;
+//     this.isCategoryEnb = "normal";
+//     this.isDoEnb = "normal";
+//     this.isDueEnb = "normal";
+// 	this.isPriorityEnb = "bold";
+// 	this.isCaActive = "#363648";
+// 	this.isDoActive = "#363648"
+// 	this.isDuActive = "#363648"
+// 	this.isPrActive = "#265b8f"
+//   }
+  //End Tab Click//
 
   async openModal(type,input) {
 
@@ -161,7 +259,7 @@ export class ActionsPage implements OnInit {
 
 
       const modal = await this.modalController.create({
-       component: ActionCreationPage,cssClass: 'actions-modal',componentProps: initialState
+       component: ActionCreationPage,cssClass: 'action-modal-new',componentProps: initialState
       });
 
       modal.onDidDismiss().then((dataReturned) => {
@@ -186,6 +284,7 @@ export class ActionsPage implements OnInit {
 	clickedheader(i){
 		console.log("Clicked header index....  "+ i);
 		this.click_header_index = i;
+		this.categoryToggle = !this.categoryToggle
 	}
 
 
@@ -421,13 +520,29 @@ export class ActionsPage implements OnInit {
 		// this.click_previous_index = data;
 	}
 
-	onDrop(event: CdkDragDrop<string[]>) {
+	async onDrop(event: CdkDragDrop<string[]>) {
 		console.log('Event Triggered....');
 		console.log(event);
+		// if (this.dumpActions == 0) {
+
+		// }
+		if(event.previousContainer.id == 'moviesList' && event.container.id== 'chooseDate'){
+			return
+		}
 		if (event.previousContainer === event.container) {
 			moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
 			console.log('SAME container......');
-		} else {
+		}else if(event.container.id== 'chooseDate') {
+			// this.modalRef = this.modalService.show(AddDateComponent, { class: 'gray modal-md' });
+			transferArrayItem(
+				event.previousContainer.data,
+				event.container.data,
+				event.previousIndex,
+				event.currentIndex
+			);
+		}
+		else {
+			
 			let substract_index = 0;
 			if(event.currentIndex == 0){
 				substract_index = 0;
@@ -443,28 +558,27 @@ export class ActionsPage implements OnInit {
 				event.currentIndex-substract_index
 			);
 
-    console.log('other container......');
+    	console.log('other container......');
+		console.log(this.chunkActions);
+		console.log(this.dumpActions);
+		console.log(event.currentIndex-substract_index);
+		console.log(event.container.id);
+		for(let i=0;i< this.chunkActions.length;i++){
 
-      console.log(this.chunkActions);
-      console.log(this.dumpActions);
-      console.log(event.currentIndex-substract_index);
-      console.log(event.container.id);
-      for(let i=0;i< this.chunkActions.length;i++){
+			if(this.chunkActions[i].name == event.container.id){
+			console.log('*********');
+			console.log(i);
+			console.log(this.chunkActions[i]);
+			console.log(this.chunkActions[i].actions);
+			console.log(this.chunkActions[i].actions[event.currentIndex-substract_index]);
+			console.log(this.chunkActions[i].actions[event.currentIndex-substract_index]['action_category_id']);
+			this.chunkActions[i].actions[event.currentIndex-substract_index]['action_category_id'] = this.chunkActions[i].category_id;
+			this.chunkActions[i].actions[event.currentIndex-substract_index]['category_name'] = this.chunkActions[i].name;
+			this.updateOnDragDrop(this.chunkActions[i].actions[event.currentIndex-substract_index]);
 
-        if(this.chunkActions[i].name == event.container.id){
-		  console.log('*********');
-		  console.log(i);
-		  console.log(this.chunkActions[i]);
-		  console.log(this.chunkActions[i].actions);
-		  console.log(this.chunkActions[i].actions[event.currentIndex-substract_index]);
-		  console.log(this.chunkActions[i].actions[event.currentIndex-substract_index]['action_category_id']);
-          this.chunkActions[i].actions[event.currentIndex-substract_index]['action_category_id'] = this.chunkActions[i].category_id;
-          this.chunkActions[i].actions[event.currentIndex-substract_index]['category_name'] = this.chunkActions[i].name;
-          this.updateOnDragDrop(this.chunkActions[i].actions[event.currentIndex-substract_index]);
-
-        }
-      }
-      this.countChunks();
+			}
+      	}
+		this.countChunks();
 		}
   }
 
@@ -498,6 +612,35 @@ this.updateOnDragDrop(this.dumpActions[event.currentIndex]);
 	}
 }
 
+	onDropDate(event: CdkDragDrop<string[]>,date){
+		console.log('Event Triggered....');
+		console.log(event);
+
+		// if (this.dumpActions == 0) {
+
+		// }
+		if(event.previousContainer.id == 'moviesList' && event.container.id == 'chooseDate'){
+			return
+		}
+		if (event.previousContainer === event.container) {
+			moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+			console.log('SAME container......');
+		}else if(event.container.id== 'chooseDate') {
+
+			// call update function here  with below parameters
+			console.log(event.item.data); // item data
+			console.log(date) // date
+
+			transferArrayItem(
+				event.previousContainer.data,
+				event.container.data,
+				event.previousIndex,
+				event.currentIndex
+			);
+
+			//this.modalRef = this.modalService.show(AddDateComponent, { class: 'gray modal-md' });
+		}
+	}
 
   updateOnDragDrop(dataReceived){
 
