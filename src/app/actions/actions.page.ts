@@ -68,7 +68,8 @@ export class ActionsPage implements OnInit {
 
 	days = [];
 	daysRequired = 6;
-
+	anotherdate = [];
+	otherdays = 1;
 	collapse_all = true;
 
 	//Toggle//
@@ -88,6 +89,23 @@ export class ActionsPage implements OnInit {
 		isDuActive = "#363648"
 		// isPrActive = "#363648"
 	// End Do Tabs //
+
+	//Actions Data
+	actions:any = {
+		"action": "",
+		"objective_id": null,
+		"created_user_id":null,
+		"scheduled_date": "",
+		"completed_date": "",
+		"target_date": "",
+		"description": "null",
+		"remarks": "null",
+		"priority_id": null,
+		"action_category_id": null,
+		"enterprise_id": null,
+		"goal_id": null,
+		"milestone_id":null
+	};
 
 //   listviewOptions: MbscListviewOptions = {
 //       theme: 'material',
@@ -150,7 +168,21 @@ export class ActionsPage implements OnInit {
 	
 	}
 
+	for (let i = 0; i <= this.otherdays; i++) {
+		if (i == 0) {
+			this.anotherdate.push( 
+				{displayDate1 : 'Another date',
+					formatDate:moment().add(i, 'days').format('YYYY-MM-DD'),
+					actions:[],
+					id:"chooseDate"
+				}
+			 );
+		}
+	
+	}
+
 	console.log(this.days)
+	console.log(this.anotherdate)
   }
 
   segmentChanged(ev: any) {
@@ -634,11 +666,41 @@ this.updateOnDragDrop(this.dumpActions[event.currentIndex]);
 			transferArrayItem(
 				event.previousContainer.data,
 				event.container.data,
-				event.previousIndex,
+				event.previousIndex-2,
 				event.currentIndex
 			);
 
 			//this.modalRef = this.modalService.show(AddDateComponent, { class: 'gray modal-md' });
+		}
+	}
+	
+	async anotherDate(event: CdkDragDrop<string[]>,date){
+		console.log('Event Triggered....');
+		console.log(event);
+		
+		if(event.previousContainer.id == 'moviesList' && event.container.id == 'chooseDate'){
+			return
+		}
+		if (event.previousContainer === event.container) {
+			moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+			console.log('SAME container......');
+		}else if(event.container.id== 'chooseDate') {
+
+			// call update function here  with below parameters
+			console.log(event.item.data); // item data
+			console.log(date) // date
+
+			transferArrayItem(
+				event.previousContainer.data,
+				event.container.data,
+				event.previousIndex,
+				event.currentIndex
+			);
+
+			const modal = await this.modalController.create({
+				   component: ActionDatePage,cssClass: 'action-modal-date'
+		  	});
+			return await modal.present();
 		}
 	}
 

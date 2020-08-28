@@ -1,6 +1,7 @@
 .card{
     /* background-color: #F3F3F3; */
     box-shadow: 5px 5px 5px -5px inset;
+    overflow: scroll;
 }
 .card1{
     /* background-color: #F3F3F3; */
@@ -41,17 +42,6 @@
     height:20px;
 }   
 
-.buttons{
-    height: 55px;
-    width: 140px;
-    font-size:20px;
-    border-radius: 25px;
-    box-shadow: 5px 5px 15px -4px;
-    /* box-shadow:10px 10px 10px -10px inset; */
-    margin-right: 0px;
-    background-color:#9ed127;
-}
-
 table, tr, td {  
     border: 1px solid #ddd;
     text-align: left;
@@ -80,4 +70,36 @@ table, tr, td {
     min-height: 70px;
     // box-shadow:10px 10px 10px -10px inset ;
     box-shadow: 3px 2px 7px -5px inset;
+}
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(114deg, #c354a3 22%, #3668a4 82%);
+    border-radius: 10px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1089CE; 
+  }
+
+  .action-btn {
+    width: 175px;
+    height: 72px;
+    font-size: 15px;
+    font-weight: bold;
+    --background: #9ac81b;
+    --box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);
 }

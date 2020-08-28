@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: ProgressTrackerPage
+  },
+  {
+    path: 'share',
+    loadChildren: () => import('./share/share.module').then( m => m.SharePageModule)
   }
 ];
 

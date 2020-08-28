@@ -8,6 +8,7 @@ import { ProgressTrackerPageRoutingModule } from './progress-tracker-routing.mod
 
 import { ProgressTrackerPage } from './progress-tracker.page';
 import { ChartsModule } from 'ng2-charts';
+import { SharePageModule } from './share/share.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ChartsModule } from 'ng2-charts';
     FormsModule,
     IonicModule,
     ProgressTrackerPageRoutingModule,
-    ChartsModule
+    ChartsModule,
+    SharePageModule
   ],
   declarations: [ProgressTrackerPage]
 })

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Label, MultiDataSet, Color } from 'ng2-charts';
 import { ChartType, ChartOptions } from 'chart.js';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
+import { SharePage } from './share/share.page';
 
 @Component({
   selector: 'app-progress-tracker',
@@ -57,7 +58,7 @@ export class ProgressTrackerPage implements OnInit {
 
   doughnutChartLegend =false;
 
-  constructor(public navCtrl: NavController) { }
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {
     this.segment = 'new';
@@ -68,5 +69,13 @@ export class ProgressTrackerPage implements OnInit {
   segmentChanged(ev: any) {
     console.log('Segment changed', ev);
   } 
+
+  async openModal() {
+    const modal = await this.modalController.create({
+         component: SharePage,cssClass: 'share-modal'
+        });
+    modal.present();
+    console.log('clicked');
+  }
 
 }

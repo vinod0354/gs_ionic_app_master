@@ -207,7 +207,8 @@ export class ActionCreationPage implements OnInit {
   }
 
   onBlur(event){
-    this.isEdit = !this.isEdit
+    this.isEdit = !this.isEdit;
+    this.isEditable = !this.isEditable;
   }
  
     saveActions(){

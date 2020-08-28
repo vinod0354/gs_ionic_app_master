@@ -1,24 +1,24 @@
 .padding-25px-top{
-    padding-top: 25px;
+  padding-top: 25px;
 }
 .chart-wrapper {
-    background: transparent url('../../assets/img/lotus2.png') no-repeat center 30px;
-  }
-  ion-segment{
-    --background:white;
-    border: 1px solid lightgray;
-    border-radius: 4px;
-  }
-  ion-segment-button{
-    text-transform:capitalize;
-    --indicator-box-shadow:transparent !important;
-    border: 1px solid #ededed;
-    --border-color:#ededed;
-    --padding:0 0.2em;
-    --margin:0.5em;
-    // --background-checked:#1089CE !important;
-    --background-checked: linear-gradient(to bottom, #419ebe, #3e7ebf);
-    --color-checked:rgb(255,255,255);
-    --indicator-color:transparent !important
+  background: transparent url('../../assets/img/lotus2.png') no-repeat center 30px;
+}
+ion-segment{
+  --background:white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+ion-segment-button{
+  text-transform:capitalize;
+  --indicator-box-shadow:transparent !important;
+  border: 1px solid #ededed;
+  --border-color:#ededed;
+  --padding:0 0.2em;
+  --margin:0.5em;
+  // --background-checked:#1089CE !important;
+  --background-checked: linear-gradient(to bottom, #419ebe, #3e7ebf);
+  --color-checked:rgb(255,255,255);
+  --indicator-color:transparent !important
 
-  }
+}

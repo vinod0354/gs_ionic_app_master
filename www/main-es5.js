@@ -848,7 +848,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | actions-actions-module */
-        [__webpack_require__.e("default~actions-actions-module~compass-compass-module~goalsobjective-goalsobjective-module~progress-~653be762"), __webpack_require__.e("default~action-creation-action-creation-module~actions-actions-module"), __webpack_require__.e("common"), __webpack_require__.e("actions-actions-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~actions-actions-module~compass-compass-module~goalsobjective-goalsobjective-module~progress-~653be762"), __webpack_require__.e("default~action-creation-action-creation-module~actions-actions-module"), __webpack_require__.e("default~action-date-action-date-module~actions-actions-module"), __webpack_require__.e("common"), __webpack_require__.e("actions-actions-module")]).then(__webpack_require__.bind(null,
         /*! ./actions/actions.module */
         "./src/app/actions/actions.module.ts")).then(function (m) {
           return m.ActionsPageModule;
@@ -1088,7 +1088,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return __webpack_require__.e(
         /*! import() | action-date-action-date-module */
-        "common").then(__webpack_require__.bind(null,
+        "default~action-date-action-date-module~actions-actions-module").then(__webpack_require__.bind(null,
         /*! ./action-date/action-date.module */
         "./src/app/action-date/action-date.module.ts")).then(function (m) {
           return m.ActionDatePageModule;
@@ -1586,13 +1586,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
     /*! @ionic-native/camera/ngx */
     "./node_modules/@ionic-native/camera/ngx/index.js");
+    /* harmony import */
+
+
+    var _focus_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    /*! ./focus.directive */
+    "./src/app/focus.directive.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _focus_directive__WEBPACK_IMPORTED_MODULE_19__["FocusDirective"]],
       entryComponents: [],
       imports: [_mobiscroll_angular__WEBPACK_IMPORTED_MODULE_1__["MbscModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_13__["HttpClientModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_10__["AppRoutingModule"], _categgories_category_modal_category_modal_module__WEBPACK_IMPORTED_MODULE_11__["CategoryModalPageModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["BrowserAnimationsModule"], _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_17__["PipesModule"]],
       providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_8__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_7__["SplashScreen"], _services_api_services_service__WEBPACK_IMPORTED_MODULE_14__["ApiServicesService"], _ionic_native_native_storage_ngx__WEBPACK_IMPORTED_MODULE_15__["NativeStorage"], _angular_common__WEBPACK_IMPORTED_MODULE_16__["DatePipe"], _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_18__["Camera"], {
@@ -2100,6 +2106,82 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     EventsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
     })], EventsService);
+    /***/
+  },
+
+  /***/
+  "./src/app/focus.directive.ts":
+  /*!************************************!*\
+    !*** ./src/app/focus.directive.ts ***!
+    \************************************/
+
+  /*! exports provided: FocusDirective */
+
+  /***/
+  function srcAppFocusDirectiveTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FocusDirective", function () {
+      return FocusDirective;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var FocusDirective = /*#__PURE__*/function () {
+      function FocusDirective(host, el, zone, renderer) {
+        _classCallCheck(this, FocusDirective);
+
+        this.host = host;
+        this.el = el;
+        this.zone = zone;
+        this.renderer = renderer;
+      }
+
+      _createClass(FocusDirective, [{
+        key: "ngAfterContentInit",
+        value: function ngAfterContentInit() {
+          var _this4 = this;
+
+          this.zone.runOutsideAngular(function () {
+            return setTimeout(function () {
+              _this4.renderer.selectRootElement(_this4.el.nativeElement).focus();
+            }, 0);
+          });
+        }
+      }]);
+
+      return FocusDirective;
+    }();
+
+    FocusDirective.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer"]
+      }];
+    };
+
+    FocusDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+      selector: '[appFocus]'
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer"]])], FocusDirective);
     /***/
   },
 
@@ -2672,7 +2754,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "canActivate",
         value: function canActivate(route) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-            var _this4 = this;
+            var _this5 = this;
 
             return regeneratorRuntime.wrap(function _callee4$(_context4) {
               while (1) {
@@ -2684,8 +2766,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                   case 2:
                     _context4.next = 4;
                     return this.storage.getItem('login').then(function (result) {
-                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this4, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-                        var _this5 = this;
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this5, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+                        var _this6 = this;
 
                         return regeneratorRuntime.wrap(function _callee3$(_context3) {
                           while (1) {
@@ -2699,24 +2781,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                                 _context3.next = 3;
                                 return this.storage.getItem('getFullList').then(function (result) {
                                   if (result.goalInfo.length != 0 || result.objInfo.length != 0) {
-                                    _this5.storage.getItem('userdeatils').then(function (data) {
+                                    _this6.storage.getItem('userdeatils').then(function (data) {
                                       console.log('enterpriseid:', +data);
-                                      _this5.global.enterprisedId = data.user.enterprise_id;
-                                      _this5.global.userId = data.user.user_id;
+                                      _this6.global.enterprisedId = data.user.enterprise_id;
+                                      _this6.global.userId = data.user.user_id;
 
-                                      _this5.events.publish('user:created', {
+                                      _this6.events.publish('user:created', {
                                         user: data
                                       });
                                     }, function (error) {
                                       console.log(error);
                                     });
 
-                                    _this5.router.navigateByUrl('/goalsobjective');
+                                    _this6.router.navigateByUrl('/goalsobjective');
                                   } else {
-                                    _this5.router.navigateByUrl('/welcome');
+                                    _this6.router.navigateByUrl('/welcome');
                                   }
                                 }, function (error) {
-                                  _this5.router.navigateByUrl('/welcome');
+                                  _this6.router.navigateByUrl('/welcome');
                                 });
 
                               case 3:

@@ -734,7 +734,7 @@ const routes = [
     },
     {
         path: 'actions',
-        loadChildren: () => Promise.all(/*! import() | actions-actions-module */[__webpack_require__.e("default~actions-actions-module~compass-compass-module~goalsobjective-goalsobjective-module~progress-~653be762"), __webpack_require__.e("default~action-creation-action-creation-module~actions-actions-module"), __webpack_require__.e("common"), __webpack_require__.e("actions-actions-module")]).then(__webpack_require__.bind(null, /*! ./actions/actions.module */ "./src/app/actions/actions.module.ts")).then(m => m.ActionsPageModule)
+        loadChildren: () => Promise.all(/*! import() | actions-actions-module */[__webpack_require__.e("default~actions-actions-module~compass-compass-module~goalsobjective-goalsobjective-module~progress-~653be762"), __webpack_require__.e("default~action-creation-action-creation-module~actions-actions-module"), __webpack_require__.e("default~action-date-action-date-module~actions-actions-module"), __webpack_require__.e("common"), __webpack_require__.e("actions-actions-module")]).then(__webpack_require__.bind(null, /*! ./actions/actions.module */ "./src/app/actions/actions.module.ts")).then(m => m.ActionsPageModule)
     },
     {
         path: 'goals',
@@ -822,7 +822,7 @@ const routes = [
     },
     {
         path: 'action-date',
-        loadChildren: () => __webpack_require__.e(/*! import() | action-date-action-date-module */ "common").then(__webpack_require__.bind(null, /*! ./action-date/action-date.module */ "./src/app/action-date/action-date.module.ts")).then(m => m.ActionDatePageModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | action-date-action-date-module */ "default~action-date-action-date-module~actions-actions-module").then(__webpack_require__.bind(null, /*! ./action-date/action-date.module */ "./src/app/action-date/action-date.module.ts")).then(m => m.ActionDatePageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -1111,6 +1111,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _pipes_pipes_module__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pipes/pipes.module */ "./src/app/pipes/pipes.module.ts");
 /* harmony import */ var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic-native/camera/ngx */ "./node_modules/@ionic-native/camera/ngx/index.js");
+/* harmony import */ var _focus_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./focus.directive */ "./src/app/focus.directive.ts");
+
 
 
 
@@ -1134,7 +1136,7 @@ let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"], _focus_directive__WEBPACK_IMPORTED_MODULE_19__["FocusDirective"]],
         entryComponents: [],
         imports: [
             _mobiscroll_angular__WEBPACK_IMPORTED_MODULE_1__["MbscModule"],
@@ -1505,6 +1507,50 @@ EventsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], EventsService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/focus.directive.ts":
+/*!************************************!*\
+  !*** ./src/app/focus.directive.ts ***!
+  \************************************/
+/*! exports provided: FocusDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FocusDirective", function() { return FocusDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let FocusDirective = class FocusDirective {
+    constructor(host, el, zone, renderer) {
+        this.host = host;
+        this.el = el;
+        this.zone = zone;
+        this.renderer = renderer;
+    }
+    ngAfterContentInit() {
+        this.zone.runOutsideAngular(() => setTimeout(() => {
+            this.renderer.selectRootElement(this.el.nativeElement).focus();
+        }, 0));
+    }
+};
+FocusDirective.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer"] }
+];
+FocusDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+        selector: '[appFocus]'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer"]])
+], FocusDirective);
 
 
 

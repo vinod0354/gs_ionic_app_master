@@ -40,7 +40,7 @@
         <!--Button-->
       <div class="text-center" style="padding-top: 20px;">
       <label style="color: #e98604;"><ion-icon name="lock-closed-outline" style="padding-right:10px;"></ion-icon>Only you can see this</label><br><br>
-      <ion-button  class="buttons"><ion-icon name="add-circle" style="padding-right:10px;"></ion-icon>Add</ion-button>
+      <ion-button  class="action-btn" shape="round"><ion-icon name="add-circle" style="padding-right:10px;"></ion-icon>Add</ion-button>
     </div>
     <!--button-->
 
@@ -48,7 +48,7 @@
     <div class="col-12 padding">
       <ion-label>History</ion-label>
    </div>
-    <ion-card class="card" style="max-height: 68vh;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+    <ion-card class="card" style="max-height: 68vh;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; overflow-x: hidden;">
       <ion-card-content style="padding: 10px 15px 10px 15px !important;overflow-y: auto">
                 <div class="col-12 padding">
                   <ion-label>2020</ion-label>
@@ -166,7 +166,7 @@
       <div class="text-center" style="padding-top: 20px;">
         <label><ion-icon name="lock-open-outline" style="padding-right: 10px;"></ion-icon>Submit with name</label><br><br>
         <label style="color: #1089CE;"><ion-icon name="lock-closed-outline" style="padding-right: 10px;color: #1089CE;"></ion-icon>Submit Anonymously</label><br><br>
-        <ion-button class="buttons"><ion-icon name="arrow-up-circle" style="padding-right:5px;"></ion-icon>Submit</ion-button>
+        <ion-button class="action-btn" shape="round"><ion-icon name="arrow-up-circle" style="padding-right:5px;"></ion-icon>Submit</ion-button>
       </div>
 
        <!-- History Table -->
@@ -174,7 +174,7 @@
       <div class="col-12 padding">
         <ion-label>History</ion-label>
      </div>
-      <ion-card class="card" style="max-height: 68vh;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+      <ion-card class="card" style="max-height: 68vh;border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; overflow-x: hidden;">
         <ion-card-content style="padding: 10px 15px 10px 15px !important;overflow-y: auto">
                 <div class="col-12 padding">
                     <ion-label>2020</ion-label>
@@ -263,12 +263,10 @@
   </div>
 
 </form>
-  
-  
-
+  <div style="margin-top: 60px;"></div>
 </ion-content>
 
-<ion-footer>
+<!-- <ion-footer>
   <ion-segment class="segment-button" [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
     
     <ion-segment-button value="profession">
@@ -279,4 +277,20 @@
     </ion-segment-button>
 
   </ion-segment>
-</ion-footer>
+</ion-footer> -->
+<ion-fab vertical="bottom" slot="fixed" style="width: 100%;flex-direction: row; justify-content: center;">
+  <ion-row>
+    <ion-col>
+      <ion-segment class="segment-button" [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
+    
+        <ion-segment-button value="profession">
+          Professional
+        </ion-segment-button>
+        <ion-segment-button value="personal">
+          Personal
+        </ion-segment-button>
+    
+      </ion-segment>
+    </ion-col>
+  </ion-row>
+</ion-fab>

@@ -104,6 +104,17 @@
   }
 }
 
+.share-modal {
+  .modal-wrapper {
+      position: absolute;
+      display: block;
+      width:80%;
+      height: 75%;
+      border-radius: 4px;
+  }
+}
+
+
 .custom-modal1 {
   .modal-wrapper {
       position: absolute;

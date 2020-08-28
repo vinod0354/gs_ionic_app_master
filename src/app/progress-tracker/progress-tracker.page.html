@@ -18,6 +18,13 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-row>
+    <ion-col>
+      <div class="ion-text-end ion-margin-top">
+        <ion-text style="color: #f78f11;" class="ion-padding ion-margin-top" (click)="openModal()"><i class="fa fa-share" aria-hidden="true" style="color: #f78f11;"></i> &nbsp;Share</ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
   <div [ngSwitch]="segment">
     <ion-list *ngSwitchCase="'new'">
       <ion-grid>
@@ -673,7 +680,7 @@
   </div>
     
     <ion-list style="padding:5px;">
-      <ion-segment [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
+      <ion-segment class="segment-button" [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
     
         <ion-segment-button value="new">
           New
@@ -688,7 +695,7 @@
       </ion-segment>
     </ion-list>
     <ion-list style="padding:5px;">
-      <ion-segment [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
+      <ion-segment class="segment-button" [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
     
         <ion-segment-button value="today">
          Today
@@ -706,7 +713,7 @@
       </ion-segment>
     </ion-list>
     <ion-list style="padding:5px;">
-      <ion-segment [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
+      <ion-segment class="segment-button" [(ngModel)]="segment"  (ionChange)="segmentChanged($event)">
     
         <ion-segment-button value="personal">
           Personal

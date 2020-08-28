@@ -4,57 +4,50 @@
       <ion-menu-button style="color: #f09d2e;"></ion-menu-button>
     </ion-buttons>
     <ion-title color="Medium"> Guiding Principles</ion-title>
+    <ion-buttons slot="end">
+      <ion-button style="color: #f09d2e;">
+        <ion-icon style="color: #f09d2e;" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-row>
-    <ion-col size="2">
-      <ion-list>
-        <ion-thumbnail slot="start" style="padding-left:10px; padding-top:10px;" >
-          <ion-img src="assets/img/account.png" class="image-container hovereffect"></ion-img>  
-             <div class="btn btn-link btn-file "> 
-              <a  style="color:white; padding-top:15px;" href="#" class="overlay">Edit</a>
-              <ion-input type='file' id="upload-img"  accept="image/*" class="select-profile-picture"></ion-input>
-            </div>   
-        </ion-thumbnail>
-        <!-- <ion-avatar slot="start">
-          <img src="assets/img/account.png">
-        </ion-avatar>
-        <ion-label>Vijay Mitra</ion-label> -->
-      </ion-list> 
-    </ion-col>
-    <ion-col size="10">
-      <p style="padding-top:12px;">Vijay Mitra</p>  
-    </ion-col>
-  </ion-row> 
+  <ion-grid class="ion-margin-top">
+    <ion-row>
+      <ion-col size="2" class="">
+        <div>
+          <img src="assets/img/profile.jpg" alt="" style="height: 60px; padding: 3px; border-radius: 50%; border: 1px solid white; background: linear-gradient(147deg, #c354a3 18%, #4466a4 92%);">
+        </div>
+      </ion-col>
+      <ion-col size="10" class="ion-margin-top">
+        <ion-label>Vijay Mitra</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
   <ion-grid style="padding-top:20px; padding-left:20px; font-weight:bold;">
     <ion-label class="purpose">My Purpose</ion-label><br>
-      </ion-grid>
-        <ion-grid style="padding-top:5px;  padding-left:20px;">
-          <ion-label>Lorem Ipsum</ion-label>
-          <ion-icon name="pencil" style="color:#1089CE;" class="edit" ></ion-icon>
-        </ion-grid>
-        <!-- <div class="purpose">
-          <ion-label for="description" id="form"><p style="color:#1089CE;">Lorem Ipsum</p></ion-label>
-         <div class="edit"><a href="#"><ion-icon name="pencil" style="color:#1089CE;" class="edit"></ion-icon></a></div>
-       </div> -->
-        <ion-grid style="padding-top:20px; padding-left:20px; font-weight:bold;">
-          <ion-label>What's important to me</ion-label><br>
-        </ion-grid>
-        <ion-grid style="padding-top:5px; padding-left:20px;">
-          <ion-label>Lorem Ipsum</ion-label><br>
-        </ion-grid>
-    <ion-item style="border-bottom: 1px solid grey !important ; padding-right:10px; padding-left:10px;"></ion-item>
+  </ion-grid>
+  <ion-grid style="padding-top:5px;  padding-left:20px;">
+    <ion-label>Lorem Ipsum</ion-label>
+    <ion-icon name="pencil" style="color:#1089CE;" class="edit" ></ion-icon>
+  </ion-grid>
+  <ion-grid style="padding-top:20px; padding-left:20px; font-weight:bold;">
+    <ion-label>What's important to me</ion-label><br>
+  </ion-grid>
+  <ion-grid style="padding-top:5px; padding-left:20px;">
+    <ion-label>Lorem Ipsum</ion-label><br>
+  </ion-grid>
+  <div style="border-bottom: 1px solid #104a84; margin: 25px;"></div>
      
-    <!-- Company details starts here -->
+  <!-- Company details starts here -->
   <ion-row>
-    <ion-col size="6">
+    <ion-col size="4">
       <ion-list >
-        <img src="https://www.impaxivesolutions.com/images/logo.png" slot="start" style="padding-left:10px; padding-top:10px"  >
+        <img src="https://www.acme.in/upload/dynamicImages/26092018104535_logo%20(1).png" slot="center" style="height: 70px;">
       </ion-list>
     </ion-col>
-    <ion-col size="6">
-        <p style="padding-left:5px; padding-top:20px" >ACME Inc.</p>
+    <ion-col size="8" class="ion-padding ion-margin-top">
+        <p>ACME Inc.</p>
     </ion-col>
   </ion-row>
         <ion-grid style="padding-top:20px; padding-left:20px; font-weight:bold;">
@@ -73,9 +66,8 @@
           <ion-label>Values</ion-label><br>
         </ion-grid>
         <ion-grid style="padding-left:10px;" >
-          <li style="padding-left:10px;">Competence</li>
-          <li style="padding-left:10px;">Respect</li>
+          <li style="padding-left:10px;" class="ion-margin-bottom">Competence</li>
+          <li style="padding-left:10px;" class="ion-margin-bottom">Respect</li>
           <li style="padding-left:10px;">Have Fun</li>
         </ion-grid>
  </ion-content>
-
