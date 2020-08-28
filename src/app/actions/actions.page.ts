@@ -320,7 +320,7 @@ export class ActionsPage implements OnInit {
       return await modal.present();
 	 }
 
-	clickedheader(i){
+	clickedheader(i, type){
 		console.log("Clicked header index....  "+ i);
 		this.click_header_index = i;
 		this.categoryToggle = !this.categoryToggle
