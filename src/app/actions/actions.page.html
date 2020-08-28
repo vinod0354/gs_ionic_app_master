@@ -398,7 +398,8 @@
               <ion-grid style="padding:0px">
                 <ion-row class="ion-align-items-center">
                   <ion-col class="ion-align-self-center"  style="padding:0px">
-                    <span style="float:left; font-size: large; padding:4px; margin-top:2px; color: #104a84;font-weight: bold; " >Do Today</span>  
+                    <span *ngIf="dodate" style="float:left; font-size: large; padding:4px; margin-top:2px; color: #104a84;font-weight: bold; " >Do Today</span>  
+                    <span  *ngIf="duedate" style="float:left; font-size: large; padding:4px; margin-top:2px; color: #104a84;font-weight: bold; " >Due Date</span>  
                     <!-- <span style="padding-top: 5px; color:black; font-size: large; float:right;width:30px;height:30px;border-radius:30px;border:lightgray 1px solid">{{doActions.length<10 ? '0'+doActions.length : doActions.length }}</span> -->
                   </ion-col>
                 </ion-row>
@@ -453,7 +454,7 @@
                       <ion-grid style="padding:0px">
                         <ion-row class="ion-align-items-center">
                           <ion-col class="ion-align-self-center" size="12" style="padding:4px">
-                            <span style="float:left; padding-left:4px; padding-top:4px; color: #363648;" ><i class="icon-sort" style="color: #bee25f;"></i>Trake Cosmo for a walk</span>
+                            <span style="float:left; padding-left:4px; padding-top:4px; color: #363648;" ><i class="icon-sort" style="color: #bee25f;"></i>Take Cosmo for a walk</span>
                           </ion-col>
                         </ion-row>
                       </ion-grid>
@@ -464,7 +465,7 @@
                       <ion-grid style="padding:0px">
                         <ion-row class="ion-align-items-center">
                           <ion-col class="ion-align-self-center" size="12" style="padding:4px">
-                            <span style="float:left; padding-left:4px; padding-top:4px; color: #363648;" ><i class="icon-sort" style="color: #bee25f;"></i>Trake Cosmo for a walk</span>
+                            <span style="float:left; padding-left:4px; padding-top:4px; color: #363648;" ><i class="icon-sort" style="color: #bee25f;"></i>Take Cosmo for a walk</span>
                           </ion-col>
                         </ion-row>
                       </ion-grid>
@@ -497,13 +498,13 @@
                 </ion-card-header>
                 <ion-card-content *ngIf="visible" class="ion-padding-top">
                   <ion-grid>
-                    <ion-row *ngIf="overdueActionList.length == 0">
+                    <!-- <ion-row *ngIf="overdueActionList.length == 0">
                       <ion-col>
                         <div style="text-align: center;">
                             No Actions
                         </div>
                       </ion-col>
-                    </ion-row>
+                    </ion-row> -->
                     <ion-card *ngFor="let item1 of overdueActionList | userExtract: terms;" (click)="openModal('edit',item1)"  style="font-weight: normal; border: white; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);">
                       <!-- <ion-col size="1">
                         <ion-text color="light" [style.background-color]="item1.color">{{item1.category_name | slice:0:1}}</ion-text>
@@ -521,6 +522,28 @@
                         </ion-grid>
                       </ion-card-header>
                     </ion-card>
+                    <ion-card style="flex-direction: row;cursor: move; height: 60px; border: white; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);">
+                      <ion-card-header>
+                        <ion-grid style="padding:0px">
+                          <ion-row class="ion-align-items-center">
+                            <ion-col class="ion-align-self-center" size="12" style="padding:4px">
+                              <span style="float:left; padding-left:4px; padding-top:4px; color: #363648;" ><i class="icon-sort" style="color: #bee25f;"></i>Take Cosmo for a walk</span>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-header>
+                    </ion-card>   
+                    <ion-card style="flex-direction: row;cursor: move; height: 60px; border: white; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);">
+                      <ion-card-header>
+                        <ion-grid style="padding:0px">
+                          <ion-row class="ion-align-items-center">
+                            <ion-col class="ion-align-self-center" size="12" style="padding:4px">
+                              <span style="float:left; padding-left:4px; padding-top:4px; color: #363648;" ><i class="icon-sort" style="color: #bee25f;"></i>Take Cosmo for a walk</span>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-header>
+                    </ion-card>   
                   </ion-grid>
                 </ion-card-content>
               </ion-card>
@@ -531,15 +554,15 @@
                     <ion-label style="color:#464644 !important;margin: 0px !important; font-weight: bold;"> Due</ion-label>
                   </ion-item>
                 </ion-card-header>
-                <ion-card-content *ngIf="visible2" class="ion-padding-top">
+                <ion-card-content class="ion-padding-top">
                   <ion-grid>
-                    <ion-row *ngIf="todayActionList.length == 0">
+                    <!-- <ion-row *ngIf="todayActionList.length == 0">
                       <ion-col>
                         <div style="text-align: center;">
                             No Actions
                         </div>
                       </ion-col>
-                    </ion-row>
+                    </ion-row> -->
                     <ion-card *ngFor="let item2 of todayActionList | userExtract: terms;" (click)="openModal('edit',item2)"  style="font-weight: normal; border: white; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);">
                       <ion-card-header>
                         <ion-grid style="padding:0px">
@@ -551,6 +574,39 @@
                         </ion-grid>
                       </ion-card-header>
                     </ion-card>
+                    <ion-card style="flex-direction: row;cursor: move; height: 60px; border: white; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);">
+                      <ion-card-header>
+                        <ion-grid style="padding:0px">
+                          <ion-row class="ion-align-items-center">
+                            <ion-col class="ion-align-self-center" size="12" style="padding:4px">
+                              <span style="float:left; padding-left:4px; padding-top:4px; color: #363648;" ><i class="icon-sort" style="color: #bee25f;"></i>Take Cosmo for a walk</span>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-header>
+                    </ion-card> 
+                    <ion-card style="flex-direction: row;cursor: move; height: 60px; border: white; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);">
+                      <ion-card-header>
+                        <ion-grid style="padding:0px">
+                          <ion-row class="ion-align-items-center">
+                            <ion-col class="ion-align-self-center" size="12" style="padding:4px">
+                              <span style="float:left; padding-left:4px; padding-top:4px; color: #363648;" ><i class="icon-sort" style="color: #af5db7;"></i>Pay Tax</span>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-header>
+                    </ion-card>
+                    <ion-card style="flex-direction: row;cursor: move; height: 60px; border: white; box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08), 0 -6px 12px 0 rgba(255, 255, 255, 0.5);">
+                      <ion-card-header>
+                        <ion-grid style="padding:0px">
+                          <ion-row class="ion-align-items-center">
+                            <ion-col class="ion-align-self-center" size="12" style="padding:4px">
+                              <span style="float:left; padding-left:4px; padding-top:4px; color: #363648;" ><i class="icon-sort" style="color: greenyellow;"></i>Run 10 miles</span>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-card-header>
+                    </ion-card>  
                   </ion-grid>
                 </ion-card-content>
               </ion-card>

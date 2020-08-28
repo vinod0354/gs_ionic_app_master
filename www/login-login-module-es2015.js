@@ -137,8 +137,8 @@ let LoginPage = class LoginPage {
         this.apiServcie = apiServcie;
         this.global = global;
         this.globals = globals;
-        this.username = 'dev.goalshaper@gmail.com';
-        this.password = 'goalshaper1';
+        this.username = '';
+        this.password = '';
         this.checkLengthGoal = [];
         this.checkLengthObjective = [];
     }

@@ -75,6 +75,9 @@ export class ActionsPage implements OnInit {
 	//Toggle//
 	categoryToggle = false;
 
+	dodate = true;
+	duedate = false;
+
 	// Do Tabs //
 		// isCategory = true;
 		isDo = true;
@@ -224,6 +227,8 @@ export class ActionsPage implements OnInit {
 	this.isDoActive = "#265b8f"
 	this.isDuActive = "#363648"
 	// this.isPrActive = "#363648"
+	this.duedate = !this.duedate
+	this.dodate = !this.dodate
   }
 
   click_Due(){
@@ -240,6 +245,8 @@ export class ActionsPage implements OnInit {
 	this.isDoActive = "#363648"
 	this.isDuActive = "#265b8f"
 	// this.isPrActive = "#363648"
+	this.duedate = !this.duedate
+	this.dodate = !this.dodate
   }
 
 //   click_Priority(){
